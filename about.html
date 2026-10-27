@@ -1,0 +1,2032 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Kwetu Creations, Kampala Creative Studio</title>  <!-- SEO:BEGIN -->
+  <meta name="description" content="Meet Kwetu Creations, the Kampala studio founded in 2014 behind the signage, branding, interior, fabrication and website work we deliver for businesses.">
+  <!-- SEO:DOMAIN: tools/set-domain.php inserts the canonical link, og:url and og:image here -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kwetu Creations">
+  <meta property="og:locale" content="en_UG">
+  <meta property="og:title" content="About Us | Kwetu Creations, Kampala Creative Studio">
+  <meta property="og:description" content="Meet Kwetu Creations, the Kampala studio founded in 2014 behind the signage, branding, interior, fabrication and website work we deliver for businesses.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About Us | Kwetu Creations, Kampala Creative Studio">
+  <meta name="twitter:description" content="Meet Kwetu Creations, the Kampala studio founded in 2014 behind the signage, branding, interior, fabrication and website work we deliver for businesses.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo/favicon-32.png?v=4">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png?v=3">
+  <!-- SEO:END -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/shared.css">
+
+        <link rel="preload" as="style"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </noscript>
+
+    <style>
+        /* =========================================
+           KWETU CREATIONS — ABOUT US
+           Premium responsive page
+        ========================================= */
+
+        .about-page {
+            --about-red: #B5122A;
+            --about-red-dark: #8F0E21;
+            --about-gold: #C6A56B;
+            --about-gold-dark: #A7864D;
+            --about-white: #F5F3EF;
+            --about-black: #151515;
+            --about-soft: #202020;
+            --about-muted: rgba(245,243,239,.74);
+
+            margin: 0;
+            background: var(--about-black);
+            color: var(--about-white);
+            overflow-x: clip;
+        }
+
+        .about-page *,
+        .about-page *::before,
+        .about-page *::after {
+            box-sizing: border-box;
+        }
+
+        .about-page img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .about-page a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .about-page .about-container {
+            width: min(1180px, 88%);
+            margin-inline: auto;
+        }
+
+        .about-page .about-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0 0 20px;
+            color: var(--about-gold);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            line-height: 1.6;
+            text-transform: uppercase;
+        }
+
+        .about-page .about-eyebrow::before {
+            content: "";
+            width: 30px;
+            height: 1px;
+            flex: 0 0 30px;
+            background: var(--about-red);
+        }
+
+        .about-page .about-heading {
+            max-width: 760px;
+            margin-bottom: 42px;
+        }
+
+        .about-page .about-heading h2 {
+            margin: 0 0 20px;
+            font-size: clamp(32px, 4.5vw, 54px);
+            font-weight: 600;
+            letter-spacing: -1.7px;
+            line-height: 1.12;
+        }
+
+        .about-page .about-heading h2 span {
+            color: var(--about-gold);
+        }
+
+        .about-page .about-heading > p {
+            max-width: 650px;
+            margin: 0;
+            color: var(--about-muted);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .about-page .about-copy {
+            color: var(--about-muted);
+            font-size: 15px;
+            line-height: 1.95;
+        }
+
+        .about-page .about-copy p {
+            margin: 0 0 18px;
+        }
+
+        .about-page .about-button {
+            display: inline-flex;
+            min-height: 49px;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 14px 22px;
+            border: 1px solid var(--about-red);
+            background: var(--about-red);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.1px;
+            line-height: 1.4;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition:
+                background .25s ease,
+                border-color .25s ease,
+                color .25s ease,
+                transform .25s ease;
+        }
+
+        .about-page .about-button:hover {
+            transform: translateY(-2px);
+            border-color: var(--about-gold);
+            background: var(--about-gold);
+            color: var(--about-black);
+        }
+
+        .about-page .about-button-outline {
+            border-color: rgba(198,165,107,.65);
+            background: transparent;
+            color: var(--about-white);
+        }
+
+        .about-page .about-button-outline:hover {
+            background: var(--about-gold);
+            color: var(--about-black);
+        }
+
+        .about-page .about-arrow {
+            color: var(--about-gold);
+            font-size: 17px;
+            transition: transform .25s ease;
+        }
+
+        .about-page a:hover .about-arrow {
+            transform: translateX(4px);
+        }
+
+        /* HERO */
+
+        .about-page .about-hero {
+            position: relative;
+            isolation: isolate;
+            display: flex;
+            min-height: 610px;
+            align-items: center;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(12,12,12,.97) 0%,
+                    rgba(12,12,12,.88) 38%,
+                    rgba(12,12,12,.48) 100%
+                ),
+                url("images/webp/place.webp") center 45% / cover no-repeat;
+            border-bottom: 1px solid rgba(198,165,107,.32);
+        }
+
+        .about-page .about-hero::after {
+            position: absolute;
+            z-index: -1;
+            right: 7%;
+            bottom: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(
+                transparent,
+                rgba(198,165,107,.22),
+                transparent
+            );
+            content: "";
+        }
+
+        .about-page .about-hero-content {
+            width: 100%;
+            padding-top: calc(var(--nav-h, 76px) + 22px);
+            padding-bottom: 90px;
+        }
+
+        .about-page .about-hero-copy {
+            max-width: 800px;
+        }
+
+        .about-page .about-hero h1 {
+            max-width: 850px;
+            margin: 0 0 25px;
+            font-size: clamp(43px, 6.6vw, 82px);
+            font-weight: 600;
+            letter-spacing: -3px;
+            line-height: 1.02;
+        }
+
+        .about-page .about-hero h1 span {
+            display: block;
+            margin-top: 8px;
+            color: var(--about-gold);
+        }
+
+        .about-page .about-hero-description {
+            max-width: 610px;
+            margin: 0 0 32px;
+            color: rgba(245,243,239,.82);
+            font-size: 16px;
+            line-height: 1.95;
+        }
+
+        .about-page .about-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .about-page .about-hero-note {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-top: 65px;
+            color: rgba(245,243,239,.62);
+            font-size: 10px;
+            letter-spacing: 2px;
+            line-height: 1.8;
+            text-transform: uppercase;
+        }
+
+        .about-page .about-hero-note span {
+            width: 38px;
+            height: 1px;
+            background: var(--about-gold);
+        }
+
+        /* BRAND INTRODUCTION */
+
+        .about-page .about-introduction {
+            padding: 110px 0;
+        }
+
+        .about-page .about-intro-grid {
+            display: grid;
+            grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+            align-items: center;
+            gap: 85px;
+        }
+
+        .about-page .about-intro-copy h2 {
+            margin: 0 0 25px;
+            font-size: clamp(34px, 4.3vw, 52px);
+            font-weight: 600;
+            letter-spacing: -1.8px;
+            line-height: 1.14;
+        }
+
+        .about-page .about-intro-copy h2 span {
+            color: var(--about-gold);
+        }
+
+        .about-page .about-intro-visual {
+            position: relative;
+            min-width: 0;
+            padding: 0 17px 17px 0;
+        }
+
+        .about-page .about-intro-image {
+            min-height: 470px;
+            background:
+                linear-gradient(
+                    0deg,
+                    rgba(15,15,15,.12),
+                    rgba(15,15,15,.03)
+                ),
+                url("images/webp/ash.webp") center / cover no-repeat;
+            border: 1px solid rgba(198,165,107,.25);
+        }
+
+        .about-page .about-image-caption {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: min(260px, 78%);
+            padding: 21px 24px;
+            background: var(--about-red);
+            color: #fff;
+        }
+
+        .about-page .about-image-caption small {
+            display: block;
+            margin-bottom: 7px;
+            color: rgba(255,255,255,.78);
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about-page .about-image-caption strong {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        /* BRANDS WE HAVE WORKED WITH */
+
+        /* Sits between the #1C1C1C "Why Kwetu Creations" section and the closing
+           call to action, so its own ground is the page's darker #151515 - the
+           two sections would otherwise read as one block - and the tiles step
+           back up to #1C1C1C. Only a top hairline: the CTA draws its own. */
+        .about-page .about-brands {
+            padding: 46px 0 50px;
+            background: #151515;
+            border-top: 1px solid rgba(198,165,107,.17);
+        }
+
+        /* A heading with the same voice as the eyebrow rule above every other
+           section, so the band has a real <h2> for readers and crawlers. */
+        .about-page .about-brands-title,
+        .about-page .about-people-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0 0 22px;
+            color: var(--about-gold);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            line-height: 1.6;
+            text-transform: uppercase;
+        }
+
+        .about-page .about-brands-title::before {
+            content: "";
+            width: 30px;
+            height: 1px;
+            flex: 0 0 30px;
+            background: var(--about-red);
+        }
+
+        /* Names, not logos - no client artwork is on file for any of them. */
+        .about-page .about-brand-list {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .about-page .about-brand-list li {
+            display: flex;
+            min-width: 0;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 12px;
+            background: #1C1C1C;
+            border: 1px solid rgba(245,243,239,.11);
+            color: var(--about-white);
+            font-size: 12.5px;
+            font-weight: 600;
+            line-height: 1.55;
+            text-align: center;
+        }
+
+        /* OUR PEOPLE */
+
+        .about-page .about-people {
+            padding: 0 0 110px;
+        }
+
+        .about-page .about-people-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .about-page .about-person {
+            min-width: 0;
+            padding: 29px 25px 27px;
+            background: #1C1C1C;
+            border: 1px solid rgba(245,243,239,.09);
+            border-top: 2px solid var(--about-red);
+        }
+
+        .about-page .about-person h3 {
+            margin: 0 0 10px;
+            font-size: 21px;
+            font-weight: 600;
+            letter-spacing: -.4px;
+            line-height: 1.3;
+        }
+
+        .about-page .about-person-role {
+            margin: 0;
+            color: var(--about-gold);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.2px;
+            line-height: 1.7;
+            text-transform: uppercase;
+        }
+
+        .about-page .about-person-note {
+            margin: 16px 0 0;
+            padding-top: 15px;
+            border-top: 1px solid rgba(245,243,239,.09);
+            color: var(--about-muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        /* OUR MARK */
+
+        .about-page .about-mark {
+            padding: 0 0 110px;
+        }
+
+        .about-page .about-mark-grid {
+            display: grid;
+            grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+            align-items: center;
+            gap: 65px;
+        }
+
+        /* The white ground is keyed out of images/logo/logo-480.webp, and the
+           gold frame around it came out on 2026-10-27 too, so the artwork sits
+           on the page with nothing drawn around it. */
+        .about-page .about-mark-figure {
+            overflow: hidden;
+        }
+
+        .about-page .about-mark-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .about-page .about-mark-copy h2 {
+            margin: 0 0 25px;
+            font-size: clamp(30px, 3.6vw, 44px);
+            font-weight: 600;
+            letter-spacing: -1.4px;
+            line-height: 1.16;
+        }
+
+        .about-page .about-mark-copy h2 span {
+            color: var(--about-gold);
+        }
+
+        @media (max-width: 860px) {
+            .about-page .about-mark-grid {
+                grid-template-columns: 1fr;
+                gap: 38px;
+            }
+
+            .about-page .about-mark-figure {
+                max-width: 340px;
+            }
+        }
+
+        /* BRAND PHILOSOPHY */
+
+        .about-page .about-philosophy {
+            position: relative;
+            padding: 82px 0;
+            background: #1C1C1C;
+            border-top: 1px solid rgba(198,165,107,.17);
+            border-bottom: 1px solid rgba(198,165,107,.17);
+        }
+
+        .about-page .about-philosophy-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            align-items: start;
+            gap: 65px;
+        }
+
+        .about-page .about-philosophy h2 {
+            margin: 0;
+            font-size: clamp(30px, 4vw, 46px);
+            font-weight: 600;
+            letter-spacing: -1.5px;
+            line-height: 1.18;
+        }
+
+        .about-page .about-philosophy h2 span {
+            color: var(--about-gold);
+        }
+
+        .about-page .about-philosophy-copy {
+            padding-top: 6px;
+            color: var(--about-muted);
+            font-size: 15px;
+            line-height: 2;
+        }
+
+        .about-page .about-philosophy-copy p {
+            margin: 0 0 18px;
+        }
+
+        .about-page .about-philosophy-copy p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* EXPERTISE */
+
+        .about-page .about-expertise {
+            padding: 110px 0;
+        }
+
+        .about-page .about-expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .about-page .about-expertise-card {
+            min-width: 0;
+            padding: 29px 25px 27px;
+            background: #1C1C1C;
+            border: 1px solid rgba(245,243,239,.09);
+            border-top: 2px solid var(--about-red);
+            transition:
+                transform .25s ease,
+                border-color .25s ease,
+                background .25s ease;
+        }
+
+        .about-page .about-expertise-card:hover {
+            transform: translateY(-5px);
+            background: #222;
+            border-top-color: var(--about-gold);
+        }
+
+        .about-page .about-card-number {
+            display: flex;
+            width: 42px;
+            height: 42px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 28px;
+            border: 1px solid rgba(198,165,107,.55);
+            color: var(--about-gold);
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .about-page .about-expertise-card h3 {
+            margin: 0 0 13px;
+            font-size: 19px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .about-page .about-expertise-card p {
+            margin: 0;
+            color: var(--about-muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .about-page .about-expertise-footnote {
+            margin-top: 28px;
+            color: rgba(245,243,239,.55);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* PROJECT SHOWCASE */
+
+        .about-page .about-showcase {
+            padding: 95px 0;
+            background: #1C1C1C;
+            border-top: 1px solid rgba(198,165,107,.17);
+            border-bottom: 1px solid rgba(198,165,107,.17);
+        }
+
+        .about-page .about-showcase-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .about-page .about-showcase-heading .about-heading {
+            margin-bottom: 0;
+        }
+
+        .about-page .about-project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .about-page .about-project {
+            min-width: 0;
+        }
+
+        .about-page .about-project-image {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4 / 4.5;
+            background: #292929;
+        }
+
+        .about-page .about-project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s ease;
+        }
+
+        .about-page .about-project:hover img {
+            transform: scale(1.045);
+        }
+
+        .about-page .about-project-image::after {
+            position: absolute;
+            inset: 45% 0 0;
+            background: linear-gradient(transparent, rgba(0,0,0,.5));
+            content: "";
+            pointer-events: none;
+        }
+
+        .about-page .about-project-caption {
+            padding: 20px 0 0;
+        }
+
+        .about-page .about-project-caption small {
+            display: block;
+            margin-bottom: 9px;
+            color: var(--about-gold);
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about-page .about-project-caption h3 {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .about-page .about-project-caption p {
+            margin: 8px 0 0;
+            color: var(--about-muted);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* OUR PROCESS */
+
+        .about-page .about-process {
+            padding: 110px 0;
+        }
+
+        .about-page .about-process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .about-page .about-process-step {
+            position: relative;
+            padding-top: 24px;
+            border-top: 1px solid rgba(198,165,107,.55);
+        }
+
+        .about-page .about-process-step .step-number {
+            display: block;
+            margin-bottom: 24px;
+            color: var(--about-gold);
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .about-page .about-process-step h3 {
+            margin: 0 0 12px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .about-page .about-process-step p {
+            margin: 0;
+            color: var(--about-muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        /* WHY KWETU */
+
+        .about-page .about-difference {
+            padding: 95px 0;
+            background: #1C1C1C;
+            border-top: 1px solid rgba(198,165,107,.17);
+        }
+
+        .about-page .about-difference-grid {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 85px;
+            align-items: start;
+        }
+
+        .about-page .about-difference-intro h2 {
+            margin: 0 0 22px;
+            font-size: clamp(34px, 4.2vw, 49px);
+            letter-spacing: -1.6px;
+            line-height: 1.15;
+        }
+
+        .about-page .about-difference-intro h2 span {
+            color: var(--about-gold);
+        }
+
+        .about-page .about-difference-intro p {
+            margin: 0;
+            color: var(--about-muted);
+            font-size: 14px;
+            line-height: 1.95;
+        }
+
+        .about-page .about-review {
+            margin: 26px 0 0;
+            padding: 22px 24px;
+            border-left: 3px solid var(--about-gold);
+            background: rgba(198, 165, 107, .06);
+        }
+
+        .about-page .about-review-quote {
+            margin: 0;
+            color: var(--brand-white);
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        .about-page .about-review-who {
+            display: grid;
+            gap: 3px;
+            margin-top: 16px;
+        }
+
+        .about-page .about-review-who strong {
+            color: var(--about-gold);
+            font-size: 13px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .about-page .about-review-who span {
+            color: var(--about-muted);
+            font-size: 12px;
+        }
+
+        .about-page .about-review-figure {
+            margin: 0;
+        }
+
+        /* The dots follow the homepage carousel: a pill that stretches for the
+           review being read. One review on the feed means nothing to click, and
+           the container stays empty. */
+        .about-page .about-review-dots {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .about-page .about-review-dots:empty {
+            display: none;
+        }
+
+        .about-page .about-review-dot {
+            width: 10px;
+            height: 10px;
+            padding: 0;
+            background: rgba(245, 243, 239, .26);
+            border: 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background .25s ease, width .25s ease;
+        }
+
+        .about-page .about-review-dot:hover {
+            background: rgba(198, 165, 107, .65);
+        }
+
+        .about-page .about-review-dot[aria-current="true"] {
+            width: 26px;
+            background: var(--about-gold);
+        }
+
+        .about-page .about-review-dot:focus-visible {
+            outline: 2px solid var(--about-gold);
+            outline-offset: 3px;
+        }
+
+        /* Screen-reader announcement of which review is showing, kept off
+           layout so it cannot shift the box when the words change. */
+        .about-page .about-review-status {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .about-page .about-review-dot {
+                transition: none;
+            }
+        }
+
+        .about-page .about-reasons {
+            display: grid;
+            gap: 0;
+        }
+
+        .about-page .about-reason {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            gap: 17px;
+            padding: 22px 0;
+            border-bottom: 1px solid rgba(245,243,239,.11);
+        }
+
+        .about-page .about-reason:first-child {
+            padding-top: 0;
+        }
+
+        .about-page .about-reason-number {
+            padding-top: 3px;
+            color: var(--about-gold);
+            font-size: 11px;
+        }
+
+        .about-page .about-reason h3 {
+            margin: 0 0 7px;
+            font-size: 16px;
+        }
+
+        .about-page .about-reason p {
+            margin: 0;
+            color: var(--about-muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* FINAL CALL TO ACTION */
+
+        .about-page .about-cta {
+            position: relative;
+            padding: 100px 0;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(15,15,15,.97),
+                    rgba(15,15,15,.88)
+                ),
+                url("images/webp/as.webp") center / cover no-repeat;
+            border-top: 1px solid rgba(198,165,107,.3);
+        }
+
+        .about-page .about-cta-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 45px;
+        }
+
+        .about-page .about-cta-copy {
+            max-width: 710px;
+        }
+
+        .about-page .about-cta h2 {
+            margin: 0 0 18px;
+            font-size: clamp(34px, 4.6vw, 54px);
+            font-weight: 600;
+            letter-spacing: -1.8px;
+            line-height: 1.12;
+        }
+
+        .about-page .about-cta h2 span {
+            color: var(--about-gold);
+        }
+
+        .about-page .about-cta p {
+            max-width: 590px;
+            margin: 0;
+            color: var(--about-muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .about-page .about-cta-actions {
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* RESPONSIVE LAYOUT */
+
+        /* Six names across only works once each tile is ~180px wide. Below that
+           the longer ones wrap to three lines, so the band goes to three
+           columns first and two on phones. */
+        @media (max-width: 1200px) {
+            .about-page .about-brand-list {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 950px) {
+            .about-page .about-intro-grid {
+                gap: 45px;
+            }
+
+            .about-page .about-philosophy-grid,
+            .about-page .about-difference-grid {
+                gap: 40px;
+            }
+
+            .about-page .about-expertise-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .about-page .about-process-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                row-gap: 38px;
+            }
+
+            .about-page .about-cta-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .about-page .about-cta-actions {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .about-page .about-container {
+                width: 90%;
+            }
+
+            .about-page .about-hero {
+                min-height: auto;
+                background-position: 58% center;
+            }
+
+            .about-page .about-hero-content {
+                padding-top: calc(var(--nav-h, 76px) + 26px);
+                padding-bottom: 55px;
+            }
+
+            .about-page .about-hero h1 {
+                font-size: clamp(40px, 10vw, 59px);
+                letter-spacing: -1.8px;
+            }
+
+            .about-page .about-hero-description {
+                font-size: 14px;
+            }
+
+            .about-page .about-hero-note {
+                margin-top: 45px;
+                font-size: 9px;
+                letter-spacing: 1.5px;
+            }
+
+            .about-page .about-introduction,
+            .about-page .about-expertise,
+            .about-page .about-process {
+                padding: 72px 0;
+            }
+
+            .about-page .about-intro-grid,
+            .about-page .about-philosophy-grid,
+            .about-page .about-difference-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .about-page .about-intro-image {
+                min-height: 350px;
+            }
+
+            .about-page .about-philosophy {
+                padding: 65px 0;
+            }
+
+            .about-page .about-expertise-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .about-page .about-expertise-card {
+                padding: 24px;
+            }
+
+            .about-page .about-people {
+                padding: 0 0 72px;
+            }
+
+            .about-page .about-people-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-page .about-brand-list {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .about-page .about-showcase {
+                padding: 72px 0;
+            }
+
+            .about-page .about-showcase-heading {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .about-page .about-project-grid {
+                grid-template-columns: 1fr;
+                gap: 34px;
+            }
+
+            .about-page .about-project-image {
+                aspect-ratio: 4 / 3.4;
+            }
+
+            .about-page .about-process-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .about-page .about-process-step {
+                padding-top: 18px;
+            }
+
+            .about-page .about-process-step .step-number {
+                margin-bottom: 15px;
+            }
+
+            .about-page .about-difference {
+                padding: 72px 0;
+            }
+
+            .about-page .about-cta {
+                padding: 75px 0;
+            }
+
+            .about-page .about-cta-actions {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .about-page .about-button {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .about-page *,
+            .about-page *::before,
+            .about-page *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>  <!-- SEO:JSON-LD:BEGIN -->
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "#kwetu-creations",
+      "name": "Kwetu Creations",
+      "description": "Kampala creative studio delivering signage solutions, branding and graphic design, interior solutions, illuminated signage, laser cutting, custom fabrication, large-format printing and website design.",
+      "email": "info@kwetucreations.com",
+      "telephone": "+256787738999",
+      "foundingDate": "2014",
+      "founder": {
+          "@type": "Person",
+          "name": "Stephen Were Mbatya",
+          "jobTitle": "Marketing Director"
+      },
+      "employee": [
+          {
+              "@type": "Person",
+              "name": "Stephen Were Mbatya",
+              "jobTitle": "Marketing Director"
+          },
+          {
+              "@type": "Person",
+              "name": "Byuma Daniel",
+              "jobTitle": "Creative Graphics Designer"
+          }
+      ],
+      "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Freedom House, Level 6, Suite R-724, Nkurumah Road",
+          "addressLocality": "Kampala",
+          "addressCountry": "UG"
+      },
+      "knowsAbout": [
+          "Signage solutions",
+          "Illuminated signage",
+          "Branding and graphic design",
+          "Large-format printing",
+          "Laser cutting",
+          "Custom fabrication",
+          "Interior solutions",
+          "Website design and development"
+      ],
+      "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Studio services",
+          "itemListElement": [
+              {
+                  "@type": "Offer",
+                  "url": "services.html#signage",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Signage Solutions"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#branding",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Branding & Graphic Design"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#interiors",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Interior Solutions"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#illuminated-signage",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Illuminated Signage"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#fabrication",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Custom Fabrication"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#laser-cutting",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Laser Cutting"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#large-format-printing",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Large-Format Printing"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#web-design",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Website Design & Development"
+                  }
+              }
+          ]
+      }
+  }
+  </script>
+  <!-- SEO:JSON-LD:END -->
+</head>
+
+<body class="about-page">
+
+    <!-- Shared navigation: keep existing header -->
+    <div id="site-header">
+  <!-- KWETU:CHROME:SITE-HEADER:BEGIN -->
+  <header class="navbar">
+      <a href="./" class="logo">
+          <img class="logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+          <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+          <span class="logo-creations">CREATIONS</span>
+      </a>
+  
+      <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="main-navigation"
+          aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+  
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+          <a href="./" data-page="index3.html">Home</a>
+          <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+          <a href="services.html" data-page="services.html">Services</a>
+          <a href="about.html" data-page="about.html">About Us</a>
+         <a href="contact.html" data-page="contact.html">Contact Us</a>
+          <a href="quote-request.html" class="nav-quote" data-page="quote-request.html">Get a Quote ↗</a>
+          
+      </nav>
+  </header>
+  <!-- KWETU:CHROME:SITE-HEADER:END -->
+</div>
+
+    <main>
+
+        <!-- 01. HERO -->
+        <section class="about-hero">
+            <div class="about-container about-hero-content">
+                <div class="about-hero-copy">
+
+                    <div class="about-eyebrow">
+                        The Kwetu Creations Story
+                    </div>
+
+                    <h1>
+                        We Turn Ideas
+                        <span>Into Impact.</span>
+                    </h1>
+
+                    <p class="about-hero-description">
+                        Creative thinking. Thoughtful design. Practical
+                        solutions. We help businesses bring their ideas
+                        to life through branding, signage, fabrication,
+                        interior solutions and website design.
+                    </p>
+
+                    <div class="about-hero-actions">
+                        <a href="portfolio.html" class="about-button">
+                            Explore Our Work
+                            <span class="about-arrow">↗</span>
+                        </a>
+
+                        <a href="quote-request.html"
+                           class="about-button about-button-outline">
+                            Start a Project
+                        </a>
+                    </div>
+
+                    <div class="about-hero-note">
+                        <span></span>
+                        Creativity with purpose
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 02. WHO WE ARE -->
+        <section class="about-introduction">
+            <div class="about-container about-intro-grid">
+
+                <div class="about-intro-copy">
+                    <div class="about-eyebrow">Who We Are</div>
+
+                    <h2>
+                        Creative Ideas.
+                        <span>Real-World Solutions.</span>
+                    </h2>
+
+                    <div class="about-copy">
+                        <p>
+                            Kwetu Creations is a creative company founded
+                            by Stephen Were Mbatya in 2014 and focused on
+                            helping businesses express their identity
+                            and bring ideas into the real world.
+                        </p>
+
+                        <p>
+                            The studio works from Kampala and stays with
+                            a project from the first concept through to
+                            installation.
+                        </p>
+
+                        <p>
+                            We work across branding, signage, illuminated
+                            signage, fabrication, interior solutions and
+                            website design. These areas allow us to approach
+                            projects from both a visual and a practical
+                            perspective.
+                        </p>
+
+                        <p>
+                            We believe good creative work begins with
+                            understanding the client. By listening,
+                            planning carefully and paying attention to
+                            the details, we aim to deliver solutions
+                            that suit each project's purpose.
+                        </p>
+                    </div>
+
+                    <a href="services.html" class="about-button">
+                        Discover Our Services
+                        <span class="about-arrow">↗</span>
+                    </a>
+                </div>
+
+                <div class="about-intro-visual">
+                    <div class="about-intro-image"
+                         role="img"
+                         aria-label="Creative work and project imagery"></div>
+
+                    <div class="about-image-caption">
+                        <small>Our Approach</small>
+                        <strong>Ideas shaped with care and purpose.</strong>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 02b. OUR PEOPLE -->
+        <section class="about-people">
+            <div class="about-container">
+
+                <h2 class="about-people-title">Our People</h2>
+
+                <div class="about-people-grid">
+
+                    <article class="about-person">
+                        <h3>Stephen Were Mbatya</h3>
+                        <p class="about-person-role">Marketing Director</p>
+                        <p class="about-person-note">
+                            He founded Kwetu Creations in 2014.
+                        </p>
+                    </article>
+
+                    <article class="about-person">
+                        <h3>Byuma Daniel</h3>
+                        <p class="about-person-role">Creative Graphics Designer</p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 02c. OUR MARK -->
+        <section class="about-mark">
+            <div class="about-container about-mark-grid">
+
+                <div class="about-mark-figure">
+                    <img src="images/logo/logo-480.webp?v=3" width="480" height="480"
+                         loading="lazy" decoding="async"
+                         alt="The Kwetu Creations logo: a circular brushed-metal monogram with a red inner ring, the words KWETU CREATIONS on a bar across the middle, and the tagline ...for a creative innovation. on a base below the circle">
+                </div>
+
+                <div class="about-mark-copy">
+                    <div class="about-eyebrow">Our Mark</div>
+
+                    <h2>
+                        Built Around
+                        <span>Creative Innovation.</span>
+                    </h2>
+
+                    <div class="about-copy">
+                        <p>
+                            The mark above carries the studio's tagline:
+                            "...for a creative innovation." It is the identity
+                            used across this site — in the navigation bar, as
+                            the tab icon, and as the picture shown when a page
+                            is shared.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 03. OUR PHILOSOPHY -->
+        <section class="about-philosophy">
+            <div class="about-container about-philosophy-grid">
+
+                <div>
+                    <div class="about-eyebrow">Our Philosophy</div>
+
+                    <h2>
+                        More Than
+                        <span>Appearance.</span>
+                        Built Around Purpose.
+                    </h2>
+                </div>
+
+                <div class="about-philosophy-copy">
+                    <p>
+                        We believe creative work should do more than
+                        look good. It should communicate clearly,
+                        serve a purpose and make sense for the people
+                        who will use it.
+                    </p>
+
+                    <p>
+                        A brand identity should communicate who a
+                        business is. Signage should help people
+                        recognise and navigate a place. An interior
+                        solution should consider how a space will
+                        be experienced.
+                    </p>
+
+                    <p>
+                        This way of thinking guides how we approach
+                        the projects entrusted to us: with attention
+                        to the brief, the details and the intended result.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 04. OUR EXPERTISE -->
+        <section class="about-expertise">
+            <div class="about-container">
+
+                <div class="about-heading">
+                    <div class="about-eyebrow">What We Do</div>
+
+                    <h2>
+                        Our Expertise.
+                        <span>Your Ideas.</span>
+                    </h2>
+
+                    <p>
+                        We bring together different creative disciplines
+                        to help businesses develop their identity,
+                        communicate visually and improve their spaces.
+                    </p>
+                </div>
+
+                <div class="about-expertise-grid">
+
+                    <article class="about-expertise-card">
+                        <div class="about-card-number">01</div>
+                        <h3>Branding &amp; Identity</h3>
+                        <p>
+                            Visual branding solutions that help businesses
+                            present their identity consistently and
+                            communicate their character.
+                        </p>
+                    </article>
+
+                    <article class="about-expertise-card">
+                        <div class="about-card-number">02</div>
+                        <h3>Signage Solutions</h3>
+                        <p>
+                            Signage designed to help businesses become
+                            recognisable, communicate information and
+                            present their spaces professionally.
+                        </p>
+                    </article>
+
+                    <article class="about-expertise-card">
+                        <div class="about-card-number">03</div>
+                        <h3>Illuminated Signage</h3>
+                        <p>
+                            Illuminated sign solutions that bring
+                            visibility and a distinctive visual presence
+                            to business environments.
+                        </p>
+                    </article>
+
+                    <article class="about-expertise-card">
+                        <div class="about-card-number">04</div>
+                        <h3>Fabrication</h3>
+                        <p>
+                            Fabrication solutions developed around
+                            project requirements, intended use and
+                            the desired finished result.
+                        </p>
+                    </article>
+
+                    <article class="about-expertise-card">
+                        <div class="about-card-number">05</div>
+                        <h3>Interior Solutions</h3>
+                        <p>
+                            Creative solutions for interior spaces,
+                            with consideration for presentation,
+                            functionality and the overall experience.
+                        </p>
+                    </article>
+
+                    <article class="about-expertise-card">
+                        <div class="about-card-number">06</div>
+                        <h3>Website Design &amp; Development</h3>
+                        <p>
+                            Business websites planned around the same
+                            identity as the rest of the brand and built to
+                            work on phones as well as desktops.
+                        </p>
+                    </article>
+
+                    <article class="about-expertise-card">
+                        <div class="about-card-number">07</div>
+                        <h3>Custom Projects</h3>
+                        <p>
+                            Project-specific creative work shaped
+                            around a client's brief, requirements
+                            and intended outcome.
+                        </p>
+                    </article>
+
+                </div>
+
+                <p class="about-expertise-footnote">
+                    Have a project that doesn't fit neatly into one
+                    category? Share your idea with us so we can
+                    understand what you need.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- 05. OUR WORK -->
+        <section class="about-showcase">
+            <div class="about-container">
+
+                <div class="about-showcase-heading">
+                    <div class="about-heading">
+                        <div class="about-eyebrow">Our Work in Action</div>
+
+                        <h2>
+                            Ideas Become
+                            <span>Something Real.</span>
+                        </h2>
+
+                        <p>
+                            Explore our work to see how creative ideas
+                            can be translated into visual and practical
+                            solutions.
+                        </p>
+                    </div>
+
+                    <a href="portfolio.html"
+                       class="about-button about-button-outline">
+                        View All Projects
+                        <span class="about-arrow">↗</span>
+                    </a>
+                </div>
+
+                <div class="about-project-grid">
+
+                    <article class="about-project">
+                        <div class="about-project-image">
+                            <img decoding="async" height="1008" width="756"
+                                src="images/webp/ami.webp"
+                                alt="Illuminated totem sign for Amicus Medical Centre at night with a panel listing its medical services"
+                                loading="lazy">
+                        </div>
+
+                        <div class="about-project-caption">
+                            <small>01 / Branding</small>
+                            <h3>Building a Visual Identity</h3>
+                            <p>
+                                Creative presentation and brand expression.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="about-project">
+                        <div class="about-project-image">
+                            <img decoding="async" height="756" width="1008"
+                                src="images/webp/goe.webp"
+                                alt="Red and black illuminated 3D shopfront sign for K and W Forex Bureau with an LED open display"
+                                loading="lazy">
+                        </div>
+
+                        <div class="about-project-caption">
+                            <small>02 / Signage</small>
+                            <h3>Making Businesses Visible</h3>
+                            <p>
+                                Visual communication through signage.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="about-project">
+                        <div class="about-project-image">
+                            <img decoding="async" height="1707" width="1280"
+                                src="images/webp/interior-3.webp"
+                                alt="Walk-in wardrobe joinery with LED-lit shelves, drawers and glass-fronted display cabinets"
+                                loading="lazy">
+                        </div>
+
+                        <div class="about-project-caption">
+                            <small>03 / Interiors</small>
+                            <h3>Thoughtful Spaces</h3>
+                            <p>
+                                Creative thinking applied to environments.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 06. HOW WE WORK -->
+        <section class="about-process">
+            <div class="about-container">
+
+                <div class="about-heading">
+                    <div class="about-eyebrow">How We Work</div>
+
+                    <h2>
+                        From First Idea
+                        <span>To Finished Project.</span>
+                    </h2>
+
+                    <p>
+                        Every project is different, but a clear process
+                        helps us understand expectations and work towards
+                        the right solution.
+                    </p>
+                </div>
+
+                <div class="about-process-grid">
+
+                    <article class="about-process-step">
+                        <span class="step-number">STEP 01</span>
+                        <h3>Listen &amp; Understand</h3>
+                        <p>
+                            We learn about your idea, goals, requirements
+                            and the purpose of the project.
+                        </p>
+                    </article>
+
+                    <article class="about-process-step">
+                        <span class="step-number">STEP 02</span>
+                        <h3>Plan &amp; Design</h3>
+                        <p>
+                            We consider suitable creative directions
+                            and agree on the proposed solution.
+                        </p>
+                    </article>
+
+                    <article class="about-process-step">
+                        <span class="step-number">STEP 03</span>
+                        <h3>Create &amp; Produce</h3>
+                        <p>
+                            Work proceeds according to the agreed
+                            scope, specifications and approvals.
+                        </p>
+                    </article>
+
+                    <article class="about-process-step">
+                        <span class="step-number">STEP 04</span>
+                        <h3>Complete &amp; Deliver</h3>
+                        <p>
+                            We work towards the agreed outcome and
+                            communicate about completion and delivery.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 07. WHY KWETU CREATIONS -->
+        <section class="about-difference">
+            <div class="about-container about-difference-grid">
+
+                <div class="about-difference-intro">
+                    <div class="about-eyebrow">Why Work With Us</div>
+
+                    <h2>
+                        Your Vision Deserves
+                        <span>Thoughtful Execution.</span>
+                    </h2>
+
+                    <p>
+                        Choosing a creative partner means finding
+                        someone who understands what you're trying
+                        to achieve. Our approach is centred on the
+                        brief, the details and the needs of each project.
+                    </p>
+
+                    <div class="about-review" data-featured-review>
+                        <figure class="about-review-figure">
+                            <blockquote class="about-review-quote">
+                                Reviews from the businesses we have worked with
+                                appear here, one at a time, and only once the
+                                person who wrote one has agreed to it being
+                                published.
+                            </blockquote>
+                            <figcaption class="about-review-who">
+                                <strong>Kwetu Creations</strong>
+                                <span>Design and production studio, Kampala</span>
+                            </figcaption>
+                        </figure>
+
+                        <div class="about-review-dots" data-featured-dots
+                             role="group" aria-label="Choose a review to read"></div>
+
+                        <p class="about-review-status" data-featured-status
+                           role="status" aria-live="polite"></p>
+                    </div>
+                </div>
+
+                <div class="about-reasons">
+
+                    <article class="about-reason">
+                        <div class="about-reason-number">01</div>
+                        <div>
+                            <h3>Solutions Around Your Needs</h3>
+                            <p>
+                                We consider the requirements of your
+                                project instead of assuming one solution
+                                works for every client.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="about-reason">
+                        <div class="about-reason-number">02</div>
+                        <div>
+                            <h3>Attention to Detail</h3>
+                            <p>
+                                We recognise the importance of the
+                                smaller decisions that contribute to
+                                a considered finished result.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="about-reason">
+                        <div class="about-reason-number">03</div>
+                        <div>
+                            <h3>Creative Thinking</h3>
+                            <p>
+                                We look for ways to translate ideas
+                                into clear visual concepts and
+                                practical project solutions.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="about-reason">
+                        <div class="about-reason-number">04</div>
+                        <div>
+                            <h3>Working With You</h3>
+                            <p>
+                                Clear communication and an understanding
+                                of the brief help keep the project
+                                aligned with your expectations.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 07b. BRANDS WE HAVE WORKED WITH -->
+        <section class="about-brands">
+            <div class="about-container">
+
+                <h2 class="about-brands-title">Brands We Have Worked With</h2>
+
+                <ul class="about-brand-list">
+                    <li>Virah Forex Bureau</li>
+                    <li>ABC Capital Bank Uganda</li>
+                    <li>Mountain Inn Hotel</li>
+                    <li>Dahabshiil Money Transfer</li>
+                    <li>Exquisite Uganda</li>
+                    <li>NWSC (National Water and Sewerage Corporation)</li>
+                </ul>
+
+            </div>
+        </section>
+
+        <!-- 08. FINAL CALL TO ACTION -->
+        <section class="about-cta">
+            <div class="about-container about-cta-inner">
+
+                <div class="about-cta-copy">
+                    <div class="about-eyebrow">Let's Create Together</div>
+
+                    <h2>
+                        Have an Idea?
+                        <span>Let's Bring It to Life.</span>
+                    </h2>
+
+                    <p>
+                        Tell us what you're planning, what you need
+                        and what you want to achieve. Let's start
+                        a conversation about your next project.
+                    </p>
+                </div>
+
+                <div class="about-cta-actions">
+                    <a href="quote-request.html" class="about-button">
+                        Request a Quote
+                        <span class="about-arrow">↗</span>
+                    </a>
+
+                    <a href="portfolio.html"
+                       class="about-button about-button-outline">
+                        Explore Our Work
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Shared footer: keep existing footer -->
+    <div id="site-footer">
+  <!-- KWETU:CHROME:SITE-FOOTER:BEGIN -->
+  <footer class="site-footer">
+  
+      <div class="footer-top">
+          <div class="footer-brand">
+              <a href="./" class="footer-logo">
+                  <img class="footer-logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+                  <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+                  <span class="logo-creations">CREATIONS</span>
+              </a>
+  
+              <p class="footer-tagline">
+                  Creative design. Precision production. Exceptional results.
+              </p>
+          </div>
+  
+          <div class="footer-explore">
+              <h3>EXPLORE</h3>
+              <a href="./" data-page="index3.html">Home</a>
+              <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+              <a href="services.html" data-page="services.html">Services</a>
+              <a href="about.html" data-page="about.html">About Us</a>
+              <a href="testimonials.html" data-page="testimonials.html">Client Reviews</a>
+              <a href="contact.html" data-page="contact.html">Contact Us</a>
+              <a href="quote-request.html" data-page="quote-request.html">Get a Quote</a>
+          </div>
+          <div class="footer-services">
+                  <h3>OUR SERVICES</h3>
+                  <a href="services.html#signage">Signage</a>
+                  <a href="services.html#branding">Branding &amp; Graphic Design</a>
+                  <a href="services.html#interiors">Interior Solutions</a>
+                  <a href="services.html#illuminated-signage">Illuminated Signage</a>
+                  <a href="services.html#fabrication">Fabrication</a>
+                  <a href="services.html#laser-cutting">Laser Cutting</a>
+                  <a href="services.html#large-format-printing">Large-Format Printing</a>
+                  <a href="services.html#web-design">Website Design &amp; Development</a>
+              </div>
+  
+              <div class="footer-contact">
+                  <h3>CONTACT US</h3>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <address>
+                      Freedom House, Level 6, Suite R-724<br>
+                      Nkurumah Road, Kampala, Uganda
+                     
+                  </address>
+              </div>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  <a href="tel:+256787738999">+256 787 738 999</a>
+              </div>
+              
+              <div class="footer-contact-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <a href="mailto:info@kwetucreations.com">
+                      info@kwetucreations.com
+                  </a>
+              </div>
+  
+          </div>
+  
+          <div class="footer-social">
+              <h3>CONNECT WITH US</h3>
+  
+              <div class="social-icons-container">
+                  <a class="icon-link whatsapp"
+                     href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener"
+                     aria-label="Message the studio on WhatsApp"
+                     title="Message the studio on WhatsApp">
+                      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                  </a>
+                  <span class="icon-link instagram" role="img"
+                        aria-label="Instagram" title="Instagram">
+                      <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link tiktok" role="img"
+                        aria-label="TikTok" title="TikTok">
+                      <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link linkedin" role="img"
+                        aria-label="LinkedIn" title="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link facebook" role="img"
+                        aria-label="Facebook" title="Facebook">
+                      <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                  </span>
+              </div>
+  
+              <p class="footer-social-note">
+                  Speak to the studio directly —
+                  <a href="mailto:info@kwetucreations.com">info@kwetucreations.com</a>,
+                  <a href="tel:+256787738999">+256 787 738 999</a>,
+                  or
+                  <a href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener">message us on WhatsApp</a>.
+                  All three reach the team, and a reply from us comes from a
+                  person, not a queue.
+              </p>
+  
+          </div>
+          
+      </div>
+  
+      <div class="footer-bottom">
+          <div class="footer-legal-links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <span>|</span>
+              <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+              <span>|</span>
+              <a href="cookie-policy.html">Cookie Policy</a>
+              <span>|</span>
+              <button type="button" data-cookie-settings
+                      aria-haspopup="dialog">Cookie Settings</button>
+          </div>
+  
+          <p class="footer-copyright">
+              &copy; <span id="year"></span>
+              <span class="footer-kwetu">Kwetu</span>
+              <span class="footer-creations">Creations</span>.
+              All rights reserved.
+          </p>
+  
+          <div class="footer-designer">
+              <span>Website designed by</span>
+              <strong>BYUMA DANIEL</strong>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mpozzadaniel@gmail.com"
+                 target="_blank" rel="noopener noreferrer">
+                  mpozzadaniel@gmail.com
+              </a>
+          </div>
+      </div>
+  
+  </footer>
+  <!-- KWETU:CHROME:SITE-FOOTER:END -->
+</div>
+
+    <script src="script.js"></script>
+    <script src="cookie-consent.js"></script>
+    <script src="testimonials-live.js" data-testimonial-feed="backend/approved-testimonials.php" defer></script>
+
+</body>
+</html>

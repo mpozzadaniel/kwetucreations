@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Kwetu Creations</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="The page you asked for is not here. Find Kwetu Creations signage, branding, fabrication and interior work from the pages below.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+    <!-- Absolute paths: this page is served for any missing address, so a
+         relative "css/shared.css" would resolve against that wrong address. -->
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="preload" as="style"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </noscript>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo/favicon-32.png?v=4">
+    <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png?v=3">
+
+    <style>
+        :root {
+            --red: #B5122A;
+            --dark-red: #8F0E21;
+            --gold: #C6A56B;
+            --white: #F5F3EF;
+            --black: #151515;
+            --soft-black: #202020;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--black);
+            color: var(--white);
+            font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            padding: 90px 7% 80px;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 7vw, 76px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            font-weight: 800;
+        }
+
+        h1 span {
+            color: var(--red);
+        }
+
+        .lede {
+            margin-top: 20px;
+            max-width: 560px;
+            color: rgba(245, 243, 239, 0.75);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .rule {
+            width: 70px;
+            height: 3px;
+            background: var(--gold);
+            margin: 34px 0;
+        }
+
+        h2 {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 18px;
+        }
+
+        .destinations {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            list-style: none;
+        }
+
+        .destinations a {
+            display: block;
+            padding: 18px;
+            background: var(--soft-black);
+            border: 1px solid #343434;
+            border-radius: 4px;
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: border-color 0.25s, background 0.25s;
+        }
+
+        .destinations a small {
+            display: block;
+            margin-top: 6px;
+            color: rgba(245, 243, 239, 0.6);
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .destinations a:hover,
+        .destinations a:focus-visible {
+            border-color: var(--gold);
+            background: var(--dark-red);
+            outline: none;
+        }
+
+        .ask {
+            margin-top: 34px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: rgba(245, 243, 239, 0.75);
+        }
+
+        .ask a {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        @media (max-width: 760px) {
+            .destinations {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 520px) {
+            main {
+                padding: calc(var(--nav-h, 76px) + 24px) 6% 55px;
+            }
+
+            .destinations {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="site-header">
+  <!-- KWETU:CHROME:SITE-HEADER:BEGIN -->
+  <header class="navbar">
+      <a href="./" class="logo">
+          <img class="logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+          <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+          <span class="logo-creations">CREATIONS</span>
+      </a>
+  
+      <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="main-navigation"
+          aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+  
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+          <a href="./" data-page="index3.html">Home</a>
+          <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+          <a href="services.html" data-page="services.html">Services</a>
+          <a href="about.html" data-page="about.html">About Us</a>
+         <a href="contact.html" data-page="contact.html">Contact Us</a>
+          <a href="quote-request.html" class="nav-quote" data-page="quote-request.html">Get a Quote ↗</a>
+          
+      </nav>
+  </header>
+  <!-- KWETU:CHROME:SITE-HEADER:END -->
+</div>
+
+    <main>
+        <p class="eyebrow">Error 404</p>
+
+        <h1>This page has been moved,<br><span>renamed, or never existed.</span></h1>
+
+        <p class="lede">
+            The address you followed is not part of the Kwetu Creations site.
+            Everything we publish is one click away below.
+        </p>
+
+        <div class="rule"></div>
+
+        <h2>Where to go next</h2>
+
+        <ul class="destinations">
+            <li>
+                <a href="./">Home
+                    <small>What the studio does, in pictures.</small>
+                </a>
+            </li>
+            <li>
+                <a href="portfolio.html">Our Work
+                    <small>Signage, branding, fabrication and interiors we have made.</small>
+                </a>
+            </li>
+            <li>
+                <a href="services.html">Services
+                    <small>From first design to installation.</small>
+                </a>
+            </li>
+            <li>
+                <a href="about.html">About Us
+                    <small>The Kampala team behind the projects.</small>
+                </a>
+            </li>
+            <li>
+                <a href="contact.html">Contact Us
+                    <small>Call, email or visit us on Nkurumah Road.</small>
+                </a>
+            </li>
+            <li>
+                <a href="quote-request.html">Get a Quote
+                    <small>Send sizes, materials and artwork for an estimate.</small>
+                </a>
+            </li>
+        </ul>
+
+        <p class="ask">
+            Looking for a project we photographed but cannot find?
+            <a href="contact.html">Tell us what you were looking for</a>
+            and we will point you to the right page.
+        </p>
+    </main>
+
+    <div id="site-footer">
+  <!-- KWETU:CHROME:SITE-FOOTER:BEGIN -->
+  <footer class="site-footer">
+  
+      <div class="footer-top">
+          <div class="footer-brand">
+              <a href="./" class="footer-logo">
+                  <img class="footer-logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+                  <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+                  <span class="logo-creations">CREATIONS</span>
+              </a>
+  
+              <p class="footer-tagline">
+                  Creative design. Precision production. Exceptional results.
+              </p>
+          </div>
+  
+          <div class="footer-explore">
+              <h3>EXPLORE</h3>
+              <a href="./" data-page="index3.html">Home</a>
+              <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+              <a href="services.html" data-page="services.html">Services</a>
+              <a href="about.html" data-page="about.html">About Us</a>
+              <a href="testimonials.html" data-page="testimonials.html">Client Reviews</a>
+              <a href="contact.html" data-page="contact.html">Contact Us</a>
+              <a href="quote-request.html" data-page="quote-request.html">Get a Quote</a>
+          </div>
+          <div class="footer-services">
+                  <h3>OUR SERVICES</h3>
+                  <a href="services.html#signage">Signage</a>
+                  <a href="services.html#branding">Branding &amp; Graphic Design</a>
+                  <a href="services.html#interiors">Interior Solutions</a>
+                  <a href="services.html#illuminated-signage">Illuminated Signage</a>
+                  <a href="services.html#fabrication">Fabrication</a>
+                  <a href="services.html#laser-cutting">Laser Cutting</a>
+                  <a href="services.html#large-format-printing">Large-Format Printing</a>
+                  <a href="services.html#web-design">Website Design &amp; Development</a>
+              </div>
+  
+              <div class="footer-contact">
+                  <h3>CONTACT US</h3>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <address>
+                      Freedom House, Level 6, Suite R-724<br>
+                      Nkurumah Road, Kampala, Uganda
+                     
+                  </address>
+              </div>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  <a href="tel:+256787738999">+256 787 738 999</a>
+              </div>
+              
+              <div class="footer-contact-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <a href="mailto:info@kwetucreations.com">
+                      info@kwetucreations.com
+                  </a>
+              </div>
+  
+          </div>
+  
+          <div class="footer-social">
+              <h3>CONNECT WITH US</h3>
+  
+              <div class="social-icons-container">
+                  <a class="icon-link whatsapp"
+                     href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener"
+                     aria-label="Message the studio on WhatsApp"
+                     title="Message the studio on WhatsApp">
+                      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                  </a>
+                  <span class="icon-link instagram" role="img"
+                        aria-label="Instagram" title="Instagram">
+                      <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link tiktok" role="img"
+                        aria-label="TikTok" title="TikTok">
+                      <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link linkedin" role="img"
+                        aria-label="LinkedIn" title="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link facebook" role="img"
+                        aria-label="Facebook" title="Facebook">
+                      <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                  </span>
+              </div>
+  
+              <p class="footer-social-note">
+                  Speak to the studio directly —
+                  <a href="mailto:info@kwetucreations.com">info@kwetucreations.com</a>,
+                  <a href="tel:+256787738999">+256 787 738 999</a>,
+                  or
+                  <a href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener">message us on WhatsApp</a>.
+                  All three reach the team, and a reply from us comes from a
+                  person, not a queue.
+              </p>
+  
+          </div>
+          
+      </div>
+  
+      <div class="footer-bottom">
+          <div class="footer-legal-links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <span>|</span>
+              <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+              <span>|</span>
+              <a href="cookie-policy.html">Cookie Policy</a>
+              <span>|</span>
+              <button type="button" data-cookie-settings
+                      aria-haspopup="dialog">Cookie Settings</button>
+          </div>
+  
+          <p class="footer-copyright">
+              &copy; <span id="year"></span>
+              <span class="footer-kwetu">Kwetu</span>
+              <span class="footer-creations">Creations</span>.
+              All rights reserved.
+          </p>
+  
+          <div class="footer-designer">
+              <span>Website designed by</span>
+              <strong>BYUMA DANIEL</strong>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mpozzadaniel@gmail.com"
+                 target="_blank" rel="noopener noreferrer">
+                  mpozzadaniel@gmail.com
+              </a>
+          </div>
+      </div>
+  
+  </footer>
+  <!-- KWETU:CHROME:SITE-FOOTER:END -->
+</div>
+
+    <script src="script.js"></script>
+    <script src="cookie-consent.js"></script>
+
+    <script>
+        // The shared header and footer link with relative addresses, which a
+        // missing page would resolve against the broken URL instead of the
+        // site root. script.js fetches those fragments after this page loads,
+        // and cookie-consent.js builds its banner and its policy links at the
+        // end of the body, so watch the whole body rather than guessing when
+        // each of them will arrive.
+        function reRoot(host) {
+            host.querySelectorAll("a[href]").forEach(link => {
+                const href = link.getAttribute("href");
+
+                if (/^[\w.-]+\.html/.test(href)) link.setAttribute("href", "/" + href);
+            });
+        }
+
+        reRoot(document.body);
+        new MutationObserver(() => reRoot(document.body))
+            .observe(document.body, {childList: true, subtree: true});
+    </script>
+
+</body>
+</html>

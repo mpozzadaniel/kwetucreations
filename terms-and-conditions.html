@@ -1,0 +1,1296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Terms &amp; Conditions | Kwetu Creations</title>  <!-- SEO:BEGIN -->
+  <meta name="description" content="The terms that apply to Kwetu Creations quotations, design approvals, production, payment and project delivery.">
+  <!-- SEO:DOMAIN: tools/set-domain.php inserts the canonical link, og:url and og:image here -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kwetu Creations">
+  <meta property="og:locale" content="en_UG">
+  <meta property="og:title" content="Terms &amp; Conditions | Kwetu Creations">
+  <meta property="og:description" content="The terms that apply to Kwetu Creations quotations, design approvals, production, payment and project delivery.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Terms &amp; Conditions | Kwetu Creations">
+  <meta name="twitter:description" content="The terms that apply to Kwetu Creations quotations, design approvals, production, payment and project delivery.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo/favicon-32.png?v=4">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png?v=3">
+  <!-- SEO:END -->
+
+    <meta name="theme-color" content="#151515">
+
+        <link rel="preload" as="style"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </noscript>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/shared.css">
+
+    <style>
+        /* ========================================
+           KWETU CREATIONS — TERMS & CONDITIONS
+           Premium black, red, white and gold
+        ======================================== */
+
+        :root {
+            --terms-red: #B5122A;
+            --terms-red-dark: #8F0E21;
+            --terms-gold: #C6A56B;
+            --terms-white: #F5F3EF;
+            --terms-black: #151515;
+            --terms-black-soft: #202020;
+            --terms-muted: #B8B5B0;
+            --terms-border: rgba(198, 165, 107, 0.22);
+        }
+
+        /* The dark canvas belongs to the document, not only to <main>, so no
+           leftover page margin or overscroll can expose a white band down the
+           sides of the page. */
+        body {
+            background: var(--terms-black);
+        }
+
+        .terms-page {
+            min-height: 100vh;
+            background: var(--terms-black);
+            color: var(--terms-white);
+            font-family: inherit;
+        }
+
+        .terms-page *,
+        .terms-page *::before,
+        .terms-page *::after {
+            box-sizing: border-box;
+        }
+
+        .terms-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 7% 80px;
+            background:
+                radial-gradient(
+                    ellipse at 85% 20%,
+                    rgba(181, 18, 42, 0.20),
+                    transparent 42%
+                ),
+                linear-gradient(135deg, #151515, #202020);
+            border-bottom: 1px solid var(--terms-border);
+        }
+
+        .terms-hero::after {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 4px;
+            right: -50px;
+            bottom: 55px;
+            background: var(--terms-gold);
+            opacity: 0.55;
+            transform: rotate(-35deg);
+        }
+
+        .terms-hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        .terms-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            color: var(--terms-gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .terms-eyebrow::before {
+            content: "";
+            width: 35px;
+            height: 2px;
+            background: var(--terms-red);
+        }
+
+        .terms-hero h1 {
+            max-width: 900px;
+            margin: 0 0 22px;
+            font-size: clamp(40px, 7vw, 78px);
+            line-height: 1.06;
+            letter-spacing: -2px;
+            font-weight: 800;
+        }
+
+        .terms-hero h1 span {
+            color: var(--terms-gold);
+        }
+
+        .terms-hero-description {
+            max-width: 700px;
+            margin: 0;
+            color: var(--terms-muted);
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .terms-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 32px;
+            color: var(--terms-muted);
+            font-size: 13px;
+        }
+
+        .terms-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .terms-meta span::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--terms-gold);
+        }
+
+        /* Main layout */
+
+        .terms-layout {
+            display: grid;
+            grid-template-columns: 270px minmax(0, 1fr);
+            align-items: start;
+            gap: 65px;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 65px 6% 100px;
+        }
+
+        /* Contents menu */
+
+        .terms-toc {
+            position: sticky;
+            top: 100px;
+            padding: 28px 23px;
+            background: var(--terms-black-soft);
+            border: 1px solid var(--terms-border);
+        }
+
+        .terms-toc h2 {
+            margin: 0 0 20px;
+            font-size: 15px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .terms-toc h2 span {
+            color: var(--terms-gold);
+        }
+
+        .terms-toc ol {
+            display: grid;
+            gap: 4px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .terms-toc a {
+            display: block;
+            padding: 10px 12px;
+            border-left: 2px solid transparent;
+            color: var(--terms-muted);
+            font-size: 13px;
+            line-height: 1.6;
+            text-decoration: none;
+            transition: 0.25s ease;
+        }
+
+        .terms-toc a:hover,
+        .terms-toc a:focus-visible {
+            color: var(--terms-white);
+            background: rgba(181, 18, 42, 0.13);
+            border-left-color: var(--terms-gold);
+        }
+
+        .terms-toc-contact {
+            margin-top: 22px;
+            padding-top: 20px;
+            border-top: 1px solid var(--terms-border);
+        }
+
+        .terms-toc-contact p {
+            margin: 0 0 14px;
+            color: var(--terms-muted);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .terms-toc-contact a {
+            padding-left: 0;
+            border-left: 0;
+            color: var(--terms-gold);
+            font-weight: 700;
+        }
+
+        /* Document */
+
+        .terms-content {
+            min-width: 0;
+        }
+
+        .terms-intro {
+            margin-bottom: 48px;
+            padding: 25px 28px;
+            background: linear-gradient(
+                135deg,
+                rgba(181, 18, 42, 0.12),
+                rgba(198, 165, 107, 0.05)
+            );
+            border: 1px solid var(--terms-border);
+            border-left: 4px solid var(--terms-red);
+        }
+
+        .terms-intro h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .terms-intro p {
+            margin: 0;
+            color: var(--terms-muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .terms-section {
+            padding-bottom: 37px;
+            margin-bottom: 37px;
+            border-bottom: 1px solid rgba(245, 243, 239, 0.10);
+            scroll-margin-top: 100px;
+        }
+
+        .terms-section:last-of-type {
+            border-bottom: 0;
+        }
+
+        .terms-section h2 {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin: 0 0 18px;
+            font-size: clamp(21px, 2.6vw, 27px);
+            line-height: 1.4;
+            font-weight: 750;
+        }
+
+        .terms-section h2 span {
+            flex-shrink: 0;
+            color: var(--terms-gold);
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .terms-section h3 {
+            margin: 24px 0 9px;
+            color: var(--terms-white);
+            font-size: 16px;
+        }
+
+        .terms-section p,
+        .terms-section li {
+            color: var(--terms-muted);
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .terms-section p {
+            margin: 0 0 15px;
+        }
+
+        .terms-section ul {
+            padding-left: 22px;
+            margin: 12px 0 18px;
+        }
+
+        .terms-section li {
+            padding-left: 5px;
+            margin-bottom: 7px;
+        }
+
+        .terms-section li::marker {
+            color: var(--terms-gold);
+        }
+
+        .terms-section strong {
+            color: var(--terms-white);
+            font-weight: 650;
+        }
+
+        .terms-note {
+            margin-top: 20px;
+            padding: 18px 20px;
+            background: rgba(198, 165, 107, 0.07);
+            border: 1px solid var(--terms-border);
+            color: var(--terms-muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .terms-note strong {
+            color: var(--terms-gold);
+        }
+
+        .terms-final {
+            margin-top: 20px;
+            padding: 30px;
+            background: var(--terms-black-soft);
+            border: 1px solid var(--terms-border);
+        }
+
+        .terms-final h2 {
+            margin: 0 0 12px;
+            font-size: 23px;
+        }
+
+        .terms-final h2 span {
+            color: var(--terms-gold);
+        }
+
+        .terms-final p {
+            color: var(--terms-muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .terms-final a {
+            color: var(--terms-gold);
+            overflow-wrap: anywhere;
+        }
+
+        .terms-back-top {
+            display: inline-block;
+            margin-top: 12px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--terms-gold);
+            color: var(--terms-white);
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .terms-back-top:hover {
+            color: var(--terms-gold);
+        }
+
+        /* Responsive layout */
+
+        @media (max-width: 900px) {
+            .terms-hero {
+                padding: calc(var(--nav-h, 76px) + 26px) 6% 65px;
+            }
+
+            .terms-layout {
+                grid-template-columns: 1fr;
+                gap: 38px;
+                padding-top: 45px;
+            }
+
+            .terms-toc {
+                position: static;
+            }
+
+            .terms-toc ol {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 4px 12px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .terms-hero {
+                padding: calc(var(--nav-h, 76px) + 22px) 6% 50px;
+            }
+
+            .terms-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .terms-hero-description {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+
+            .terms-meta {
+                gap: 12px;
+            }
+
+            .terms-layout {
+                padding: 35px 5% 65px;
+            }
+
+            .terms-toc {
+                padding: 22px 17px;
+            }
+
+            .terms-toc ol {
+                grid-template-columns: 1fr;
+            }
+
+            .terms-intro {
+                padding: 20px;
+            }
+
+            .terms-section h2 {
+                gap: 10px;
+            }
+
+            .terms-section p,
+            .terms-section li {
+                font-size: 13px;
+            }
+
+            .terms-final {
+                padding: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .terms-page *,
+            .terms-page *::before,
+            .terms-page *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+        
+.legal-links-box {
+    margin-top: 24px;
+    padding: 20px;
+    background: #202020;
+    border: 1px solid rgba(198, 165, 107, 0.35);
+}
+
+.legal-links-box h3 {
+    margin: 0 0 14px;
+    color: #C6A56B;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.legal-links-box a {
+    display: block;
+    padding: 10px 0;
+    color: #F5F3EF;
+    font-size: 13px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(245, 243, 239, 0.10);
+}
+
+.legal-links-box a:last-child {
+    border-bottom: none;
+}
+
+.legal-links-box a:hover {
+    color: #C6A56B;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Shared navigation -->
+    <div id="site-header">
+  <!-- KWETU:CHROME:SITE-HEADER:BEGIN -->
+  <header class="navbar">
+      <a href="./" class="logo">
+          <img class="logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+          <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+          <span class="logo-creations">CREATIONS</span>
+      </a>
+  
+      <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="main-navigation"
+          aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+  
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+          <a href="./" data-page="index3.html">Home</a>
+          <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+          <a href="services.html" data-page="services.html">Services</a>
+          <a href="about.html" data-page="about.html">About Us</a>
+         <a href="contact.html" data-page="contact.html">Contact Us</a>
+          <a href="quote-request.html" class="nav-quote" data-page="quote-request.html">Get a Quote ↗</a>
+          
+      </nav>
+  </header>
+  <!-- KWETU:CHROME:SITE-HEADER:END -->
+</div>
+
+    <main class="terms-page" id="top">
+
+        <!-- Hero -->
+        <section class="terms-hero">
+            <div class="terms-hero-inner">
+
+                <div class="terms-eyebrow">
+                    Clear terms. Better projects.
+                </div>
+
+                <h1>
+                    Terms &amp; <span>Conditions.</span>
+                </h1>
+
+                <p class="terms-hero-description">
+                    These terms explain the basis on which Kwetu Creations
+                    discusses, quotes for and undertakes creative projects.
+                    Our aim is to keep expectations clear from the first
+                    enquiry through to project completion.
+                </p>
+
+                <div class="terms-meta">
+                    <span>Kwetu Creations</span>
+                    <span>Client Information</span>
+                    <span>Uganda</span>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="terms-layout">
+
+            <!-- Table of contents -->
+            <aside class="terms-toc">
+                <h2>On this <span>page</span></h2>
+
+                <ol>
+                    <li><a href="#introduction">01. Introduction</a></li>
+                    <li><a href="#services">02. Services</a></li>
+                    <li><a href="#quotations">03. Quotations</a></li>
+                    <li><a href="#payments">04. Payments</a></li>
+                    <li><a href="#design">05. Design &amp; Approval</a></li>
+                    <li><a href="#changes">06. Changes &amp; Revisions</a></li>
+                    <li><a href="#cancellations">07. Cancellations</a></li>
+                    <li><a href="#production">08. Production &amp; Delivery</a></li>
+                    <li><a href="#client-responsibilities">09. Client Responsibilities</a></li>
+                    <li><a href="#intellectual-property">10. Intellectual Property</a></li>
+                    <li><a href="#defects">11. Quality &amp; Defects</a></li>
+                    <li><a href="#liability">12. Liability</a></li>
+                    <li><a href="#privacy">13. Privacy</a></li>
+                    <li><a href="#disputes">14. Complaints &amp; Disputes</a></li>
+                    <li><a href="#updates">15. Updates</a></li>
+                    <li><a href="#contact">16. Contact</a></li>
+                </ol>
+                
+                <div class="legal-links-box">
+                    <h3>Legal &amp; Information</h3>
+
+                    <a href="privacy-policy.html">Privacy Policy ↗</a>
+                    <a href="terms-and-conditions.html">Terms &amp; Conditions ↗</a>
+                    <a href="cookie-policy.html">Cookie Policy ↗</a>
+                </div>
+
+
+                <div class="terms-toc-contact">
+                    <p>
+                        Need clarification before starting a project?
+                        Contact our team.
+                    </p>
+
+                    <a href="mailto:info@kwetucreations.com">
+                        Contact us ↗
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Terms content -->
+            <article class="terms-content">
+
+                <div class="terms-intro">
+                    <h2>Please read these terms carefully</h2>
+                    <p>
+                        Please read these terms before sending an enquiry,
+                        accepting a quotation or starting a project. They
+                        set out how Kwetu Creations works with the businesses
+                        it serves. Specific prices, payment schedules,
+                        deadlines, warranties and project conditions are
+                        confirmed in the written quotation or agreement for
+                        your project, and that document governs where it
+                        says something different.
+                    </p>
+                </div>
+
+                <section class="terms-section" id="introduction">
+                    <h2><span>01</span> Introduction</h2>
+
+                    <p>
+                        These Terms &amp; Conditions apply to enquiries,
+                        quotations and projects undertaken by Kwetu
+                        Creations, subject to any separate written
+                        agreement accepted by the parties.
+                    </p>
+
+                    <p>
+                        A quotation or proposal may contain additional
+                        project-specific terms. If a separate written
+                        agreement conflicts with these general terms,
+                        the parties should clarify which terms apply
+                        before work begins.
+                    </p>
+
+                    <p>
+                        No provision in these terms is intended to remove
+                        any right or protection that cannot lawfully
+                        be excluded under applicable law.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="services">
+                    <h2><span>02</span> Our Services</h2>
+
+                    <p>
+                        Kwetu Creations provides creative and production
+                        services that may include:
+                    </p>
+
+                    <ul>
+                        <li>Signage and business displays.</li>
+                        <li>Branding and visual identity applications.</li>
+                        <li>Interior branding and interior solutions.</li>
+                        <li>Illuminated signs and related applications.</li>
+                        <li>Custom fabrication and related project work.</li>
+                    </ul>
+
+                    <p>
+                        The exact scope of each project will be set out
+                        in the relevant quotation, proposal or written
+                        agreement. Any service not expressly included
+                        should be confirmed separately.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="quotations">
+                    <h2><span>03</span> Quotations &amp; Pricing</h2>
+
+                    <p>
+                        A quotation will be based on the project
+                        information available at the time it is prepared.
+                        Accurate measurements, specifications, quantities,
+                        materials and installation requirements help us
+                        provide an appropriate estimate.
+                    </p>
+
+                    <p>
+                        Unless a quotation states otherwise, it should
+                        be treated as a proposal rather than a guarantee
+                        that work has been booked or production has begun.
+                        A project is scheduled after the scope, price,
+                        relevant terms and any required initial payment
+                        have been confirmed.
+                    </p>
+
+                    <p>
+                        Each quotation should state its own validity
+                        period. If no period is stated, the validity
+                        should be confirmed with Kwetu Creations before
+                        the client accepts it.
+                    </p>
+
+                    <p>
+                        If the project scope, specifications, quantities,
+                        materials, site conditions or other requirements
+                        change, the price and timeline may need to be
+                        reviewed. Any agreed adjustment should be
+                        documented before the additional work proceeds.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="payments">
+                    <h2><span>04</span> Deposits &amp; Payments</h2>
+
+                    <p>
+                        The required deposit, payment milestones,
+                        balance and payment methods should be stated
+                        in the accepted quotation or written agreement.
+                    </p>
+
+                    <p>
+                        Work may be scheduled to begin once the agreed
+                        acceptance requirements and initial payment
+                        have been satisfied.
+                    </p>
+
+                    <p>
+                        Where a payment becomes overdue, the parties
+                        should communicate promptly to resolve the
+                        situation. Any lawful pause in work, revised
+                        delivery date, additional cost or other
+                        consequence should follow the agreed terms
+                        and applicable law.
+                    </p>
+
+                    <p>
+                        Clients should retain payment confirmations
+                        and request a receipt or other appropriate
+                        acknowledgement for payments made.
+                    </p>
+
+                    <p>
+                        We do not hold a single standard deposit or payment
+                        schedule across the studio, because a roll-up banner
+                        and a fitted interior are not the same commitment.
+                        Whatever applies to your project is written into the
+                        quotation you accept, before work is scheduled, and
+                        the written quotation is what the team works to.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="design">
+                    <h2><span>05</span> Design &amp; Approval</h2>
+
+                    <p>
+                        Where a project includes design work, the client
+                        should review the proposed artwork, layout,
+                        dimensions, wording, colours, materials and
+                        other relevant details before approving
+                        production.
+                    </p>
+
+                    <p>
+                        The client is responsible for carefully checking
+                        supplied names, telephone numbers, addresses,
+                        spelling, measurements and other information
+                        before approval.
+                    </p>
+
+                    <p>
+                        Production or fabrication should not proceed
+                        until the required approval has been received
+                        and any agreed pre-production requirements
+                        have been met.
+                    </p>
+
+                    <p>
+                        Changes requested after approval may affect
+                        the cost and schedule. These changes should
+                        be discussed and approved before implementation.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="changes">
+                    <h2><span>06</span> Changes &amp; Revisions</h2>
+
+                    <p>
+                        The quotation should state how many design
+                        concepts or revision rounds are included,
+                        where relevant.
+                    </p>
+
+                    <p>
+                        A revision is a change to an existing design
+                        within the agreed project scope. A substantially
+                        different concept, additional deliverable,
+                        new specification or change in project scope
+                        may require a revised quotation.
+                    </p>
+
+                    <p>
+                        Before carrying out chargeable additional work,
+                        Kwetu Creations should explain the proposed
+                        cost and any effect on the delivery date and
+                        obtain the client's agreement.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="cancellations">
+                    <h2><span>07</span> Cancellations &amp; Refunds</h2>
+
+                    <p>
+                        If a client wishes to cancel or suspend a
+                        project, the request should be communicated
+                        in writing as soon as possible.
+                    </p>
+
+                    <p>
+                        The parties should review work already completed,
+                        materials ordered, fabrication undertaken,
+                        third-party commitments and other reasonable
+                        project costs incurred up to the cancellation
+                        date.
+                    </p>
+
+                    <p>
+                        Any amount payable, refund or other adjustment
+                        should be assessed under the agreed project
+                        terms and applicable law. No deposit should
+                        automatically be treated as non-refundable
+                        unless the relevant condition has been
+                        properly agreed and is lawful.
+                    </p>
+
+                    <p>
+                        Kwetu Creations should communicate the proposed
+                        settlement clearly and provide an appropriate
+                        breakdown where necessary.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="production">
+                    <h2><span>08</span> Production, Installation &amp; Delivery</h2>
+
+                    <p>
+                        Production and delivery estimates depend on
+                        factors such as design approval, material
+                        availability, project complexity, site access
+                        and installation requirements.
+                    </p>
+
+                    <p>
+                        Any agreed target date should be confirmed
+                        in the quotation or project communication.
+                        If a significant delay becomes apparent,
+                        the parties should communicate and agree on
+                        the next steps.
+                    </p>
+
+                    <p>
+                        Where installation is included, the quotation
+                        should identify the relevant location, scope
+                        of work, access requirements and any
+                        responsibilities assigned to the client.
+                    </p>
+
+                    <p>
+                        Permits, site preparation, electrical work,
+                        structural work, transport or other additional
+                        services should be clearly allocated in the
+                        project agreement rather than assumed to
+                        be included.
+                    </p>
+
+                    <p>
+                        The client should ensure that the agreed site
+                        is accessible and that required permissions
+                        are obtained by the party responsible for them.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="client-responsibilities">
+                    <h2><span>09</span> Client Responsibilities</h2>
+
+                    <p>
+                        To help a project proceed smoothly, the client
+                        should, where applicable:
+                    </p>
+
+                    <ul>
+                        <li>Provide accurate project information, measurements and specifications.</li>
+                        <li>Supply artwork and materials they are authorised to use.</li>
+                        <li>Review and approve designs within agreed timelines.</li>
+                        <li>Make payments in accordance with the accepted agreement.</li>
+                        <li>Arrange access to the project site where required.</li>
+                        <li>Obtain permissions or approvals assigned to the client.</li>
+                        <li>Communicate changes or concerns promptly.</li>
+                    </ul>
+
+                    <p>
+                        If missing information, delayed approvals,
+                        restricted site access or other client-related
+                        issues affect the work, the parties should
+                        discuss any reasonable adjustment to the
+                        schedule or scope.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="intellectual-property">
+                    <h2><span>10</span> Intellectual Property &amp; Project Materials</h2>
+
+                    <p>
+                        Clients retain whatever rights they hold in
+                        their original logos, artwork, photographs
+                        and other materials supplied to Kwetu Creations.
+                        By supplying those materials, clients confirm
+                        that they are authorised to provide them
+                        for the agreed project.
+                    </p>
+
+                    <p>
+                        Ownership and permitted use of new designs,
+                        working files, source files, production files
+                        and other deliverables should be specified
+                        in the accepted quotation or written agreement.
+                    </p>
+
+                    <p>
+                        Unless expressly agreed otherwise, clients
+                        should not assume that payment for a finished
+                        product automatically includes every editable
+                        source file or the transfer of all intellectual
+                        property rights.
+                    </p>
+
+                    <p>
+                        Kwetu Creations should obtain appropriate
+                        permission before using identifiable client
+                        work, confidential designs or project
+                        photographs in marketing or portfolio
+                        materials where required.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="defects">
+                    <h2><span>11</span> Quality, Defects &amp; After-Sales Support</h2>
+
+                    <p>
+                        The agreed specifications and any applicable
+                        legal standards will guide the expected quality
+                        of the work.
+                    </p>
+
+                    <p>
+                        If a client believes that delivered work does
+                        not match the agreed specifications, they
+                        should notify Kwetu Creations promptly and
+                        provide relevant information or photographs
+                        where appropriate.
+                    </p>
+
+                    <p>
+                        We will review the concern and discuss
+                        reasonable next steps in accordance with
+                        the agreement and applicable law.
+                    </p>
+
+                    <p>
+                        Any product warranty, workmanship warranty,
+                        maintenance arrangement or exclusions should
+                        be expressly stated in the relevant quotation
+                        or written agreement. This page does not
+                        establish a specific warranty period.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="liability">
+                    <h2><span>12</span> Liability &amp; Unforeseen Events</h2>
+
+                    <p>
+                        Each party should take reasonable steps to
+                        meet its agreed responsibilities and minimise
+                        avoidable losses.
+                    </p>
+
+                    <p>
+                        If events outside a party's reasonable control
+                        materially affect a project, the affected
+                        party should notify the other party as soon
+                        as reasonably possible and discuss practical
+                        arrangements.
+                    </p>
+
+                    <p>
+                        Nothing in these terms excludes or limits
+                        liability where such exclusion or limitation
+                        is prohibited by applicable law. Any agreed
+                        allocation or limitation of responsibility
+                        should be reviewed for legal enforceability.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="privacy">
+                    <h2><span>13</span> Privacy &amp; Personal Information</h2>
+
+                    <p>
+                        Information provided through enquiries,
+                        quotations and project communications will
+                        be handled in accordance with our Privacy
+                        Policy and applicable data-protection law.
+                    </p>
+
+                    <p>
+                        For details about the intended collection,
+                        use, retention and protection of personal
+                        information, please read our
+                        <a href="privacy-policy.html"
+                           style="color: var(--terms-gold);">
+                            Privacy Policy
+                        </a>.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="disputes">
+                    <h2><span>14</span> Complaints &amp; Dispute Resolution</h2>
+
+                    <p>
+                        If a concern arises, the parties should first
+                        try to resolve it through clear and timely
+                        communication.
+                    </p>
+
+                    <p>
+                        Where a concern cannot be resolved informally,
+                        the parties may consider an appropriate
+                        mediation or other lawful dispute-resolution
+                        process, if agreed or required.
+                    </p>
+
+                    <p>
+                        These terms and any project agreement are subject to
+                        applicable law. Where a quotation names the law or
+                        court that governs it, that statement applies to
+                        that project.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="updates">
+                    <h2><span>15</span> Changes to These Terms</h2>
+
+                    <p>
+                        Kwetu Creations may update these general
+                        terms as its services, processes or legal
+                        obligations change.
+                    </p>
+
+                    <p>
+                        The current version will be published on
+                        this page. Any changes affecting an existing
+                        project should be handled in accordance
+                        with the accepted agreement and applicable law.
+                    </p>
+
+                    <p>
+                        Project-specific written terms should be
+                        reviewed carefully before a quotation
+                        or agreement is accepted.
+                    </p>
+                </section>
+
+                <section class="terms-section" id="contact">
+                    <h2><span>16</span> Contact Us</h2>
+
+                    <p>
+                        For questions about these Terms &amp; Conditions
+                        or a proposed project, contact Kwetu Creations
+                        using our verified business contact details.
+                    </p>
+
+                    <p>
+                        <strong>Business:</strong> Kwetu Creations
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        <a href="mailto:info@kwetucreations.com"
+                           style="color: var(--terms-gold);">
+                            info@kwetucreations.com
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Telephone:</strong>
+                        <a href="tel:+256787738999"
+                           style="color: var(--terms-gold);">+256 787 738 999</a>
+                    </p>
+
+                    <p>
+                        <strong>Business address:</strong>
+                        Freedom House, Level 6, Suite R-724, Nkurumah Road, Kampala, Uganda
+                    </p>
+
+        <p class="related-links">
+            <span>Related pages:</span>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="contact.html">Contact Kwetu Creations</a>
+            <a href="quote-request.html">Request a quote</a>
+            <a href="portfolio.html">See our work</a>
+        </p>
+                </section>
+
+                <div class="terms-final">
+                    <h2>Clear agreements. <span>Better results.</span></h2>
+
+                    <p>
+                        We believe that clear communication and
+                        agreed expectations help every project run
+                        more smoothly. Please raise any questions
+                        before accepting a quotation or authorising
+                        work to begin.
+                    </p>
+
+                    <a class="terms-back-top" href="#top">
+                        Back to top ↑
+                    </a>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <!-- Shared footer -->
+    <div id="site-footer">
+  <!-- KWETU:CHROME:SITE-FOOTER:BEGIN -->
+  <footer class="site-footer">
+  
+      <div class="footer-top">
+          <div class="footer-brand">
+              <a href="./" class="footer-logo">
+                  <img class="footer-logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+                  <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+                  <span class="logo-creations">CREATIONS</span>
+              </a>
+  
+              <p class="footer-tagline">
+                  Creative design. Precision production. Exceptional results.
+              </p>
+          </div>
+  
+          <div class="footer-explore">
+              <h3>EXPLORE</h3>
+              <a href="./" data-page="index3.html">Home</a>
+              <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+              <a href="services.html" data-page="services.html">Services</a>
+              <a href="about.html" data-page="about.html">About Us</a>
+              <a href="testimonials.html" data-page="testimonials.html">Client Reviews</a>
+              <a href="contact.html" data-page="contact.html">Contact Us</a>
+              <a href="quote-request.html" data-page="quote-request.html">Get a Quote</a>
+          </div>
+          <div class="footer-services">
+                  <h3>OUR SERVICES</h3>
+                  <a href="services.html#signage">Signage</a>
+                  <a href="services.html#branding">Branding &amp; Graphic Design</a>
+                  <a href="services.html#interiors">Interior Solutions</a>
+                  <a href="services.html#illuminated-signage">Illuminated Signage</a>
+                  <a href="services.html#fabrication">Fabrication</a>
+                  <a href="services.html#laser-cutting">Laser Cutting</a>
+                  <a href="services.html#large-format-printing">Large-Format Printing</a>
+                  <a href="services.html#web-design">Website Design &amp; Development</a>
+              </div>
+  
+              <div class="footer-contact">
+                  <h3>CONTACT US</h3>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <address>
+                      Freedom House, Level 6, Suite R-724<br>
+                      Nkurumah Road, Kampala, Uganda
+                     
+                  </address>
+              </div>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  <a href="tel:+256787738999">+256 787 738 999</a>
+              </div>
+              
+              <div class="footer-contact-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <a href="mailto:info@kwetucreations.com">
+                      info@kwetucreations.com
+                  </a>
+              </div>
+  
+          </div>
+  
+          <div class="footer-social">
+              <h3>CONNECT WITH US</h3>
+  
+              <div class="social-icons-container">
+                  <a class="icon-link whatsapp"
+                     href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener"
+                     aria-label="Message the studio on WhatsApp"
+                     title="Message the studio on WhatsApp">
+                      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                  </a>
+                  <span class="icon-link instagram" role="img"
+                        aria-label="Instagram" title="Instagram">
+                      <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link tiktok" role="img"
+                        aria-label="TikTok" title="TikTok">
+                      <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link linkedin" role="img"
+                        aria-label="LinkedIn" title="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link facebook" role="img"
+                        aria-label="Facebook" title="Facebook">
+                      <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                  </span>
+              </div>
+  
+              <p class="footer-social-note">
+                  Speak to the studio directly —
+                  <a href="mailto:info@kwetucreations.com">info@kwetucreations.com</a>,
+                  <a href="tel:+256787738999">+256 787 738 999</a>,
+                  or
+                  <a href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener">message us on WhatsApp</a>.
+                  All three reach the team, and a reply from us comes from a
+                  person, not a queue.
+              </p>
+  
+          </div>
+          
+      </div>
+  
+      <div class="footer-bottom">
+          <div class="footer-legal-links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <span>|</span>
+              <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+              <span>|</span>
+              <a href="cookie-policy.html">Cookie Policy</a>
+              <span>|</span>
+              <button type="button" data-cookie-settings
+                      aria-haspopup="dialog">Cookie Settings</button>
+          </div>
+  
+          <p class="footer-copyright">
+              &copy; <span id="year"></span>
+              <span class="footer-kwetu">Kwetu</span>
+              <span class="footer-creations">Creations</span>.
+              All rights reserved.
+          </p>
+  
+          <div class="footer-designer">
+              <span>Website designed by</span>
+              <strong>BYUMA DANIEL</strong>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mpozzadaniel@gmail.com"
+                 target="_blank" rel="noopener noreferrer">
+                  mpozzadaniel@gmail.com
+              </a>
+          </div>
+      </div>
+  
+  </footer>
+  <!-- KWETU:CHROME:SITE-FOOTER:END -->
+</div>
+
+    <script src="script.js"></script>
+    <script src="cookie-consent.js"></script>
+</body>
+</html>

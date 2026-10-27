@@ -1,0 +1,4010 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#151515">
+
+
+
+  <title>Kwetu Creations | Signage, Branding &amp; Interior Solutions</title>
+  <!-- SEO:BEGIN -->
+  <meta name="description" content="Kwetu Creations is a Kampala creative studio producing signage, illuminated displays, branding, large-format printing, laser fabrication and interior solutions.">
+  <!-- SEO:DOMAIN: tools/set-domain.php inserts the canonical link, og:url and og:image here -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kwetu Creations">
+  <meta property="og:locale" content="en_UG">
+  <meta property="og:title" content="Kwetu Creations | Signage, Branding &amp; Interior Solutions">
+  <meta property="og:description" content="Kwetu Creations is a Kampala creative studio producing signage, illuminated displays, branding, large-format printing, laser fabrication and interior solutions.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Kwetu Creations | Signage, Branding &amp; Interior Solutions">
+  <meta name="twitter:description" content="Kwetu Creations is a Kampala creative studio producing signage, illuminated displays, branding, large-format printing, laser fabrication and interior solutions.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo/favicon-32.png?v=4">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png?v=3">
+  <!-- SEO:END -->
+
+      <link rel="preload" as="style"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </noscript>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+
+    :root {
+
+      --brand-red: #B5122A;
+
+      --brand-red-dark: #8F0E21;
+
+      --brand-gold: #C6A56B;
+
+      --brand-white: #F5F3EF;
+
+      --brand-black: #151515;
+
+      --brand-black-soft: #202020;
+
+      --muted-white: rgba(245,243,239,.82);
+
+    }
+
+
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+    }
+
+
+
+    html {
+
+      width: 100%;
+
+      min-height: 100%;
+
+      scroll-behavior: smooth;
+
+    }
+
+
+
+    body {
+
+      width: 100%;
+
+      min-height: 100%;
+
+     
+    font-family: 'Poppins', sans-serif;
+
+      background: var(--brand-black);
+
+      color: var(--brand-white);
+
+      overflow-x: hidden;
+
+      overflow-y: auto;
+
+    }
+
+
+
+    a, button {
+
+      -webkit-tap-highlight-color: transparent;
+
+    }
+
+
+
+    a:focus-visible,
+
+    button:focus-visible {
+
+      outline: 2px solid var(--brand-gold);
+
+      outline-offset: 4px;
+
+    }
+
+
+
+    /* HERO */
+
+
+
+    .hero {
+
+    position: relative;
+
+    isolation: isolate;
+
+    width: 100%;
+
+    height: 100vh;
+
+    height: 100svh;
+
+    min-height: 600px;
+
+    overflow: hidden;
+
+    background: var(--brand-black);
+
+}
+
+
+
+/* ========================================
+   KWETU CREATIONS — CONTINUOUS HERO MOSAIC
+======================================== */
+
+/* Full-screen background wall of project photographs.
+
+   Two rules keep the wall honest:
+
+   1. The rows never slide under the navigation bar. --nav-h is measured
+      from the live header by JavaScript, and the mosaic starts below it,
+      so all three rows are the same height on screen.
+
+   2. Each row is a single track holding TWO IDENTICAL COPIES of one photo
+      sequence. The animation slides the track by exactly the width of one
+      copy, measured from the live layout, so the loop restarts on a
+      pixel-identical frame: no jump, no gap, no reset.
+
+   On top of that, every tile holds two photographs stacked vertically and
+   slides between them on its own random timer, so the wall keeps changing
+   while it travels. */
+
+/* The hero owns exactly the space between the bottom of the navigation bar
+   and the bottom of the visible window, so all three rows are on screen at
+   once and nothing has to be scrolled to see a whole row. --nav-h and
+   --viewport-h are measured by JavaScript; the fallbacks keep the wall
+   sane for the first frame. */
+main.hero {
+    margin-top: var(--nav-h, 76px);
+    height: calc(var(--viewport-h, 100svh) - var(--nav-h, 76px));
+    min-height: 0;
+}
+
+.mosaic {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    background: var(--brand-black);
+    animation: mosaic-reveal 2.2s ease-out both;
+}
+
+/* Three equal rows; each one owns its own speed and direction. */
+.image-row {
+    display: flex;
+    flex: 0 0 33.333333%;
+    min-height: 0;
+    flex-direction: row;
+    align-items: stretch;
+    width: max-content;
+    gap: 0;
+    will-change: transform;
+    backface-visibility: hidden;
+    animation-name: slide-across;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: var(--row-duration, 180s);
+}
+
+/* normal = photographs travel right to left.
+   reverse = the same track played backwards, so photographs travel
+   left to right while the loop stays seamless. */
+.image-row.row-left {
+    animation-direction: normal;
+}
+
+.image-row.row-right {
+    animation-direction: reverse;
+}
+
+.image-tile {
+    position: relative;
+    flex: 0 0 auto;
+    /* +1px / -1px make neighbouring tiles overlap by a hair, so rounding
+       a fractional row height or tile width can never open a seam.
+       The tile that comes later in the row paints over the overlap. */
+    height: calc(100% + 1px);
+    margin-right: -1px;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: var(--brand-black-soft, #202020);
+}
+
+/* The two photographs of one tile, stacked top to bottom. The pair slides
+   up to show the second photograph, then back down again. */
+.tile-stack {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    animation-name: slide-up-next;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: var(--churn-duration, 12s);
+    animation-delay: var(--churn-delay, 0s);
+}
+
+.tile-stack img {
+    /* Out of flow on purpose: an in-flow img lets its intrinsic height
+       push the tile (and therefore the row) far past 1/3 of the hero
+       through flexbox min-height:auto. */
+    flex: 0 0 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(1.12) contrast(1.1) saturate(1.1);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+@keyframes slide-across {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(calc(-1 * var(--slide-distance, 0px)), 0, 0);
+    }
+}
+
+/* Hold on the first photograph, slide up to the second, hold, slide back.
+   The per-tile animation-delay set in JavaScript staggers every tile. */
+@keyframes slide-up-next {
+    0%, 45% {
+        transform: translateY(0);
+    }
+
+    50%, 95% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* One-time fade-in of the whole wall, like the reference. */
+@keyframes mosaic-reveal {
+    from {
+        opacity: .02;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Reduced motion: the wall is still full-bleed, it simply does not move. */
+@media (prefers-reduced-motion: reduce) {
+    .mosaic,
+    .image-row,
+    .tile-stack {
+        animation: none;
+    }
+}
+/* DARK BRAND OVERLAY */
+
+
+
+    .overlay {
+
+      position: absolute;
+
+      z-index: -1;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      background:
+
+        linear-gradient(
+
+          135deg,
+
+          rgba(181,18,42,.20),
+
+          transparent 42%
+
+        ),
+
+        linear-gradient(
+
+          315deg,
+
+          rgba(198,165,107,.09),
+
+          transparent 40%
+
+        ),
+
+        radial-gradient(
+
+          circle at center,
+
+          rgba(21,21,21,.25) 0%,
+
+          rgba(21,21,21,.45) 100%
+
+        );
+
+    }
+
+
+
+    
+
+
+
+   
+
+
+    /* MOBILE MENU BUTTON: HIDDEN ON DESKTOP */
+
+
+
+    .menu-toggle {
+
+      display: none;
+
+      align-items: center;
+
+      justify-content: center;
+
+      flex-direction: column;
+
+      gap: 5px;
+
+      width: 44px;
+
+      height: 44px;
+
+      flex: 0 0 44px;
+
+      border: 1px solid rgba(245,243,239,.28);
+
+      border-radius: 4px;
+
+      background: rgba(21,21,21,.85);
+
+      color: var(--brand-white);
+
+      cursor: pointer;
+
+    }
+
+
+
+    .menu-toggle span {
+
+      display: block;
+
+      width: 20px;
+
+      height: 2px;
+
+      border-radius: 2px;
+
+      background: currentColor;
+
+      transition: transform .25s ease, opacity .25s ease;
+
+    }
+
+
+
+    .menu-toggle[aria-expanded="true"] span:first-child {
+
+      transform: translateY(7px) rotate(45deg);
+
+    }
+
+
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+
+      opacity: 0;
+
+    }
+
+
+
+    .menu-toggle[aria-expanded="true"] span:last-child {
+
+      transform: translateY(-7px) rotate(-45deg);
+
+    }
+
+
+
+    /* HEADER QUOTE BUTTON */
+
+
+
+    .contact {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 7px;
+
+      padding: 13px 20px;
+
+      background: var(--brand-red);
+
+      color: var(--brand-white);
+
+      text-decoration: none;
+
+      text-transform: uppercase;
+
+      font-size: 11px;
+
+      font-weight: 800;
+
+      letter-spacing: .7px;
+
+      border: 1px solid var(--brand-red);
+
+      border-radius: 3px;
+
+      white-space: nowrap;
+
+      transition:
+
+        background .25s ease,
+
+        border-color .25s ease,
+
+        transform .25s ease;
+
+    }
+
+
+
+    .contact:hover {
+
+      background: var(--brand-red-dark);
+
+      border-color: var(--brand-gold);
+
+      transform: translateY(-2px);
+
+    }
+
+
+
+    /* MAIN HERO CONTENT */
+
+
+
+    .hero-content {
+
+      position: absolute;
+
+      z-index: 3;
+
+      top: 50%;
+
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      width: min(90%, 780px);
+
+      text-align: center;
+
+      text-shadow: 0 2px 18px rgba(0,0,0,.65);
+
+    }
+
+
+
+    .hero-logo {
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      margin-bottom: 20px;
+
+    }
+
+
+
+    .hero-logo img {
+
+      display: block;
+
+      width: 128px;
+
+      max-width: 48vw;
+
+      height: auto;
+
+      object-fit: contain;
+
+    }
+
+
+
+    .eyebrow {
+
+      margin-bottom: 16px;
+
+      color: var(--brand-gold);
+
+      font-size: 11px;
+
+      font-weight: 800;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+    }
+
+
+
+    .hero-content h1 {
+
+      color: var(--brand-white);
+
+      font-size: clamp(40px, 6vw, 76px);
+
+      font-weight: 400;
+
+      letter-spacing: -2px;
+
+      line-height: 1.04;
+
+      overflow-wrap: anywhere;
+
+    }
+
+
+
+    .hero-content h1 span {
+
+      color: var(--brand-red);
+
+      font-weight: 800;
+
+    }
+
+
+
+    .hero-content p {
+
+      max-width: 600px;
+
+      margin: 22px auto 30px;
+
+      color: var(--muted-white);
+
+      font-size: 16px;
+
+      line-height: 1.75;
+
+    }
+
+
+
+    /* HERO BUTTONS */
+
+
+
+    .buttons {
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 14px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+
+    .btn {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 7px;
+
+      min-height: 50px;
+
+      padding: 15px 25px;
+
+      text-decoration: none;
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      letter-spacing: .5px;
+
+      text-transform: uppercase;
+
+      border: 1px solid transparent;
+
+      border-radius: 3px;
+
+      transition:
+
+        background .25s ease,
+
+        color .25s ease,
+
+        border-color .25s ease,
+
+        transform .25s ease;
+
+    }
+
+
+
+    .btn:hover {
+
+      transform: translateY(-3px);
+
+    }
+
+
+
+    .btn-light {
+
+      background: var(--brand-white);
+
+      color: var(--brand-black);
+
+      border-color: var(--brand-white);
+
+    }
+
+
+
+    .btn-light:hover {
+
+      background: var(--brand-gold);
+
+      border-color: var(--brand-gold);
+
+      color: var(--brand-black);
+
+    }
+
+
+
+    .btn-red {
+
+      background: var(--brand-red);
+
+      color: var(--brand-white);
+
+      border-color: var(--brand-red);
+
+    }
+
+
+
+    .btn-red:hover {
+
+      background: var(--brand-red-dark);
+
+      border-color: var(--brand-gold);
+
+    }
+
+
+
+    /* BOTTOM TEXT */
+
+
+
+    .bottom-label {
+
+      position: absolute;
+
+      z-index: 3;
+
+      bottom: 25px;
+
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: 90%;
+
+      text-align: center;
+
+      color: rgba(245,243,239,.78);
+
+      font-size: 11px;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+    }
+
+
+
+    .bottom-label span {
+
+      margin-left: 7px;
+
+      color: var(--brand-gold);
+
+      font-size: 19px;
+
+    }
+
+
+
+    /* SMALL DESKTOPS AND TABLETS */
+
+
+
+    @media (max-width: 900px) {
+
+      .navbar {
+
+        padding-right: 4%;
+
+        padding-left: 4%;
+
+        gap: 16px;
+
+      }
+
+
+
+      .logo img {
+
+        height: 42px;
+
+        max-width: 145px;
+
+      }
+
+
+
+      .nav-links {
+
+        gap: 16px;
+
+      }
+
+
+
+      .nav-links a {
+
+        font-size: 10px;
+
+        letter-spacing: .5px;
+
+      }
+
+
+
+      .contact {
+
+        padding: 12px 14px;
+
+        font-size: 10px;
+
+      }
+
+    }
+
+
+
+    /* TABLET AND MOBILE NAVIGATION */
+
+
+
+    @media (max-width: 760px) {
+
+      .navbar {
+
+        min-height: 76px;
+
+        padding: 13px 5%;
+
+        gap: 10px;
+
+        flex-wrap: nowrap;
+
+      }
+
+
+
+
+      .logo img {
+
+        height: 40px;
+
+        max-width: 145px;
+
+      }
+
+
+
+      .menu-toggle {
+
+        display: inline-flex;
+
+        margin-left: auto;
+
+      }
+
+
+
+      .contact {
+
+        padding: 11px 13px;
+
+        font-size: 10px;
+
+      }
+
+
+
+      .nav-links {
+
+        position: absolute;
+
+        top: calc(100% - 1px);
+
+        left: auto;
+
+        right: 5%;
+
+        transform: none;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        justify-content: flex-start;
+
+        gap: 0;
+
+        width: min(290px, 90vw);
+
+        padding: 8px;
+
+        white-space: normal;
+
+        background: rgba(21,21,21,.98);
+
+        border: 1px solid rgba(198,165,107,.35);
+
+        border-radius: 4px;
+
+        box-shadow: 0 16px 35px rgba(0,0,0,.35);
+
+      }
+
+
+
+      .nav-links.is-open {
+
+        display: flex;
+
+      }
+
+
+
+      .nav-links a {
+
+        display: block;
+
+        width: 100%;
+
+        padding: 15px 13px;
+
+        font-size: 12px;
+
+        letter-spacing: 1px;
+
+        border-bottom: 1px solid rgba(245,243,239,.09);
+
+      }
+
+
+
+      .nav-links a:last-child {
+
+        border-bottom: 0;
+
+      }
+
+
+
+      .nav-links a:hover {
+
+        background: rgba(198,165,107,.08);
+
+      }
+
+
+
+      .hero {
+
+        min-height: 620px;
+
+      }
+
+
+
+      .hero-content {
+
+        width: 90%;
+
+      }
+
+
+
+      .hero-content h1 {
+
+        font-size: clamp(38px, 8vw, 58px);
+
+        letter-spacing: -1.3px;
+
+      }
+
+
+
+      .hero-content p {
+
+        max-width: 540px;
+
+        margin: 18px auto 24px;
+
+        font-size: 15px;
+
+      }
+
+
+
+      .hero-logo img {
+
+        width: 100px;
+
+      }
+
+
+
+      .eyebrow {
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+
+      }
+
+
+
+      .btn {
+
+        padding: 14px 18px;
+
+        font-size: 11px;
+
+      }
+
+    }
+
+
+
+    /* MOBILE PHONES */
+
+
+
+    @media (max-width: 480px) {
+
+      .hero {
+
+        height: 100svh;
+
+        min-height: 700px;
+
+      }
+
+
+
+      .navbar {
+
+        min-height: 68px;
+
+        padding: 12px 4%;
+
+        gap: 8px;
+
+      }
+
+
+
+
+      .logo img {
+
+        height: 34px;
+
+        max-width: 115px;
+
+      }
+
+
+
+      .menu-toggle {
+
+        width: 40px;
+
+        height: 40px;
+
+        flex-basis: 40px;
+
+      }
+
+
+
+      .contact {
+
+        padding: 10px 9px;
+
+        font-size: 9px;
+
+        letter-spacing: .3px;
+
+      }
+
+
+
+      .nav-links {
+
+        right: 4%;
+
+      }
+
+
+
+      .hero-content {
+
+        top: 51%;
+
+        width: 92%;
+
+      }
+
+
+
+      .hero-logo {
+
+        margin-bottom: 13px;
+
+      }
+
+
+
+      .hero-logo img {
+
+        width: 78px;
+
+        max-width: 30vw;
+
+      }
+
+
+
+      .eyebrow {
+
+        margin-bottom: 13px;
+
+        font-size: 9px;
+
+        letter-spacing: 1.8px;
+
+      }
+
+
+
+      .hero-content h1 {
+
+        font-size: clamp(34px, 9.5vw, 46px);
+
+        letter-spacing: -1px;
+
+        line-height: 1.12;
+
+      }
+
+
+
+      .hero-content p {
+
+        max-width: 360px;
+
+        margin: 17px auto 23px;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+      }
+
+
+
+      .buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 11px;
+
+        width: min(100%, 280px);
+
+        margin: 0 auto;
+
+      }
+
+
+
+      .btn {
+
+        width: 100%;
+
+        min-height: 48px;
+
+        padding: 14px 12px;
+
+        font-size: 10px;
+
+      }
+
+
+
+      .bottom-label {
+
+        bottom: 15px;
+
+        width: 92%;
+
+        font-size: 9px;
+
+        letter-spacing: .6px;
+
+      }
+
+    }
+
+
+
+    /* EXTRA-SHORT SCREENS */
+
+
+
+    @media (max-height: 650px) and (min-width: 481px) {
+
+      .hero {
+
+        min-height: 600px;
+
+      }
+
+
+
+      .hero-content {
+
+        top: 53%;
+
+      }
+
+
+
+      .hero-logo {
+
+        margin-bottom: 10px;
+
+      }
+
+
+
+      .hero-logo img {
+
+        width: 85px;
+
+      }
+
+
+
+      .hero-content p {
+
+        margin: 13px auto 18px;
+
+      }
+
+    }
+
+
+
+    /* REDUCE MOTION WHEN REQUESTED */
+
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+
+        scroll-behavior: auto;
+
+      }
+
+
+
+      .mosaic,
+
+      .image-row {
+
+        animation: none;
+
+      }
+
+
+
+      .image-tile img,
+
+      .btn,
+
+      .contact,
+
+      .menu-toggle span {
+
+        transition-duration: .01ms;
+
+      }
+
+    }
+
+/* ========================================
+   HOMEPAGE TESTIMONIALS
+======================================== */
+
+.testimonials-section {
+    position: relative;
+    padding: 90px 6%;
+    background: var(--brand-black);
+    color: var(--brand-white);
+    border-top: 1px solid rgba(198, 165, 107, 0.25);
+}
+
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonials-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.testimonials-eyebrow {
+    color: var(--brand-gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.testimonials-heading h2 {
+    color: var(--brand-white);
+    font-size: clamp(28px, 4vw, 43px);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.testimonials-heading h2 span {
+    color: var(--brand-red);
+}
+
+.testimonials-heading p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--muted-white);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Three-up grid becomes a sliding carousel: a clipped viewport holding one
+   track that moves a whole card at a time. --t-per-view decides how many
+   cards sit side by side, so raising it back to 3 once there are enough
+   genuine reviews is a one-line change. The JS reads these two numbers from
+   the live layout instead of keeping its own copy, so CSS stays the single
+   source of truth. */
+.testimonials-carousel {
+    position: relative;
+}
+
+.testimonials-viewport {
+    overflow: hidden;
+}
+
+.testimonials-track {
+    --t-gap: 24px;
+    --t-per-view: 2;
+    display: flex;
+    gap: var(--t-gap);
+    transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+/* Card width is derived from the same two custom properties the JS reads,
+   so the row can never drift out of sync with the step distance. */
+.testimonials-carousel .testimonial-card {
+    flex: 0 0 calc((100% - (var(--t-per-view) - 1) * var(--t-gap)) / var(--t-per-view));
+    min-width: 0;
+}
+
+/* A track holding one card — the empty state, or a single approved story —
+   fills the row rather than sitting in half of it. */
+.testimonials-carousel .testimonial-card:only-child {
+    flex-basis: 100%;
+}
+
+.testimonials-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 32px;
+}
+
+.testimonials-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid rgba(198, 165, 107, 0.35);
+    border-radius: 50%;
+    color: var(--brand-white);
+    font-family: inherit;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.testimonials-arrow:hover {
+    background: var(--brand-red);
+    border-color: var(--brand-gold);
+    transform: translateY(-2px);
+}
+
+.testimonials-arrow:focus-visible,
+.testimonials-dot:focus-visible {
+    outline: 2px solid var(--brand-gold);
+    outline-offset: 3px;
+}
+
+.testimonials-dots {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.testimonials-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    background: rgba(245, 243, 239, 0.26);
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.25s ease, width 0.25s ease;
+}
+
+.testimonials-dot:hover {
+    background: rgba(198, 165, 107, 0.65);
+}
+
+.testimonials-dot[aria-current="true"] {
+    width: 26px;
+    background: var(--brand-gold);
+}
+
+/* Screen-reader announcement of the visible group, kept off-layout so it
+   cannot shift anything when the text changes. */
+.testimonials-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Nothing to rotate through, so nothing to click. */
+.testimonials-carousel[data-single-view="true"] .testimonials-controls {
+    display: none;
+}
+
+/* Reduced motion: the group still changes, it just snaps instead of
+   sliding, and autoplay never starts. */
+.testimonials-carousel[data-reduced-motion="true"] .testimonials-track {
+    transition: none;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 25px;
+    min-height: 260px;
+    background: var(--brand-black-soft);
+    border: 1px solid rgba(198, 165, 107, 0.22);
+    border-top: 3px solid var(--brand-red);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    border-top-color: var(--brand-gold);
+}
+
+.testimonial-stars {
+    color: var(--brand-gold);
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.testimonial-quote {
+    flex: 1;
+    color: var(--muted-white);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.testimonial-client {
+    padding-top: 18px;
+    border-top: 1px solid rgba(245, 243, 239, 0.12);
+}
+
+.testimonial-client h3 {
+    color: var(--brand-white);
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.testimonial-client p {
+    color: var(--brand-gold);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.testimonials-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.testimonials-link {
+    display: inline-block;
+    padding: 15px 24px;
+    background: var(--brand-red);
+    border: 1px solid var(--brand-red);
+    border-radius: 3px;
+    color: var(--brand-white);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.testimonials-link:hover {
+    background: var(--brand-red-dark);
+    border-color: var(--brand-gold);
+}
+
+@media (max-width: 560px) {
+    .testimonials-section {
+        padding: 65px 5%;
+    }
+
+    .testimonials-track {
+        --t-per-view: 1;
+        --t-gap: 18px;
+    }
+
+    .testimonial-card {
+        min-height: 230px;
+        padding: 25px 22px;
+    }
+
+    .testimonials-heading {
+        margin-bottom: 32px;
+    }
+}
+
+/* ========================================
+   FEATURED SERVICES
+======================================== */
+
+.featured-services {
+    padding: 90px 6%;
+    background: #191919;
+    color: var(--brand-white);
+    border-top: 1px solid rgba(198, 165, 107, 0.22);
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-heading {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.services-eyebrow {
+    margin-bottom: 14px;
+    color: var(--brand-gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.services-heading h2 {
+    margin-bottom: 16px;
+    color: var(--brand-white);
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.2;
+}
+
+.services-heading h2 span {
+    color: var(--brand-red);
+}
+
+.services-heading p {
+    color: var(--muted-white);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.service-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--brand-black-soft);
+    border: 1px solid rgba(198, 165, 107, 0.18);
+    border-top: 3px solid var(--brand-red);
+    transition: transform .3s ease, border-color .3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    border-top-color: var(--brand-gold);
+}
+
+.service-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #292929;
+}
+
+.service-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.05);
+}
+
+.service-content {
+    padding: 23px 20px 25px;
+}
+
+.service-content h3 {
+    margin-bottom: 12px;
+    color: var(--brand-white);
+    font-size: 17px;
+    line-height: 1.45;
+}
+
+.service-content p {
+    min-height: 72px;
+    margin-bottom: 20px;
+    color: var(--muted-white);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.service-link {
+    display: inline-block;
+    color: var(--brand-red);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .6px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color .25s ease;
+}
+
+.service-link:hover {
+    color: var(--brand-gold);
+}
+
+.services-footer {
+    margin-top: 38px;
+    text-align: center;
+}
+
+.services-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    background: var(--brand-red);
+    border: 1px solid var(--brand-red);
+    border-radius: 3px;
+    color: var(--brand-white);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background .25s ease, border-color .25s ease;
+}
+
+.services-button:hover {
+    background: var(--brand-red-dark);
+    border-color: var(--brand-gold);
+}
+
+@media (max-width: 1000px) {
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 560px) {
+    .featured-services {
+        padding: 65px 5%;
+    }
+
+    .services-heading {
+        margin-bottom: 30px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-content p {
+        min-height: 0;
+    }
+
+    .service-content {
+        padding: 21px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-card,
+    .service-image img,
+    .service-link,
+    .services-button {
+        transition: none;
+    }
+}
+/* ========================================
+   WHY CHOOSE KWETU CREATIONS
+======================================== */
+
+.why-choose-us {
+    background: #101010;
+    color: #ffffff;
+    padding: 85px 6%;
+}
+
+.why-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-heading {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.why-eyebrow {
+    color: var(--brand-gold, #c9a45c);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.why-heading h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.2;
+    margin: 0 0 15px;
+    font-weight: 800;
+}
+
+.why-heading h2 span {
+    color: var(--brand-red, #d71920);
+}
+
+.why-heading p {
+    color: #bdbdbd;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.why-card {
+    position: relative;
+    padding: 30px 24px;
+    background: #181818;
+    border: 1px solid #303030;
+    border-top: 3px solid var(--brand-red, #d71920);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-6px);
+    border-top-color: var(--brand-gold, #c9a45c);
+}
+
+.why-number {
+    display: block;
+    color: var(--brand-gold, #c9a45c);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+.why-card h3 {
+    color: #ffffff;
+    font-size: 19px;
+    margin: 0 0 12px;
+}
+
+.why-card p {
+    color: #bdbdbd;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.why-cta {
+    text-align: center;
+    margin-top: 42px;
+}
+
+.why-cta a {
+    display: inline-block;
+    padding: 14px 28px;
+    background: var(--brand-red, #d71920);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.3s ease;
+}
+
+.why-cta a:hover {
+    background: var(--brand-gold, #c9a45c);
+    color: #101010;
+}
+
+@media (max-width: 900px) {
+    .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .why-choose-us {
+        padding: 60px 5%;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-card {
+        padding: 25px 22px;
+    }
+}
+/* ========================================
+   FINAL CALL TO ACTION
+======================================== */
+
+.final-cta {
+    position: relative;
+    overflow: hidden;
+    padding: 90px 6%;
+    background: #181818;
+    color: #ffffff;
+    text-align: center;
+    border-top: 1px solid #303030;
+}
+
+.final-cta::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    top: -190px;
+    left: calc(50% - 160px);
+    background: var(--brand-red, #d71920);
+    opacity: 0.14;
+    filter: blur(90px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.final-cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.final-cta-label {
+    display: inline-block;
+    color: var(--brand-gold, #c9a45c);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.final-cta h2 {
+    margin: 0 auto 20px;
+    font-size: clamp(32px, 5vw, 54px);
+    line-height: 1.15;
+    font-weight: 800;
+    max-width: 750px;
+}
+
+.final-cta h2 span {
+    color: var(--brand-red, #d71920);
+}
+
+.final-cta p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #c2c2c2;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.final-cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 34px;
+}
+
+.final-cta-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 14px 26px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 800;
+    transition: background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.final-cta-primary {
+    background: var(--brand-red, #d71920);
+    color: #ffffff;
+    border: 1px solid var(--brand-red, #d71920);
+}
+
+.final-cta-primary:hover {
+    background: var(--brand-gold, #c9a45c);
+    border-color: var(--brand-gold, #c9a45c);
+    color: #101010;
+    transform: translateY(-3px);
+}
+
+.final-cta-secondary {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #777777;
+}
+
+.final-cta-secondary:hover {
+    border-color: var(--brand-gold, #c9a45c);
+    color: var(--brand-gold, #c9a45c);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 520px) {
+    .final-cta {
+        padding: 65px 5%;
+    }
+
+    .final-cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .final-cta-buttons a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+/* ========================================
+   QUICK CONTACT STRIP
+======================================== */
+
+.quick-contact-strip {
+    background: #101010;
+    color: #ffffff;
+    padding: 25px 6%;
+    border-top: 1px solid #303030;
+    border-bottom: 1px solid #303030;
+}
+
+.quick-contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.quick-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.quick-contact-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d71920;
+    color: #c9a45c;
+    font-size: 20px;
+}
+
+.quick-contact-details {
+    min-width: 0;
+}
+
+.quick-contact-details span {
+    display: block;
+    color: #c9a45c;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.quick-contact-details a,
+.quick-contact-details p {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+    margin: 0;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.quick-contact-details a:hover {
+    color: #c9a45c;
+}
+
+@media (max-width: 760px) {
+    .quick-contact-inner {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+}
+
+/* ========================================
+   BEFORE & AFTER — THE TRANSFORMATION
+======================================== */
+
+.transformation-section {
+    padding: 90px 6%;
+    background: #151515;
+    color: #F5F3EF;
+    border-top: 1px solid rgba(198, 165, 107, 0.22);
+}
+
+.transformation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.transformation-heading {
+    max-width: 720px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.transformation-eyebrow {
+    margin-bottom: 14px;
+    color: #C6A56B;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.transformation-heading h2 {
+    margin-bottom: 16px;
+    color: #F5F3EF;
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.2;
+}
+
+.transformation-heading h2 span {
+    color: #B5122A;
+}
+
+.transformation-heading p {
+    color: rgba(245, 243, 239, 0.82);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.transformation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.transformation-card {
+    min-width: 0;
+    overflow: hidden;
+    background: #202020;
+    border: 1px solid rgba(198, 165, 107, 0.22);
+    border-top: 3px solid #B5122A;
+    transition: border-color .3s ease, transform .3s ease;
+}
+
+.transformation-card:hover {
+    border-top-color: #C6A56B;
+    transform: translateY(-5px);
+}
+
+.transformation-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2px;
+    background: #151515;
+}
+
+.transformation-image {
+    position: relative;
+    min-width: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #292929;
+}
+
+.transformation-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.transformation-card:hover .transformation-image img {
+    transform: scale(1.035);
+}
+
+.transformation-label {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    padding: 8px 11px;
+    background: rgba(21, 21, 21, .92);
+    border: 1px solid rgba(198, 165, 107, .65);
+    color: #F5F3EF;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.transformation-label.after {
+    color: #C6A56B;
+}
+
+.transformation-info {
+    padding: 23px 22px 25px;
+}
+
+.transformation-info h3 {
+    margin-bottom: 9px;
+    color: #F5F3EF;
+    font-size: 19px;
+}
+
+.transformation-info p {
+    color: rgba(245, 243, 239, .76);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.transformation-footer {
+    margin-top: 38px;
+    text-align: center;
+}
+
+.transformation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 25px;
+    background: #B5122A;
+    border: 1px solid #B5122A;
+    border-radius: 3px;
+    color: #F5F3EF;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background .25s ease, border-color .25s ease;
+}
+
+.transformation-button:hover {
+    background: #8F0E21;
+    border-color: #C6A56B;
+}
+
+@media (max-width: 700px) {
+    .transformation-section {
+        padding: 65px 5%;
+    }
+
+    .transformation-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .transformation-heading {
+        margin-bottom: 30px;
+    }
+
+    .transformation-info {
+        padding: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .transformation-card,
+    .transformation-image img,
+    .transformation-button {
+        transition: none;
+    }
+}
+
+/* INTRODUCTION BACKGROUND IMAGE */
+.home-intro {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 100px 6%;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(21, 21, 21, 0.96) 0%,
+            rgba(21, 21, 21, 0.88) 55%,
+            rgba(21, 21, 21, 0.68) 100%
+        ),
+        url("images/webp/hold.webp") center / cover no-repeat;
+    color: var(--brand-white);
+}
+
+.home-intro-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .home-intro {
+        padding: 70px 5%;
+        background-position: center;
+    }
+}
+/* HOMEPAGE SLIDE LOGO */
+.slide-logo {
+    white-space: nowrap;
+}
+
+.slide-logo .kwetu {
+    color: #F5F3EF !important;
+}
+
+.slide-logo .creations {
+    color: #B5122A !important;
+}
+  </style>
+
+  <!-- SEO:JSON-LD:BEGIN -->
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "#kwetu-creations",
+      "name": "Kwetu Creations",
+      "description": "Kampala creative studio delivering signage solutions, branding and graphic design, interior solutions, illuminated signage, laser cutting, custom fabrication, large-format printing and website design.",
+      "email": "info@kwetucreations.com",
+      "telephone": "+256787738999",
+      "foundingDate": "2014",
+      "founder": {
+          "@type": "Person",
+          "name": "Stephen Were Mbatya",
+          "jobTitle": "Marketing Director"
+      },
+      "employee": [
+          {
+              "@type": "Person",
+              "name": "Stephen Were Mbatya",
+              "jobTitle": "Marketing Director"
+          },
+          {
+              "@type": "Person",
+              "name": "Byuma Daniel",
+              "jobTitle": "Creative Graphics Designer"
+          }
+      ],
+      "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Freedom House, Level 6, Suite R-724, Nkurumah Road",
+          "addressLocality": "Kampala",
+          "addressCountry": "UG"
+      },
+      "knowsAbout": [
+          "Signage solutions",
+          "Illuminated signage",
+          "Branding and graphic design",
+          "Large-format printing",
+          "Laser cutting",
+          "Custom fabrication",
+          "Interior solutions",
+          "Website design and development"
+      ],
+      "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Studio services",
+          "itemListElement": [
+              {
+                  "@type": "Offer",
+                  "url": "services.html#signage",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Signage Solutions"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#branding",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Branding & Graphic Design"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#interiors",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Interior Solutions"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#illuminated-signage",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Illuminated Signage"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#fabrication",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Custom Fabrication"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#laser-cutting",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Laser Cutting"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#large-format-printing",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Large-Format Printing"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#web-design",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Website Design & Development"
+                  }
+              }
+          ]
+      }
+  }
+  </script>
+  <!-- SEO:JSON-LD:END -->
+</head>
+
+
+
+<body>
+  <div id="site-header">
+  <!-- KWETU:CHROME:SITE-HEADER:BEGIN -->
+  <header class="navbar">
+      <a href="./" class="logo">
+          <img class="logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+          <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+          <span class="logo-creations">CREATIONS</span>
+      </a>
+  
+      <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="main-navigation"
+          aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+  
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+          <a href="./" data-page="index3.html">Home</a>
+          <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+          <a href="services.html" data-page="services.html">Services</a>
+          <a href="about.html" data-page="about.html">About Us</a>
+         <a href="contact.html" data-page="contact.html">Contact Us</a>
+          <a href="quote-request.html" class="nav-quote" data-page="quote-request.html">Get a Quote ↗</a>
+          
+      </nav>
+  </header>
+  <!-- KWETU:CHROME:SITE-HEADER:END -->
+</div>
+  <main class="hero">
+
+    <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+
+    <div class="overlay" aria-hidden="true"></div>
+    <section class="hero-content">
+
+
+
+     
+
+
+
+      <h1 class="slide-logo"><span class="kwetu">KWETU</span> <span class="creations">CREATIONS</span></h1>
+
+
+      <p>
+
+        
+      </p>
+
+
+
+      <div class="buttons">
+
+        <a href="portfolio.html" class="btn btn-light">
+
+          Explore our work
+
+        </a>
+
+
+
+        <a href="quote-request.html" class="btn btn-red">
+
+          Get a Quote <span aria-hidden="true">↗</span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <div class="bottom-label">
+
+      Creative thinking. Exceptional execution.
+
+      <span aria-hidden="true">⌄</span>
+
+    </div>
+
+  </main>
+  
+<!-- INTRODUCTION TO KWETU CREATIONS -->
+<section class="home-intro">
+    <div class="home-intro-content">
+
+       
+        <span class="home-intro-label">
+            WELCOME TO <span class="intro-kwetu">KWETU</span>
+            <span class="intro-creations">CREATIONS</span>
+        </span>
+
+
+        <h2>
+            Creative Ideas.
+            <span>Exceptional Execution.</span>
+        </h2>
+
+       
+
+        <p class="home-intro-lead">
+            We transform ideas into impactful visual experiences.
+        </p>
+
+        <p class="home-intro-description">
+            Kwetu Creations brings together creative design,
+            branding, signage, laser services, fabrication,
+            interior solutions and website design to help
+            businesses and individuals bring their ideas to life.
+        </p>
+
+        <p class="home-intro-description">
+            From developing a distinctive brand identity to
+            creating striking signs and transforming spaces,
+            we approach every project with creativity, attention
+            to detail and a commitment to quality.
+        </p>
+
+        <div class="home-intro-buttons">
+            <a href="about.html" class="intro-btn intro-btn-primary">
+                Discover Our Story <span>↗</span>
+            </a>
+
+            <a href="portfolio.html" class="intro-btn intro-btn-outline">
+                Explore Our Work <span>↗</span>
+            </a>
+        </div>
+
+    </div>
+</section>
+<!-- END INTRODUCTION -->
+
+  
+<!-- FEATURED SERVICES -->
+<section class="featured-services" id="featured-services">
+    <div class="services-container">
+
+        <div class="services-heading">
+            <div class="services-eyebrow">What We Do</div>
+
+            <h2>
+                Creative Solutions.
+                <span>Exceptional Results.</span>
+            </h2>
+
+            <p>
+                From bold brand identities to standout signage,
+                we turn ideas into professional visual experiences
+                that help businesses stand out.
+            </p>
+        </div>
+
+        <div class="services-grid">
+
+            <!-- SERVICE 1 -->
+            <article class="service-card">
+                <div class="service-image">
+                    <img decoding="async" height="567" width="1008"
+                        src="images/webp/sool.webp"
+                        alt="Illuminated E2 Salon sign hanging behind a frosted glass panel with a lit Closed indicator"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="service-content">
+                    <h3>Branding &amp; Graphic Design</h3>
+
+                    <p>
+                        Logos, visual identities and marketing
+                        materials that give your business a
+                        distinctive look.
+                    </p>
+
+                    <a href="services.html#branding" class="service-link">
+                        Explore Service →
+                    </a>
+                </div>
+            </article>
+
+            <!-- SERVICE 2 -->
+            <article class="service-card">
+                <div class="service-image">
+                    <img decoding="async" height="450" width="1000"
+                        src="images/webp/chri.webp"
+                        alt="Orange 3D channel letters spelling Marigolds Christian School beside a cut-out flower logo"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="service-content">
+                    <h3>Signage &amp; Displays</h3>
+
+                    <p>
+                        Professional business signs, shop branding
+                        and displays designed to make your
+                        business visible.
+                    </p>
+
+                    <a href="services.html#signage" class="service-link">
+                        Explore Service →
+                    </a>
+                </div>
+            </article>
+
+            <!-- SERVICE 3 -->
+            <article class="service-card">
+                <div class="service-image">
+                    <img decoding="async" height="1280" width="720"
+                        src="images/webp/nio.webp"
+                        alt="Shopfront windows covered with printed Western Union, Transfast and MoneyGram vinyl graphics"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="service-content">
+                    <h3>Printing &amp; Large Format</h3>
+
+                    <p>
+                        Banners, posters, stickers and other
+                        printed materials for your business
+                        and promotions.
+                    </p>
+
+                    <a href="services.html#large-format-printing" class="service-link">
+                        Explore Service →
+                    </a>
+                </div>
+            </article>
+
+            <!-- SERVICE 4 -->
+            <article class="service-card">
+                <div class="service-image">
+                    <img decoding="async" height="768" width="1020"
+                        src="images/webp/mon.webp"
+                        alt="Mountain Inn Hotel 3D lettering mounted on a stacked-stone reception wall above a row of world clocks"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="service-content">
+                    <h3>Laser Cutting &amp; Fabrication</h3>
+
+                    <p>
+                        Custom-made pieces, precision cutting
+                        and fabrication for creative projects
+                        and business spaces.
+                    </p>
+
+                    <a href="services.html#laser-cutting" class="service-link">
+                        Explore Service →
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="services-footer">
+            <a href="services.html" class="services-button">
+                View All Services &nbsp; →
+            </a>
+        </div>
+
+    </div>
+</section>
+<!-- END FEATURED SERVICES -->
+ 
+<!-- BEFORE & AFTER — THE TRANSFORMATION -->
+<section class="transformation-section" id="transformations">
+    <div class="transformation-container">
+
+        <div class="transformation-heading">
+            <div class="transformation-eyebrow">
+                Ideas Into Reality
+            </div>
+
+            <h2>
+                See the <span>Transformation.</span>
+            </h2>
+
+            <p>
+                Great creative work makes a difference.
+                Explore how we turn ideas into finished designs
+                through thoughtful planning, skilled execution
+                and attention to detail.
+            </p>
+        </div>
+
+        <div class="transformation-grid">
+
+            <article class="transformation-card">
+
+                <div class="transformation-images">
+
+                    <div class="transformation-image">
+                        <img decoding="async" height="770" width="1079"
+                            src="images/webp/mind.webp"
+                            alt="Bare metal stud framing and unfinished counters before the fit-out"
+                            loading="lazy"
+                        >
+                        <span class="transformation-label">
+                            BEFORE
+                        </span>
+                    </div>
+
+                    <div class="transformation-image">
+                        <img decoding="async" height="1000" width="750"
+                            src="images/webp/west.webp"
+                            alt="Completed forex bureau interior with Western Union and MoneyGram counters and cove lighting"
+                            loading="lazy"
+                        >
+                        <span class="transformation-label after">
+                            AFTER
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="transformation-info">
+                    <h3>From Concept to Completion</h3>
+                    <p>
+                        See the difference thoughtful design
+                        and professional execution can make.
+                    </p>
+                </div>
+
+            </article>
+
+            <!-- PROJECT 2: -->
+            <article class="transformation-card">
+
+                <div class="transformation-images">
+
+                    <div class="transformation-image">
+                        <img decoding="async" height="810" width="1080"
+                            src="images/webp/bef.webp"
+                            alt="Unfinished wall shelving carcass with exposed metal framing before cladding"
+                            loading="lazy"
+                        >
+                        <span class="transformation-label">
+                            BEFORE
+                        </span>
+                    </div>
+
+                    <div class="transformation-image">
+                        <img decoding="async" height="888" width="1080"
+                            src="images/webp/tv.webp"
+                            alt="Finished curved feature wall with illuminated display niches and a wall-mounted television"
+                            loading="lazy"
+                        >
+                        <span class="transformation-label after">
+                            AFTER
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="transformation-info">
+                    <h3>Designed to Stand Out</h3>
+                    <p>
+                        Discover how creative solutions can
+                        transform a space, sign or brand.
+                    </p>
+                </div>
+
+            </article>
+
+        </div>
+
+        <div class="transformation-footer">
+            <a href="portfolio.html" class="transformation-button">
+                Explore Our Projects &rarr;
+            </a>
+        </div>
+
+    </div>
+</section>
+<!-- END BEFORE & AFTER -->
+
+<!-- WHY CHOOSE KWETU CREATIONS -->
+<section class="why-choose-us">
+    <div class="why-container">
+
+        <div class="why-heading">
+            <div class="why-eyebrow">The Kwetu Difference</div>
+            <h2>Why Choose <span>Kwetu Creations?</span></h2>
+            <p>
+                We combine creativity, attention to detail and practical
+                solutions to help businesses bring their ideas to life.
+            </p>
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-card">
+                <span class="why-number">01 / CREATIVITY</span>
+                <h3>Creative Solutions</h3>
+                <p>
+                    We develop thoughtful designs that communicate your
+                    message and help your brand stand out.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <span class="why-number">02 / QUALITY</span>
+                <h3>Attention to Detail</h3>
+                <p>
+                    We focus on the details that matter, from the design
+                    concept to the final presentation.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <span class="why-number">03 / FLEXIBILITY</span>
+                <h3>Solutions for Your Needs</h3>
+                <p>
+                    We work with your project requirements to recommend
+                    suitable creative and production solutions.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <span class="why-number">04 / PARTNERSHIP</span>
+                <h3>Working With You</h3>
+                <p>
+                    We value clear communication and collaboration
+                    throughout your project.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="why-cta">
+            <a href="quote-request.html">Let's Discuss Your Project</a>
+        </div>
+
+    </div>
+</section>
+<!-- END WHY CHOOSE KWETU CREATIONS -->
+<!-- HOMEPAGE TESTIMONIALS -->
+<section class="testimonials-section" id="testimonials">
+    <div class="testimonials-container">
+
+        <div class="testimonials-heading">
+            <div class="testimonials-eyebrow">
+                What Our Clients Say
+            </div>
+
+            <h2>
+                Trust Built on <span>Great Work.</span>
+            </h2>
+
+            <p>
+                Every project is an opportunity to create something
+                exceptional. Feedback from the businesses we have worked
+                with is collected here, and each one appears only after
+                the person who wrote it has agreed to share it.
+            </p>
+        </div>
+
+        <div class="testimonials-carousel" data-testimonials>
+
+    <div class="testimonials-viewport">
+        <div class="testimonials-track" id="testimonials-track">
+    <article class="testimonial-card">
+                    <p class="testimonial-quote">
+                        We would rather show you an empty wall than a
+                        borrowed compliment. What our clients say, in their
+                        own words, appears here as soon as they let us
+                        publish it.
+                    </p>
+
+                    <div class="testimonial-client">
+                        <h3>Kwetu Creations</h3>
+                        <p>Design and production studio, Kampala</p>
+                    </div>
+                </article>
+        </div>
+    </div>
+
+    <div class="testimonials-controls" role="group" aria-label="Testimonial navigation">
+        <button type="button" class="testimonials-arrow" data-testimonials-prev aria-controls="testimonials-track" aria-label="Previous testimonials">&#8249;</button>
+        <div class="testimonials-dots" data-testimonials-dots></div>
+        <button type="button" class="testimonials-arrow" data-testimonials-next aria-controls="testimonials-track" aria-label="Next testimonials">&#8250;</button>
+    </div>
+
+    <p class="testimonials-status" data-testimonials-status role="status" aria-live="polite"></p>
+
+</div>
+
+
+        <div class="testimonials-footer">
+            <a href="testimonials.html" class="testimonials-link">
+                View All Testimonials &rarr;
+            </a>
+        </div>
+
+    </div>
+</section>
+<!-- END HOMEPAGE TESTIMONIALS -->
+<!-- FINAL CALL TO ACTION -->
+<section class="final-cta">
+    <div class="final-cta-content">
+
+        <div class="final-cta-label">
+            Let's Create Something Great
+        </div>
+
+        <h2>
+            Have a Project <span>in Mind?</span>
+        </h2>
+
+        <p>
+            From creative design and branding to printing and signage,
+            let's discuss your ideas and find the right solution for your project.
+        </p>
+
+        <div class="final-cta-buttons">
+            <a href="quote-request.html" class="final-cta-primary">
+                Request a Quote &rarr;
+            </a>
+
+            <a href="portfolio.html" class="final-cta-secondary">
+                Explore Our Work
+            </a>
+        </div>
+
+    </div>
+</section>
+<!-- END FINAL CALL TO ACTION -->
+ <!-- QUICK CONTACT STRIP -->
+<section class="quick-contact-strip">
+    <div class="quick-contact-inner">
+
+        <div class="quick-contact-item">
+            <div class="quick-contact-icon" aria-hidden="true">&#9742;</div>
+            <div class="quick-contact-details">
+                <span>Call Us</span>
+                <a href="tel:+256787738999">+256 787 738 999</a>
+            </div>
+        </div>
+
+        <div class="quick-contact-item">
+            <div class="quick-contact-icon" aria-hidden="true">&#9993;</div>
+            <div class="quick-contact-details">
+                <span>Email Us</span>
+                <a href="mailto:info@kwetucreations.com">
+                    info@kwetucreations.com
+                </a>
+            </div>
+        </div>
+
+        <div class="quick-contact-item">
+            <div class="quick-contact-icon" aria-hidden="true">&#9873;</div>
+            <div class="quick-contact-details">
+                <span>Visit Us</span>
+                <p>Freedom House, Nkurumah Road, Kampala</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- END QUICK CONTACT STRIP -->
+  <div id="site-footer">
+  <!-- KWETU:CHROME:SITE-FOOTER:BEGIN -->
+  <footer class="site-footer">
+  
+      <div class="footer-top">
+          <div class="footer-brand">
+              <a href="./" class="footer-logo">
+                  <img class="footer-logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+                  <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+                  <span class="logo-creations">CREATIONS</span>
+              </a>
+  
+              <p class="footer-tagline">
+                  Creative design. Precision production. Exceptional results.
+              </p>
+          </div>
+  
+          <div class="footer-explore">
+              <h3>EXPLORE</h3>
+              <a href="./" data-page="index3.html">Home</a>
+              <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+              <a href="services.html" data-page="services.html">Services</a>
+              <a href="about.html" data-page="about.html">About Us</a>
+              <a href="testimonials.html" data-page="testimonials.html">Client Reviews</a>
+              <a href="contact.html" data-page="contact.html">Contact Us</a>
+              <a href="quote-request.html" data-page="quote-request.html">Get a Quote</a>
+          </div>
+          <div class="footer-services">
+                  <h3>OUR SERVICES</h3>
+                  <a href="services.html#signage">Signage</a>
+                  <a href="services.html#branding">Branding &amp; Graphic Design</a>
+                  <a href="services.html#interiors">Interior Solutions</a>
+                  <a href="services.html#illuminated-signage">Illuminated Signage</a>
+                  <a href="services.html#fabrication">Fabrication</a>
+                  <a href="services.html#laser-cutting">Laser Cutting</a>
+                  <a href="services.html#large-format-printing">Large-Format Printing</a>
+                  <a href="services.html#web-design">Website Design &amp; Development</a>
+              </div>
+  
+              <div class="footer-contact">
+                  <h3>CONTACT US</h3>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <address>
+                      Freedom House, Level 6, Suite R-724<br>
+                      Nkurumah Road, Kampala, Uganda
+                     
+                  </address>
+              </div>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  <a href="tel:+256787738999">+256 787 738 999</a>
+              </div>
+              
+              <div class="footer-contact-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <a href="mailto:info@kwetucreations.com">
+                      info@kwetucreations.com
+                  </a>
+              </div>
+  
+          </div>
+  
+          <div class="footer-social">
+              <h3>CONNECT WITH US</h3>
+  
+              <div class="social-icons-container">
+                  <a class="icon-link whatsapp"
+                     href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener"
+                     aria-label="Message the studio on WhatsApp"
+                     title="Message the studio on WhatsApp">
+                      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                  </a>
+                  <span class="icon-link instagram" role="img"
+                        aria-label="Instagram" title="Instagram">
+                      <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link tiktok" role="img"
+                        aria-label="TikTok" title="TikTok">
+                      <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link linkedin" role="img"
+                        aria-label="LinkedIn" title="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link facebook" role="img"
+                        aria-label="Facebook" title="Facebook">
+                      <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                  </span>
+              </div>
+  
+              <p class="footer-social-note">
+                  Speak to the studio directly —
+                  <a href="mailto:info@kwetucreations.com">info@kwetucreations.com</a>,
+                  <a href="tel:+256787738999">+256 787 738 999</a>,
+                  or
+                  <a href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener">message us on WhatsApp</a>.
+                  All three reach the team, and a reply from us comes from a
+                  person, not a queue.
+              </p>
+  
+          </div>
+          
+      </div>
+  
+      <div class="footer-bottom">
+          <div class="footer-legal-links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <span>|</span>
+              <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+              <span>|</span>
+              <a href="cookie-policy.html">Cookie Policy</a>
+              <span>|</span>
+              <button type="button" data-cookie-settings
+                      aria-haspopup="dialog">Cookie Settings</button>
+          </div>
+  
+          <p class="footer-copyright">
+              &copy; <span id="year"></span>
+              <span class="footer-kwetu">Kwetu</span>
+              <span class="footer-creations">Creations</span>.
+              All rights reserved.
+          </p>
+  
+          <div class="footer-designer">
+              <span>Website designed by</span>
+              <strong>BYUMA DANIEL</strong>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mpozzadaniel@gmail.com"
+                 target="_blank" rel="noopener noreferrer">
+                  mpozzadaniel@gmail.com
+              </a>
+          </div>
+      </div>
+  
+  </footer>
+  <!-- KWETU:CHROME:SITE-FOOTER:END -->
+</div>
+
+  <script>
+
+    /* MOBILE MENU */
+
+
+
+    // MOBILE MENU
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNavigation = document.getElementById('main-navigation');
+
+    function closeMenu() {
+      if (!mainNavigation || !menuToggle) return;
+      mainNavigation.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation menu');
+    }
+
+    if (menuToggle && mainNavigation) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!isOpen));
+        menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+        mainNavigation.classList.toggle('is-open', !isOpen);
+      });
+
+      mainNavigation.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('click', event => {
+        if (!mainNavigation.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+          closeMenu();
+          menuToggle.focus();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 760) closeMenu();
+      });
+    }
+
+    // MOVING IMAGE MOSAIC
+    const mosaic = document.getElementById("mosaic");
+    const headerSlot = document.getElementById("site-header");
+
+    // The wall draws from images/webp/hero: one small WebP copy of every
+    // unique photograph in the project - the images folder and every
+    // subfolder (branding, fabrication, interiors, signages). Byte-identical
+    // copies stored under two names are listed once, and blue.jpeg is left
+    // out because it is an empty file.
+    // Keep the exact letter casing - hosting servers treat .JPG and
+    // .jpg as different files.
+    const photos = [
+        "images/webp/hero/abc.webp",
+        "images/webp/hero/abdec.webp",
+        "images/webp/hero/adt.webp",
+        "images/webp/hero/allumin.webp",
+        "images/webp/hero/ami.webp",
+        "images/webp/hero/apa.webp",
+        "images/webp/hero/as.webp",
+        "images/webp/hero/ash.webp",
+        "images/webp/hero/aut.webp",
+        "images/webp/hero/bab.webp",
+        "images/webp/hero/bank.webp",
+        "images/webp/hero/bar.webp",
+        "images/webp/hero/bef.webp",
+        "images/webp/hero/ber.webp",
+        "images/webp/hero/bfc.webp",
+        "images/webp/hero/bk.webp",
+        "images/webp/hero/bld.webp",
+        "images/webp/hero/brand.webp",
+        "images/webp/hero/branding/spice.webp",
+        "images/webp/hero/ced.webp",
+        "images/webp/hero/chi.webp",
+        "images/webp/hero/chri.webp",
+        "images/webp/hero/cit.webp",
+        "images/webp/hero/coos.webp",
+        "images/webp/hero/cos.webp",
+        "images/webp/hero/dac.webp",
+        "images/webp/hero/das.webp",
+        "images/webp/hero/eat.webp",
+        "images/webp/hero/ec.webp",
+        "images/webp/hero/eng.webp",
+        "images/webp/hero/execu.webp",
+        "images/webp/hero/ext.webp",
+        "images/webp/hero/eyedrop.webp",
+        "images/webp/hero/fer.webp",
+        "images/webp/hero/fish.webp",
+        "images/webp/hero/fshd.webp",
+        "images/webp/hero/ged.webp",
+        "images/webp/hero/gob.webp",
+        "images/webp/hero/goe.webp",
+        "images/webp/hero/gogo.webp",
+        "images/webp/hero/gol.webp",
+        "images/webp/hero/got.webp",
+        "images/webp/hero/hall.webp",
+        "images/webp/hero/heart.webp",
+        "images/webp/hero/her.webp",
+        "images/webp/hero/het.webp",
+        "images/webp/hero/hold.webp",
+        "images/webp/hero/hos.webp",
+        "images/webp/hero/hus.webp",
+        "images/webp/hero/inn.webp",
+        "images/webp/hero/interior-3.webp",
+        "images/webp/hero/interiors/coff.webp",
+        "images/webp/hero/interiors/exit.webp",
+        "images/webp/hero/interiors/good.webp",
+        "images/webp/hero/interiors/interior-1.webp",
+        "images/webp/hero/interiors/interior-2.webp",
+        "images/webp/hero/interiors/interior4.webp",
+        "images/webp/hero/interiors/shoe.webp",
+        "images/webp/hero/interiors/studio.webp",
+        "images/webp/hero/isu.webp",
+        "images/webp/hero/jem.webp",
+        "images/webp/hero/jiu.webp",
+        "images/webp/hero/kamp.webp",
+        "images/webp/hero/keon.webp",
+        "images/webp/hero/ker.webp",
+        "images/webp/hero/kfc.webp",
+        "images/webp/hero/kio.webp",
+        "images/webp/hero/kis.webp",
+        "images/webp/hero/kol.webp",
+        "images/webp/hero/lio.webp",
+        "images/webp/hero/lou.webp",
+        "images/webp/hero/loun.webp",
+        "images/webp/hero/mark.webp",
+        "images/webp/hero/melt.webp",
+        "images/webp/hero/mer.webp",
+        "images/webp/hero/mind.webp",
+        "images/webp/hero/mon.webp",
+        "images/webp/hero/mor.webp",
+        "images/webp/hero/mot.webp",
+        "images/webp/hero/mout.webp",
+        "images/webp/hero/muki.webp",
+        "images/webp/hero/nar.webp",
+        "images/webp/hero/nex.webp",
+        "images/webp/hero/nic.webp",
+        "images/webp/hero/nio.webp",
+        "images/webp/hero/noe.webp",
+        "images/webp/hero/noi.webp",
+        "images/webp/hero/noor.webp",
+        "images/webp/hero/noto.webp",
+        "images/webp/hero/ope.webp",
+        "images/webp/hero/oui.webp",
+        "images/webp/hero/palm.webp",
+        "images/webp/hero/pet.webp",
+        "images/webp/hero/pharm.webp",
+        "images/webp/hero/place.webp",
+        "images/webp/hero/pod.webp",
+        "images/webp/hero/poe.webp",
+        "images/webp/hero/saun.webp",
+        "images/webp/hero/sch.webp",
+        "images/webp/hero/sew.webp",
+        "images/webp/hero/sey.webp",
+        "images/webp/hero/sho.webp",
+        "images/webp/hero/signages/signage-2.webp",
+        "images/webp/hero/sky.webp",
+        "images/webp/hero/sool.webp",
+        "images/webp/hero/teardrop.webp",
+        "images/webp/hero/teha.webp",
+        "images/webp/hero/tra.webp",
+        "images/webp/hero/tri.webp",
+        "images/webp/hero/tv.webp",
+        "images/webp/hero/uni.webp",
+        "images/webp/hero/vd.webp",
+        "images/webp/hero/vibe.webp",
+        "images/webp/hero/vie.webp",
+        "images/webp/hero/vir.webp",
+        "images/webp/hero/vis.webp",
+        "images/webp/hero/vsve.webp",
+        "images/webp/hero/wall.webp",
+        "images/webp/hero/wat.webp",
+        "images/webp/hero/west.webp"
+    ];
+
+    // Row 1 and row 3 run right to left, row 2 runs left to right.
+    // secondsPerTile sets each row's own pace, so no two rows match.
+    const ROWS = [
+        { direction: "left", secondsPerTile: 9 },
+        { direction: "right", secondsPerTile: 14 },
+        { direction: "left", secondsPerTile: 21 }
+    ];
+
+    // How long one tile takes to show its second photograph and come back.
+    const CHURN_SECONDS = 12;
+
+    // Tiles this far past the right edge of the window are not looked at for
+    // most of a loop, so their photographs are held back until the row has
+    // travelled that far. It keeps the first paint light without ever
+    // showing an empty tile.
+    const LOAD_AHEAD = 4;
+
+    // One tile is re-dealt at most this often. Fast enough that the wall
+    // works through the whole pool in about a minute of watching, slow
+    // enough that it is not a download.
+    const SWAP_INTERVAL = 2500;
+
+    // One copy of a row's sequence. Long enough that the wall never feels
+    // like a short loop, short enough to stay light on phones.
+    function tilesPerCopy() {
+        const width = window.innerWidth;
+
+        if (width >= 1000) return 14;
+        if (width >= 700) return 11;
+        return 9;
+    }
+
+    function shuffled(list) {
+        const copy = [...list];
+
+        for (let i = copy.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [copy[i], copy[j]] = [copy[j], copy[i]];
+        }
+
+        return copy;
+    }
+
+    // DEALING
+    //
+    // The pool is shuffled once, when the wall is built, and from then on the
+    // photographs are handed out in that fixed order from a single pointer
+    // that walks forward and wraps around. The wall is a sequence a visitor
+    // can follow instead of random noise, and because the pointer only ever
+    // moves forward, nothing can be skipped or dealt twice.
+    //
+    // `live` holds the photographs mounted right now, so the pointer steps
+    // over them: no two tiles can show the same photograph at the same time.
+    let sequence = [];
+    let cursor = 0;
+    const live = new Set();
+
+    // Photographs mounted since the wall was last built. Once every
+    // photograph has had its turn the wall stops dealing, so a long visit
+    // never turns a decorative background into an open-ended download.
+    const everDealt = new Set();
+
+    function nextPhoto() {
+        for (let step = 0; step < photos.length; step++) {
+            const src = sequence[cursor];
+
+            cursor = (cursor + 1) % photos.length;
+
+            if (!live.has(src)) return src;
+        }
+
+        // Nothing is free: the pool is smaller than the wall, so repeating
+        // beats leaving a tile empty.
+        const last = sequence[cursor];
+
+        cursor = (cursor + 1) % photos.length;
+
+        return last;
+    }
+
+    function dealPair() {
+        const pair = { a: nextPhoto(), b: nextPhoto() };
+
+        live.add(pair.a);
+        live.add(pair.b);
+        everDealt.add(pair.a);
+        everDealt.add(pair.b);
+
+        return pair;
+    }
+
+    function retirePair(pair) {
+        live.delete(pair.a);
+        live.delete(pair.b);
+    }
+
+    // rowState[row] is one pair per tile position. Both copies of a row
+    // always show the same pair, which is what keeps the loop restart
+    // invisible.
+    let rowState = [];
+
+    // The measured width of one tile, per row, used to work out what is off
+    // screen at any moment.
+    const tileWidths = [];
+    let mountTimer = null;
+
+    // The navigation bar is fixed, so the hero has to start below it and
+    // stop at the bottom of the visible window. Measuring beats guessing:
+    // the bar changes height when it wraps and 100vh on a phone includes
+    // browser toolbars that cover the bottom row.
+    function syncChromeMetrics() {
+        const nav = headerSlot &&
+            (headerSlot.querySelector(".navbar") || headerSlot.firstElementChild);
+
+        if (!nav) return false;
+
+        const height = Math.round(nav.getBoundingClientRect().height);
+
+        if (!(height > 0)) return false;
+
+        document.documentElement.style.setProperty("--nav-h", `${height}px`);
+        document.documentElement.style.setProperty(
+            "--viewport-h",
+            `${Math.round(window.innerHeight)}px`
+        );
+
+        return true;
+    }
+
+    function isHidden(tile, advance) {
+        const box = tile.getBoundingClientRect();
+
+        return box.right <= -advance || box.left >= window.innerWidth + advance;
+    }
+
+    // Writing a pair onto one tile. Held photographs sit on the tile as
+    // data-src until the row has travelled far enough to need them.
+    function paintTile(tile, pair, load) {
+        const images = tile.querySelectorAll("img");
+
+        [pair.a, pair.b].forEach((src, slot) => {
+            const img = images[slot];
+
+            if (!img) return;
+            if (img.getAttribute("src") === src) return;
+            if (!load && img.hasAttribute("src")) return;
+
+            if (load) {
+                img.removeAttribute("data-src");
+                img.src = src;
+            } else {
+                img.setAttribute("data-src", src);
+            }
+        });
+    }
+
+    function mountPair(row, count, position, pair, load) {
+        paintTile(row.children[position], pair, load);
+        paintTile(row.children[count + position], pair, load);
+    }
+
+    // How far a tile still has to travel before any part of it can be seen.
+    function gapToWindow(box) {
+        if (box.right <= 0) return -box.right;
+        if (box.left >= window.innerWidth) return box.left - window.innerWidth;
+
+        return 0;
+    }
+
+    // Fetch a held photograph when its tile is nearly on screen. Reading the
+    // live layout instead of timing the loop is what makes this correct for
+    // the row that runs in reverse: its tail tiles are the first ones to
+    // arrive, not the last.
+    //
+    // A tile needs its picture one quarter of a window ahead of time. Rows
+    // cross that distance in at least nine seconds, which is far longer than
+    // a small WebP takes to arrive.
+    function mountApproaching() {
+        const lead = window.innerWidth * 0.25;
+
+        rowState.forEach((pairs, index) => {
+            const row = mosaic.children[index];
+
+            if (!pairs || !row) return;
+
+            const count = pairs.length;
+
+            pairs.forEach((pair, position) => {
+                const first = row.children[position];
+                const second = row.children[count + position];
+
+                if (!first || !second) return;
+
+                const gap = Math.min(
+                    gapToWindow(first.getBoundingClientRect()),
+                    gapToWindow(second.getBoundingClientRect())
+                );
+
+                if (gap > lead) return;
+
+                mountPair(row, count, position, pair, true);
+            });
+        });
+
+        // Keep watching only while some tile is still holding a photograph.
+        return !!mosaic.querySelector("img[data-src]");
+    }
+
+    // A wall that never moves never brings a held photograph to the window,
+    // so under reduced motion nothing is held back and nothing is polled.
+    function startMountWatcher() {
+        if (mountTimer !== null ||
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        mountTimer = setInterval(() => {
+            if (mountApproaching()) return;
+
+            clearInterval(mountTimer);
+            mountTimer = null;
+        }, 1000);
+    }
+
+    // Measure the real track instead of trusting a percentage: the loop
+    // distance is the distance between tile 0 and the matching tile that
+    // starts the second copy.
+    function applyTrackMetrics() {
+        if (!mosaic || mosaic.children.length !== ROWS.length) return;
+
+        const count = tilesPerCopy();
+
+        [...mosaic.children].forEach((row, index) => {
+            const first = row.children[0];
+            const secondCopy = row.children[count];
+
+            if (!first || !secondCopy) return;
+
+            const advance =
+                (secondCopy.getBoundingClientRect().x -
+                 first.getBoundingClientRect().x) / count;
+
+            if (!(advance > 0)) return;
+
+            tileWidths[index] = advance;
+
+            row.style.setProperty(
+                "--slide-distance",
+                `${(advance * count).toFixed(3)}px`
+            );
+            row.style.setProperty(
+                "--row-duration",
+                `${(count * ROWS[index].secondsPerTile).toFixed(2)}s`
+            );
+
+            const viewportTiles = Math.ceil(window.innerWidth / advance);
+
+            // Under reduced motion the wall never travels, so a tile past the
+            // window will never be seen and must not be downloaded.
+            const loadedUpTo = Math.min(
+                count,
+                window.matchMedia("(prefers-reduced-motion: reduce)").matches
+                    ? viewportTiles + 1
+                    : viewportTiles + LOAD_AHEAD
+            );
+
+            // Only the tiles that can actually be in the first viewport are
+            // fetched now; the rest of the row follows once it has almost
+            // arrived on screen.
+            for (let position = 0; position < count; position++) {
+                mountPair(
+                    row,
+                    count,
+                    position,
+                    rowState[index][position],
+                    position < loadedUpTo
+                );
+            }
+
+            [...row.children].forEach((tile, tileIndex) => {
+                tile.querySelectorAll("img").forEach(img => {
+                    img.setAttribute(
+                        "fetchpriority",
+                        tileIndex <= viewportTiles ? "high" : "low"
+                    );
+                });
+            });
+
+            // Restart so the row re-reads its new custom properties.
+            row.style.animation = "none";
+            void row.offsetWidth;
+            row.style.animation = "";
+        });
+
+        // Photographs held back on tiles that are not close to the window
+        // yet are fetched as those tiles come near.
+        mountApproaching();
+        startMountWatcher();
+    }
+
+    function createTile() {
+        const cell = document.createElement("div");
+        const stack = document.createElement("div");
+
+        cell.className = "image-tile";
+        stack.className = "tile-stack";
+
+        // A negative delay starts every tile part way through its cycle, so
+        // the wall is already changing on the first painted frame.
+        stack.style.setProperty(
+            "--churn-delay",
+            `${(-Math.random() * CHURN_SECONDS).toFixed(2)}s`
+        );
+
+        for (let slot = 0; slot < 2; slot++) {
+            const img = document.createElement("img");
+
+            img.alt = "";
+            img.draggable = false;
+            // Eager on purpose: the second photograph is clipped out of its
+            // tile until the churn slides it in, and lazy loading never
+            // notices that move because it happens in a transform. Whether
+            // it is fetched at all is decided by JavaScript instead.
+            img.loading = "eager";
+            img.decoding = "async";
+
+            stack.appendChild(img);
+        }
+
+        cell.appendChild(stack);
+
+        return cell;
+    }
+
+    let lastSwap = 0;
+
+    // A tile that has just finished showing both of its photographs is the
+    // cheapest moment to hand it a new pair - but only if neither copy of it
+    // can be seen, which is checked against the live layout.
+    function redealIfHidden(event) {
+        if (event.animationName !== "slide-up-next" ||
+            event.target.className !== "tile-stack") return;
+
+        if (Date.now() - lastSwap < SWAP_INTERVAL) return;
+
+        // Every photograph in the pool has already been mounted at least
+        // once, so there is nothing left to show.
+        if (everDealt.size >= photos.length) return;
+
+        // A wall nobody is looking at has no reason to keep downloading.
+        const wall = mosaic.getBoundingClientRect();
+
+        if (wall.bottom <= 0 || wall.top >= window.innerHeight) return;
+
+        const row = event.target.closest(".image-row");
+        const index = row ? [...mosaic.children].indexOf(row) : -1;
+        const pairs = rowState[index];
+        const advance = tileWidths[index];
+
+        if (!pairs || !(advance > 0)) return;
+
+        // The track is the row's sequence twice over, so position is counted
+        // against the number of pairs that are actually mounted.
+        const count = pairs.length;
+        const tile = event.target.parentElement;
+        const position = [...row.children].indexOf(tile) % count;
+        const other = row.children[count + position];
+
+        if (!other || !isHidden(tile, advance) || !isHidden(other, advance)) return;
+
+        // Deal before retiring so the fresh pair cannot be one of the two
+        // photographs that are still on the wall.
+        const fresh = dealPair();
+
+        retirePair(pairs[position]);
+        pairs[position] = fresh;
+        mountPair(row, count, position, fresh, true);
+        lastSwap = Date.now();
+    }
+
+    function buildMosaic() {
+        if (!mosaic) return;
+
+        const count = tilesPerCopy();
+
+        mosaic.textContent = "";
+        sequence = shuffled(photos);
+        cursor = 0;
+        live.clear();
+        everDealt.clear();
+        rowState = [];
+
+        clearInterval(mountTimer);
+        mountTimer = null;
+
+        ROWS.forEach((config, index) => {
+            const row = document.createElement("div");
+            const pairs = [];
+
+            row.className =
+                `image-row ${config.direction === "right" ? "row-right" : "row-left"}`;
+
+            for (let position = 0; position < count; position++) {
+                pairs.push(dealPair());
+                row.appendChild(createTile());
+            }
+
+            // The second copy is the same pairs in the same order, which is
+            // what the loop restart lands on.
+            for (let position = 0; position < count; position++) {
+                row.appendChild(createTile());
+            }
+
+            rowState[index] = pairs;
+            mosaic.appendChild(row);
+        });
+
+        applyTrackMetrics();
+    }
+
+    buildMosaic();
+
+    if (mosaic) {
+        mosaic.addEventListener("animationiteration", redealIfHidden);
+    }
+
+    if (!syncChromeMetrics() && headerSlot) {
+        const headerWatcher = new MutationObserver(() => {
+            if (syncChromeMetrics()) {
+                headerWatcher.disconnect();
+                applyTrackMetrics();
+            }
+        });
+
+        headerWatcher.observe(headerSlot, { childList: true, subtree: true });
+    }
+
+    let mosaicResizeTimer;
+
+    window.addEventListener("resize", () => {
+        clearTimeout(mosaicResizeTimer);
+
+        mosaicResizeTimer = setTimeout(() => {
+            const built = mosaic && mosaic.firstElementChild
+                ? mosaic.firstElementChild.children.length / 2
+                : 0;
+
+            syncChromeMetrics();
+
+            if (built !== tilesPerCopy()) buildMosaic();
+            else applyTrackMetrics();
+        }, 200);
+    });
+
+    // HOMEPAGE TESTIMONIALS CAROUSEL
+    (function () {
+        const carousel = document.querySelector("[data-testimonials]");
+        const track = document.getElementById("testimonials-track");
+        if (!carousel || !track) return;
+
+        // Cards can be swapped in by testimonials-live.js once the approved
+        // feed answers, so the list is re-read on every measure rather than
+        // captured once here.
+        let cards = Array.from(track.children);
+        if (!cards.length) return;
+
+        const dotsWrap = carousel.querySelector("[data-testimonials-dots]");
+        const status = carousel.querySelector("[data-testimonials-status]");
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+        // Mid-point of the requested 5-7 second window.
+        const ROTATE_MS = 6000;
+
+        let perView = 1;
+        let lastIndex = 0;
+        let index = 0;
+        let timer = null;
+        let dots = [];
+        // Several things can want the rotation paused at once (hover, focus,
+        // a hidden tab). Counting the reasons means leaving one pause source
+        // cannot switch the timer back on while another still holds it, and
+        // there is ever exactly one interval.
+        const pauses = new Set();
+
+        function trackNumber(variableName) {
+            return parseFloat(getComputedStyle(track).getPropertyValue(variableName)) || 0;
+        }
+
+        // Distance the track travels for one step: one card plus one gap.
+        function stepWidth() {
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            const first = cards[0];
+            return first ? first.getBoundingClientRect().width + gap : 0;
+        }
+
+        function measure() {
+            cards = Array.from(track.children);
+            perView = Math.max(1, Math.round(trackNumber("--t-per-view")));
+            lastIndex = Math.max(0, cards.length - perView);
+            index = Math.min(index, lastIndex);
+            carousel.dataset.singleView = lastIndex === 0 ? "true" : "false";
+            carousel.dataset.reducedMotion = reducedMotion.matches ? "true" : "false";
+            buildDots();
+        }
+
+        function buildDots() {
+            const wanted = lastIndex + 1;
+            if (dots.length === wanted) return;
+            dotsWrap.textContent = "";
+            dots = [];
+            for (let position = 0; position < wanted; position++) {
+                const dot = document.createElement("button");
+                dot.type = "button";
+                dot.className = "testimonials-dot";
+                dot.setAttribute("aria-label", "Show testimonials starting at " + (position + 1));
+                dot.setAttribute("aria-controls", "testimonials-track");
+                dot.addEventListener("click", function () {
+                    goTo(position);
+                    restart();
+                });
+                dotsWrap.appendChild(dot);
+                dots.push(dot);
+            }
+        }
+
+        function paint(immediate) {
+            if (immediate) {
+                track.style.transition = "none";
+            }
+            track.style.transform = "translate3d(" + (-index * stepWidth()) + "px, 0, 0)";
+            if (immediate) {
+                void track.offsetWidth;
+                track.style.transition = "";
+            }
+            dots.forEach(function (dot, position) {
+                if (position === index) {
+                    dot.setAttribute("aria-current", "true");
+                } else {
+                    dot.removeAttribute("aria-current");
+                }
+            });
+            const first = index + 1;
+            const last = Math.min(index + perView, cards.length);
+            status.textContent = "Showing testimonials " + first + " to " + last + " of " + cards.length;
+        }
+
+        function goTo(next) {
+            index = Math.min(Math.max(next, 0), lastIndex);
+            paint(false);
+        }
+
+        function stop() {
+            if (!timer) return;
+            clearInterval(timer);
+            timer = null;
+        }
+
+        function start() {
+            stop();
+            if (lastIndex === 0 || pauses.size > 0 || reducedMotion.matches) return;
+            timer = setInterval(function () {
+                // Hold position while the group is scrolled out of view
+                // instead of burning cycles nobody can see. A synchronous
+                // rect test is used rather than IntersectionObserver because
+                // observer notifications are tied to rendering frames and
+                // can arrive too late to restart the timer.
+                const box = carousel.getBoundingClientRect();
+                if (box.bottom <= 0 || box.top >= window.innerHeight) return;
+                // Step forward, wrapping back to the first group after the last.
+                goTo(index >= lastIndex ? 0 : index + 1);
+            }, ROTATE_MS);
+        }
+
+        function restart() {
+            // Re-arm so a manual click does not inherit the old countdown.
+            start();
+        }
+
+        function setPause(reason, on) {
+            if (on) {
+                pauses.add(reason);
+            } else {
+                pauses.delete(reason);
+            }
+            on ? stop() : start();
+        }
+
+        carousel.addEventListener("mouseenter", function () { setPause("hover", true); });
+        carousel.addEventListener("mouseleave", function () { setPause("hover", false); });
+        carousel.addEventListener("focusin", function () { setPause("focus", true); });
+        carousel.addEventListener("focusout", function () { setPause("focus", false); });
+        document.addEventListener("visibilitychange", function () {
+            setPause("hidden", document.hidden);
+        });
+
+        const previous = carousel.querySelector("[data-testimonials-prev]");
+        const following = carousel.querySelector("[data-testimonials-next]");
+        if (previous) {
+            previous.addEventListener("click", function () {
+                goTo(index <= 0 ? lastIndex : index - 1);
+                restart();
+            });
+        }
+        if (following) {
+            following.addEventListener("click", function () {
+                goTo(index >= lastIndex ? 0 : index + 1);
+                restart();
+            });
+        }
+
+        carousel.addEventListener("keydown", function (event) {
+            if (event.key === "ArrowLeft") {
+                event.preventDefault();
+                goTo(index <= 0 ? lastIndex : index - 1);
+                restart();
+            } else if (event.key === "ArrowRight") {
+                event.preventDefault();
+                goTo(index >= lastIndex ? 0 : index + 1);
+                restart();
+            }
+        });
+
+        reducedMotion.addEventListener("change", function () {
+            carousel.dataset.reducedMotion = reducedMotion.matches ? "true" : "false";
+            start();
+        });
+
+        let resizeTimer = null;
+        window.addEventListener("resize", function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                const before = lastIndex;
+                measure();
+                // Re-place the track without animating, otherwise a resize
+                // looks like a slide and can expose blank space at the end.
+                paint(before !== lastIndex);
+            }, 180);
+        });
+
+        document.addEventListener("kwetu:testimonials-updated", function () {
+            measure();
+            // Re-place without animating: the new set is a different length, so
+            // sliding into it would look like a glitch.
+            paint(true);
+            start();
+        });
+
+        measure();
+        paint(false);
+        start();
+    })();
+  </script>
+
+
+
+  <script src="script.js"></script>
+  <script src="cookie-consent.js"></script>
+
+  <!-- Approved testimonials, replaced only when the review screen has published some -->
+  <script src="testimonials-live.js" data-testimonial-feed="backend/approved-testimonials.php" defer></script>
+
+</body>
+
+</html>

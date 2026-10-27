@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Placeholder mark: the header logo is text (KWETU off-white, gold dot,
+       CREATIONS red). Replace with the real logo file when it is supplied. -->
+  <rect width="64" height="64" rx="12" fill="#151515"/>
+  <text x="30" y="45" text-anchor="middle" fill="#F5F3EF"
+        font-family="Poppins, 'Helvetica Neue', Arial, sans-serif"
+        font-size="40" font-weight="700">K</text>
+  <circle cx="47" cy="43" r="5" fill="#B5122A"/>
+</svg>

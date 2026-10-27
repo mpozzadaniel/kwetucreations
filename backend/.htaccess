@@ -1,0 +1,19 @@
+# kwetucreations enquiry backend
+#
+# Deny by default, then allow only the endpoints the site is meant to reach.
+# Everything else in this folder — the database login, the admin password
+# hash, the plumbing, the schema, the uploaded files — is refused even if
+# someone guesses the name.
+
+Require all denied
+
+<FilesMatch "^(csrf-token|submit-testimonial|submit-enquiry|approved-testimonials)\.php$">
+    Require all granted
+</FilesMatch>
+
+Options -Indexes
+
+# On nginx this file does nothing. The equivalent there is to allow only those
+# four endpoints and return 404 for the rest of /backend/, and ideally to
+# keep backend/local-config.php and backend/admin-hash.php outside the
+# document root altogether.

@@ -1,0 +1,16 @@
+# kwetucreations build tools
+#
+# Nothing in this folder is a page. set-domain.php rewrites the site's own
+# canonical blocks and writes robots.txt and sitemap.xml, and audit-report.txt
+# holds the findings of a security review. None of that belongs to a visitor,
+# so the whole folder is refused and there is no allowlist underneath it.
+#
+# The files are run from a terminal:  php tools/set-domain.php https://example.com
+
+Require all denied
+Options -Indexes
+
+# On nginx this file does nothing. The equivalent there is
+#     location /tools/ { return 404; }
+# and the safest arrangement of all is to keep this folder outside the
+# document root, so a web address cannot name it.

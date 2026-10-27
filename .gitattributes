@@ -1,0 +1,8 @@
+# Every file in this project is written with LF line endings and the whole
+# verification workflow for it is byte-level (md5-matched copies in
+# pre-fix-files/, diff-vs-backup before and after each edit). The Git build on
+# this machine turns core.autocrlf on in its system config, which would rewrite
+# the working copy to CRLF the next time Git checks files out and make every
+# future diff - and every hash comparison - show all churn. Turning conversion
+# off keeps the bytes in the repository identical to the bytes Apache serves.
+* -text

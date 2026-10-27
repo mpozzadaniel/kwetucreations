@@ -1,0 +1,171 @@
+# kwetucreations — site root
+#
+# Two files in this folder look like a homepage and only one of them is.
+# index3.html holds the real page; index.html is an early stub. Visitors were
+# landing on the stub because Apache serves index.html for a bare folder
+# address, so the order below names the real page first, and the redirect
+# makes the long addresses settle onto the short one.
+#
+# Nothing is renamed or deleted: both files stay on disk, every existing link
+# to index3.html or index.html still arrives at the homepage, and each page's
+# own title, description and structured data are untouched.
+
+DirectoryIndex index3.html index.html
+
+# Asking for /index.html or /index3.html directly returns the folder instead,
+# so the site has one home address rather than three that show the same page.
+# The rule is relative, so it behaves the same from a subfolder on this
+# machine (http://localhost/kwetu/) and from the domain root in production.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # %1 is whatever comes before the file name in the address the browser
+    # actually asked for, so this lands on /kwetu/ here and on / in
+    # production without a hard-coded base path.
+    RewriteCond "%{THE_REQUEST}" "^[A-Z]{3,}\s(/[^ ?]*)index[3]?\.html[\s?]"
+    RewriteRule "^index[3]?\.html$" "%1" [R=301,L]
+
+    # Plain HTTP is sent to the encrypted site, but only for a public host
+    # name. localhost and the private ranges (this machine, and a phone on
+    # the same wifi) are left alone, because no certificate is valid for them
+    # and a redirect there would simply refuse the connection.
+    RewriteCond "%{HTTPS}" !=on
+    RewriteCond "%{HTTP:X-Forwarded-Proto}" !https [NC]
+    RewriteCond "%{HTTP_HOST}" !^(localhost|127\.[0-9]+\.[0-9]+\.[0-9]+)(:[0-9]+)?$ [NC]
+    RewriteCond "%{HTTP_HOST}" !^(10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|::1) [NC]
+    RewriteRule "^" "https://%{HTTP_HOST}%{REQUEST_URI}" [R=301,L]
+</IfModule>
+
+# No folder listing: with this off, a visitor could read the file names in
+# images/ and includes/ by asking for the folder.
+Options -Indexes
+
+# The site's own not-found page, addressed from the domain root. That is where
+# this file goes when the site launches, and it arrives with a genuine 404
+# status, which is what a search engine needs to be told.
+ErrorDocument 404 /404.html
+
+# On this machine the site lives in a /kwetu/ subfolder, and an ErrorDocument
+# path is always measured from the server's document root, so "/404.html"
+# points at C:/xampp/htdocs here rather than at this project. Apache answers a
+# missing address with its plain grey page.
+#
+# The rule below is the local workaround, and it is deliberately narrow: it
+# only ever matches an address that starts with /kwetu/ and looks like a page,
+# so a missing stylesheet, image or script still produces an honest 404 here
+# instead of hiding behind the not-found HTML. On a domain root the condition
+# never matches and the ErrorDocument above stays in charge. The one trade-off
+# is that a missed page address inside the subfolder is answered with status
+# 200 rather than 404 — a display-only difference, and localhost is not
+# something a search engine indexes.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond "%{REQUEST_URI}" "^/kwetu/"
+    RewriteCond "%{REQUEST_FILENAME}" !-f
+    RewriteCond "%{REQUEST_FILENAME}" !-d
+    RewriteCond "%{REQUEST_URI}" "!^/kwetu/404\.html$"
+    RewriteCond "%{REQUEST_URI}" "!.(css|js|mjs|json|map|png|jpe?g|gif|webp|avif|svg|ico|woff2?|ttf|otf|php|txt|xml|md|sql)$" [OR]
+    RewriteCond "%{REQUEST_URI}" "\.html$"
+    RewriteRule ".+" "/kwetu/404.html" [L]
+</IfModule>
+
+# Headers every response carries. Each one is guarded, so a host without
+# mod_headers ignores the block rather than failing on it.
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    # Only ever sent on an encrypted answer; a plain-HTTP one would be ignored.
+    Header always set Strict-Transport-Security "max-age=31536000" env=HTTPS
+</IfModule>
+
+# Files that are part of the project rather than pages of the site. backend/
+# already refuses everything inside itself; this covers the rest of the tree,
+# so a stray schema.sql, a .bak left by an editor or a note in .md form cannot
+# be read through a web address.
+<FilesMatch "\.(sql|md|log|bak|old|orig|ini|sh|jsonl|ya?ml|env)$">
+    Require all denied
+</FilesMatch>
+
+# How long a browser may keep a copy before it asks again. This changes no
+# page, no image and no layout: it only tells the visitor's browser that a
+# file it already downloaded is still fresh, so a second visit to the site
+# costs almost nothing instead of re-questioning every one of the 80+ photos
+# the homepage shows.
+#
+# A page is never cached (no-cache means "always ask, and we answer 304 Not
+# Modified when nothing changed"), so an edit shows up on the next reload.
+# Photos are the bulk of the site and their file names change when a picture
+# is replaced, so they may be kept for a month. Styles and scripts sit in
+# between, and are deliberately short: a fix here should not take a month to
+# reach someone who already visited.
+#
+# Nothing here touches the admin download screen or the approved-reviews feed.
+# Both are .php, so the blocks below never match them, and each already sends
+# its own "no-store" from PHP.
+#
+# Styles and scripts are revalidated on every load rather than kept for a set
+# time. A day of freshness on shared.css meant a colour fix sat invisible for
+# hours: the browser asked for the file zero times, so no reload could pick it
+# up. A revalidation costs one "304 Not Modified" of a few hundred bytes, and
+# a changed file reaches everyone on their next reload.
+<IfModule mod_headers.c>
+    <FilesMatch "\.(webp|avif|jpe?g|png|gif|svg|ico|woff2|woff|ttf)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+    <FilesMatch "\.(css|js|mjs)$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+    <FilesMatch "\.html?$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+</IfModule>
+
+# Compressing the text of the site before it travels: the homepage's own HTML
+# is 86 KB and would arrive as about 20 KB. Pictures are left out on purpose —
+# a .webp is already compressed, and squeezing it again only spends CPU.
+#
+# Two guards, not one, and this is the reason. Apache 2.4 takes the
+# AddOutputFilterByType command from mod_filter, not from mod_deflate, so a
+# server that loaded deflate but not filter would not recognise the command at
+# all and would answer every request on the site with HTTP 500. That happened
+# on this machine on 2026-10-22 the moment deflate was switched on, and the
+# nested guard below is what keeps it from happening again: the block needs
+# both modules present before it says anything at all.
+<IfModule mod_filter.c>
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE application/xml application/rss+xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+    # A cached compressed copy must never be handed to a browser that cannot
+    # read it, so the cache is told to keep the two answers apart.
+    Header append Vary Accept-Encoding
+</IfModule>
+</IfModule>
+
+# This second block is what is running on XAMPP today, and it exists because
+# mod_filter — not mod_deflate — is the module that was missing. SetOutputFilter
+# comes from Apache's core, so it works with deflate alone, and it is pointed at
+# file types rather than MIME types to keep pictures out of it.
+#
+# The `!mod_filter.c` guard makes this block go quiet by itself the moment
+# mod_filter is loaded, so the block above takes over and the same response is
+# never passed through DEFLATE twice. Only one of the two is ever live.
+<IfModule !mod_filter.c>
+<IfModule mod_deflate.c>
+    <FilesMatch "\.(html?|css|js|json|svg|txt)$">
+        SetOutputFilter DEFLATE
+    </FilesMatch>
+    <IfModule mod_headers.c>
+        Header append Vary Accept-Encoding
+    </IfModule>
+</IfModule>
+</IfModule>
+
+# No content-security-policy here on purpose. Every page in this site uses
+# inline style attributes and inline scripts, so a header restricting them
+# would blank the layouts out. Adding one means first moving those handlers
+# into files, which is a change of its own.
+

@@ -1,0 +1,973 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#151515">
+  <title>Request a Quote | Signage &amp; Branding Projects</title>  <!-- SEO:BEGIN -->
+  <meta name="description" content="Tell Kwetu Creations about your signage, branding, laser cutting or interior project. Share sizes, materials and artwork for an accurate quote.">
+  <!-- SEO:DOMAIN: tools/set-domain.php inserts the canonical link, og:url and og:image here -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kwetu Creations">
+  <meta property="og:locale" content="en_UG">
+  <meta property="og:title" content="Request a Quote | Signage &amp; Branding Projects">
+  <meta property="og:description" content="Tell Kwetu Creations about your signage, branding, laser cutting or interior project. Share sizes, materials and artwork for an accurate quote.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Request a Quote | Signage &amp; Branding Projects">
+  <meta name="twitter:description" content="Tell Kwetu Creations about your signage, branding, laser cutting or interior project. Share sizes, materials and artwork for an accurate quote.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo/favicon-32.png?v=4">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png?v=3">
+  <!-- SEO:END -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/shared.css">
+  
+      <link rel="preload" as="style"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </noscript>
+
+  <style>
+    :root {
+      --red: #B5122A;
+      --red-dark: #8F0E21;
+      --gold: #C6A56B;
+      --white: #F5F3EF;
+      --black: #151515;
+      --panel: #202020;
+      --line: #383838;
+      --muted: #B8B8B8;
+    }
+
+    * {
+      box-sizing: border-box;   
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      font: inherit;
+    }
+
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* HEADER */
+
+    .topbar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px clamp(16px, 5vw, 70px);
+      border-bottom: 1px solid #292929;
+      background: rgba(11, 11, 11, .97);
+    }
+
+    .brand {
+      font-size: clamp(15px, 2vw, 19px);
+      font-weight: 800;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--red);
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 10px 15px;
+      border: 1px solid #555;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .2s ease;
+      white-space: nowrap;
+    }
+
+    .back:hover {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    /* PAGE INTRODUCTION */
+
+    .page {
+      width: min(1120px, 92%);
+      margin: calc(var(--nav-h, 76px) + 26px) auto 70px;
+    }
+
+    .eyebrow {
+      margin-bottom: 12px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-bottom: 16px;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -1.8px;
+      overflow-wrap: anywhere;
+    }
+
+    h1 span {
+      color: var(--red);
+    }
+
+    .intro {
+      max-width: 690px;
+      margin-bottom: 34px;
+      color: #c5c5c5;
+      font-size: 15px;
+    }
+
+    /* MAIN LAYOUT */
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(250px, .8fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      min-width: 0;
+      padding: clamp(18px, 3vw, 32px);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    h2 {
+      margin-bottom: 6px;
+      font-size: 21px;
+      line-height: 1.3;
+    }
+
+    .sub {
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* FORM */
+
+    .form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .35px;
+    }
+
+    .required {
+      color: var(--gold);
+    }
+
+    input,
+    select,
+    textarea {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      padding: 13px 14px;
+      border: 1px solid #454545;
+      border-radius: 5px;
+      background: #101010;
+      color: var(--white);
+      font-size: 14px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #858585;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--gold);
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(198, 165, 107, .15);
+    }
+
+    select {
+      cursor: pointer;
+    }
+
+    select option {
+      background: #101010;
+      color: var(--white);
+    }
+
+    textarea {
+      min-height: 135px;
+      resize: vertical;
+    }
+
+    /* FILE UPLOAD */
+
+    .upload-box {
+      padding: 18px;
+      border: 1px dashed #686868;
+      border-radius: 7px;
+      background: #171717;
+    }
+
+    .upload-title {
+      margin-bottom: 5px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .hint,
+    small {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .upload-box input[type="file"] {
+      margin: 14px 0 10px;
+      padding: 12px;
+      border: 1px dashed #555;
+      background: #101010;
+      cursor: pointer;
+    }
+
+    .file-list {
+      margin-top: 8px;
+      overflow-wrap: anywhere;
+      color: var(--gold);
+    }
+
+    /* SUBMIT */
+
+    .submit {
+      grid-column: 1 / -1;
+      width: 100%;
+      min-height: 50px;
+      padding: 14px 20px;
+      border: 1px solid var(--red);
+      border-radius: 5px;
+      background: var(--red);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .submit:hover {
+      background: var(--red-dark);
+      border-color: var(--gold);
+    }
+
+    .status {
+      grid-column: 1 / -1;
+      min-height: 20px;
+      color: var(--gold);
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    /* COMPANY DETAILS */
+
+    .business-card {
+      position: sticky;
+      top: 20px;
+    }
+
+    .business-card h2 {
+      font-size: 23px;
+    }
+
+    .tagline {
+      margin-bottom: 24px;
+      color: #c4c4c4;
+      font-size: 13px;
+    }
+
+    .accent-line {
+      width: 48px;
+      height: 4px;
+      margin: 16px 0 18px;
+      background: var(--red);
+    }
+
+    .detail {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .detail strong {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Each glyph in the colour people already read it as — pin red, call green,
+       WhatsApp's own green. The heading text stays gold; two classes and the
+       element beat the single gold rule above, which the glyph inherits. */
+    .detail strong .fa-map-marker-alt {
+      color: #EA4335;
+    }
+
+    .detail strong .fa-phone-alt {
+      color: #34A853;
+    }
+
+    .detail strong .fa-whatsapp {
+      color: #25D366;
+    }
+
+    .detail span {
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+   
+
+    /* TABLETS */
+
+    @media (max-width: 850px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .business-card {
+        position: static;
+      }
+
+      .page {
+        margin-top: calc(var(--nav-h, 76px) + 24px);
+      }
+
+      .business-card .detail {
+        padding: 13px 0;
+      }
+    }
+
+    /* MOBILE PHONES */
+
+    @media (max-width: 560px) {
+      .topbar {
+        padding: 15px 4%;
+        gap: 10px;
+      }
+
+      .brand {
+        font-size: 14px;
+        letter-spacing: .4px;
+      }
+
+      .back {
+        padding: 9px 10px;
+        font-size: 11px;
+      }
+
+      .page {
+        width: 92%;
+        margin: calc(var(--nav-h, 76px) + 22px) auto 45px;
+      }
+
+      h1 {
+        font-size: clamp(34px, 9vw, 46px);
+        letter-spacing: -1px;
+      }
+
+      .intro {
+        margin-bottom: 24px;
+        font-size: 14px;
+      }
+
+      .layout {
+        gap: 18px;
+      }
+
+      .panel {
+        padding: 19px 15px;
+        border-radius: 8px;
+      }
+
+      .form {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 17px;
+      }
+
+      .field.full,
+      .submit,
+      .status {
+        grid-column: auto;
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 13px 12px;
+        font-size: 16px;
+      }
+
+      .upload-box {
+        padding: 14px 12px;
+      }
+
+      .upload-box input[type="file"] {
+        font-size: 13px;
+      }
+
+      .submit {
+        min-height: 50px;
+      }
+
+      .business-card h2 {
+        font-size: 21px;
+      }
+    }
+
+    @media (max-width: 350px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .back {
+        align-self: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+ <div id="site-header">
+  <!-- KWETU:CHROME:SITE-HEADER:BEGIN -->
+  <header class="navbar">
+      <a href="./" class="logo">
+          <img class="logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+          <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+          <span class="logo-creations">CREATIONS</span>
+      </a>
+  
+      <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="main-navigation"
+          aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+  
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+          <a href="./" data-page="index3.html">Home</a>
+          <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+          <a href="services.html" data-page="services.html">Services</a>
+          <a href="about.html" data-page="about.html">About Us</a>
+         <a href="contact.html" data-page="contact.html">Contact Us</a>
+          <a href="quote-request.html" class="nav-quote" data-page="quote-request.html">Get a Quote ↗</a>
+          
+      </nav>
+  </header>
+  <!-- KWETU:CHROME:SITE-HEADER:END -->
+</div>
+  <main class="page">
+    <p class="eyebrow">Let's work together</p>
+
+    <h1>Request a <span>Quote.</span></h1>
+
+    <p class="intro">
+      Tell us about your project and attach any reference files,
+      existing logos, sketches, or design documents. Our team can
+      then review your requirements and follow up.
+    </p>
+
+    <div class="layout">
+      <section class="panel">
+        <h2>Project details</h2>
+        <p class="sub">Fields marked * are required.</p>
+
+        <form
+          class="form"
+          id="quoteForm"
+          action="#"
+          method="post"
+          enctype="multipart/form-data"
+          data-form-guard
+          data-endpoint="backend/submit-enquiry.php"
+          data-csrf-endpoint="backend/csrf-token.php"
+          data-recipient="info@kwetucreations.com"
+          data-subject="Quote request - Kwetu Creations"
+        >
+          <input type="hidden" name="kind" value="quote">
+
+          <!-- Bot trap. A person never sees or fills this. -->
+          <div class="guard-trap" aria-hidden="true">
+            <label for="quote-website">Company website</label>
+            <input type="text"
+              id="quote-website"
+              name="company_website"
+              tabindex="-1"
+              autocomplete="off"
+            >
+          </div>
+
+          <div class="field">
+            <label for="clientName">
+              YOUR FULL NAME <span class="required">*</span>
+            </label>
+            <input
+              id="clientName"
+              name="clientName"
+              type="text"
+              required
+              autocomplete="name"
+              placeholder="Enter your full name"
+            >
+          </div>
+
+          <div class="field">
+            <label for="clientBusiness">
+              YOUR BUSINESS NAME <span class="required">*</span>
+            </label>
+            <input
+              id="clientBusiness"
+              name="clientBusiness"
+              type="text"
+              required
+              autocomplete="organization"
+              placeholder="Your business or organisation"
+            >
+          </div>
+
+          <div class="field">
+            <label for="clientEmail">
+              YOUR EMAIL ADDRESS <span class="required">*</span>
+            </label>
+            <input
+              id="clientEmail"
+              name="clientEmail"
+              type="email"
+              required
+              autocomplete="email"
+              placeholder="you@example.com"
+            >
+          </div>
+
+          <div class="field">
+            <label for="clientPhone">
+              YOUR CONTACT NUMBER <span class="required">*</span>
+            </label>
+            <input
+              id="clientPhone"
+              name="clientPhone"
+              type="tel"
+              required
+              autocomplete="tel"
+              placeholder="e.g. +256 7XX XXX XXX"
+            >
+          </div>
+
+          <div class="field full">
+            <label for="clientAddress">YOUR BUSINESS ADDRESS</label>
+            <input
+              id="clientAddress"
+              name="clientAddress"
+              type="text"
+              autocomplete="street-address"
+              placeholder="Business location or address"
+            >
+          </div>
+
+          <div class="field full">
+            <label for="service">
+              SERVICE REQUIRED <span class="required">*</span>
+            </label>
+            <select id="service" name="service" required>
+              <option value="">Choose a service</option>
+              <option value="Logo and brand identity">Logo and brand identity</option>
+              <option value="Signage and door stickers">Signage and door stickers</option>
+              <option value="Website design">Website design</option>
+              <option value="Printing and graphic design">Printing and graphic design</option>
+              <option value="Marketing materials">Marketing materials</option>
+              <option value="Other creative project">Other creative project</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="projectDetails">
+              PROJECT DESCRIPTION <span class="required">*</span>
+            </label>
+            <textarea
+              id="projectDetails"
+              name="projectDetails"
+              required
+              placeholder="Describe what you need, quantities, dimensions, preferred colours, deadline, and other useful details."
+            ></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="designFiles">UPLOAD RELEVANT DESIGN FILES</label>
+
+            <div class="upload-box">
+              <p class="upload-title">Attach your project files</p>
+
+              <p class="hint">
+                Choose reference images, logos, sketches, PDFs, or
+                design files from your device.
+              </p>
+
+              <input
+                id="designFiles"
+                name="designFiles[]"
+                type="file"
+                multiple
+                accept=".jpg,.jpeg,.png,.webp,.pdf,.svg,.ai,.eps,.psd,.zip,.doc,.docx"
+                aria-describedby="fileHelp fileList"
+              >
+
+              <p class="hint" id="fileHelp">
+                You can select up to 4 files, 8 MB each. A file is checked
+                against its own contents, so renaming something else to look
+                like one of these types will not get it through. Only upload
+                files you are authorised to share.
+              </p>
+
+              <p class="hint file-list" id="fileList" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <button class="submit" type="submit">
+            Send Quote Request
+          </button>
+
+          <p class="status" id="quoteMessage" role="status" aria-live="polite" data-form-status>
+            Your request and any files you attach are stored on our own
+            server for the team to read. Nothing here is published, and
+            nothing replies to you automatically — if you need an answer
+            quickly, call us on +256 787 738 999.
+          </p>
+        </form>
+      </section>
+
+      <aside class="panel business-card">
+        <p class="eyebrow">Contact details</p>
+
+        <h2>Kwetu Creations</h2>
+
+        <div class="accent-line"></div>
+
+        <p class="tagline">
+          Creative thinking. Exceptional execution.
+        </p>
+
+        <div class="detail">
+          <strong>Business name</strong>
+          <span>Kwetu Creations</span>
+        </div>
+
+        <div class="detail">
+          <strong>Business address <i class="fas fa-map-marker-alt" aria-hidden="true"></i></strong>
+          
+          <div class="contact-item">
+              
+
+              <address class="company-address">
+                  
+                  Freedom House, Level 6, Suite R-724<br>
+                  Nkurumah Road, Kampala Uganda<br>
+                  
+              </address>
+          </div>
+        </div>
+
+        <div class="detail">
+          <strong>Contact number  <i class="fas fa-phone-alt" aria-hidden="true"></i>
+          </strong>
+         <div class="contact-item">
+          
+
+          <div>
+              <strong>Call Us</strong><br>
+              <a href="tel:+256787738999" class="contact-link">
+                  +256 787 738 999
+            </a>
+    </div>
+</div>
+        </div>
+
+        <div class="detail">
+          <strong>Email address</strong>
+          <span><a href="mailto:info@kwetucreations.com" class="contact-link">info@kwetucreations.com</a></span>
+        </div>
+
+        <div class="detail">
+          <strong>WhatsApp <i class="fa-brands fa-whatsapp" aria-hidden="true"></i></strong>
+          <span><a href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                 target="_blank" rel="noopener" class="contact-link">+256 787 738 999</a></span>
+        </div>
+
+        <p class="related-links related-links--stacked">
+            <span>Before you send it:</span>
+            <a href="portfolio.html">Projects we have already delivered</a>
+            <a href="services.html">What we make and how</a>
+        </p>
+
+        
+      </aside>
+    </div>
+  </main>
+
+  <div id="site-footer">
+  <!-- KWETU:CHROME:SITE-FOOTER:BEGIN -->
+  <footer class="site-footer">
+  
+      <div class="footer-top">
+          <div class="footer-brand">
+              <a href="./" class="footer-logo">
+                  <img class="footer-logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+                  <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+                  <span class="logo-creations">CREATIONS</span>
+              </a>
+  
+              <p class="footer-tagline">
+                  Creative design. Precision production. Exceptional results.
+              </p>
+          </div>
+  
+          <div class="footer-explore">
+              <h3>EXPLORE</h3>
+              <a href="./" data-page="index3.html">Home</a>
+              <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+              <a href="services.html" data-page="services.html">Services</a>
+              <a href="about.html" data-page="about.html">About Us</a>
+              <a href="testimonials.html" data-page="testimonials.html">Client Reviews</a>
+              <a href="contact.html" data-page="contact.html">Contact Us</a>
+              <a href="quote-request.html" data-page="quote-request.html">Get a Quote</a>
+          </div>
+          <div class="footer-services">
+                  <h3>OUR SERVICES</h3>
+                  <a href="services.html#signage">Signage</a>
+                  <a href="services.html#branding">Branding &amp; Graphic Design</a>
+                  <a href="services.html#interiors">Interior Solutions</a>
+                  <a href="services.html#illuminated-signage">Illuminated Signage</a>
+                  <a href="services.html#fabrication">Fabrication</a>
+                  <a href="services.html#laser-cutting">Laser Cutting</a>
+                  <a href="services.html#large-format-printing">Large-Format Printing</a>
+                  <a href="services.html#web-design">Website Design &amp; Development</a>
+              </div>
+  
+              <div class="footer-contact">
+                  <h3>CONTACT US</h3>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <address>
+                      Freedom House, Level 6, Suite R-724<br>
+                      Nkurumah Road, Kampala, Uganda
+                     
+                  </address>
+              </div>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  <a href="tel:+256787738999">+256 787 738 999</a>
+              </div>
+              
+              <div class="footer-contact-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <a href="mailto:info@kwetucreations.com">
+                      info@kwetucreations.com
+                  </a>
+              </div>
+  
+          </div>
+  
+          <div class="footer-social">
+              <h3>CONNECT WITH US</h3>
+  
+              <div class="social-icons-container">
+                  <a class="icon-link whatsapp"
+                     href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener"
+                     aria-label="Message the studio on WhatsApp"
+                     title="Message the studio on WhatsApp">
+                      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                  </a>
+                  <span class="icon-link instagram" role="img"
+                        aria-label="Instagram" title="Instagram">
+                      <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link tiktok" role="img"
+                        aria-label="TikTok" title="TikTok">
+                      <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link linkedin" role="img"
+                        aria-label="LinkedIn" title="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link facebook" role="img"
+                        aria-label="Facebook" title="Facebook">
+                      <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                  </span>
+              </div>
+  
+              <p class="footer-social-note">
+                  Speak to the studio directly —
+                  <a href="mailto:info@kwetucreations.com">info@kwetucreations.com</a>,
+                  <a href="tel:+256787738999">+256 787 738 999</a>,
+                  or
+                  <a href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener">message us on WhatsApp</a>.
+                  All three reach the team, and a reply from us comes from a
+                  person, not a queue.
+              </p>
+  
+          </div>
+          
+      </div>
+  
+      <div class="footer-bottom">
+          <div class="footer-legal-links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <span>|</span>
+              <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+              <span>|</span>
+              <a href="cookie-policy.html">Cookie Policy</a>
+              <span>|</span>
+              <button type="button" data-cookie-settings
+                      aria-haspopup="dialog">Cookie Settings</button>
+          </div>
+  
+          <p class="footer-copyright">
+              &copy; <span id="year"></span>
+              <span class="footer-kwetu">Kwetu</span>
+              <span class="footer-creations">Creations</span>.
+              All rights reserved.
+          </p>
+  
+          <div class="footer-designer">
+              <span>Website designed by</span>
+              <strong>BYUMA DANIEL</strong>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mpozzadaniel@gmail.com"
+                 target="_blank" rel="noopener noreferrer">
+                  mpozzadaniel@gmail.com
+              </a>
+          </div>
+      </div>
+  
+  </footer>
+  <!-- KWETU:CHROME:SITE-FOOTER:END -->
+</div>
+
+  <script>
+    // The chosen files are listed so the visitor can see what they are
+    // about to send. The files go with the form — this line is only a
+    // running total, not an instruction to email them separately.
+    const fileInput = document.getElementById('designFiles');
+    const fileList = document.getElementById('fileList');
+
+    fileInput.addEventListener('change', function () {
+      const files = Array.from(this.files);
+
+      if (files.length === 0) {
+        fileList.textContent = '';
+        return;
+      }
+
+      const totalMB = (files.reduce(
+        (total, file) => total + file.size,
+        0
+      ) / (1024 * 1024)).toFixed(2);
+
+      fileList.textContent =
+        `${files.length} ${files.length === 1 ? 'file' : 'files'} chosen · ${totalMB} MB, sent with this form.`;
+    });
+  </script>
+
+  <script src="script.js"></script>
+  <script src="cookie-consent.js"></script>
+  <script src="form-guard.js"></script>
+</body>
+</html>

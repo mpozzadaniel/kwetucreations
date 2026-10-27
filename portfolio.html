@@ -1,0 +1,1456 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work | Signage &amp; Interior Projects | Kwetu Creations</title>  <!-- SEO:BEGIN -->
+  <meta name="description" content="Explore real Kwetu Creations projects: halo-lit and illuminated signage, totem pylons, shopfront branding, laser cutting, feature walls and office interiors.">
+  <!-- SEO:DOMAIN: tools/set-domain.php inserts the canonical link, og:url and og:image here -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kwetu Creations">
+  <meta property="og:locale" content="en_UG">
+  <meta property="og:title" content="Our Work | Signage &amp; Interior Projects | Kwetu Creations">
+  <meta property="og:description" content="Explore real Kwetu Creations projects: halo-lit and illuminated signage, totem pylons, shopfront branding, laser cutting, feature walls and office interiors.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Our Work | Signage &amp; Interior Projects | Kwetu Creations">
+  <meta name="twitter:description" content="Explore real Kwetu Creations projects: halo-lit and illuminated signage, totem pylons, shopfront branding, laser cutting, feature walls and office interiors.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo/favicon-32.png?v=4">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png?v=3">
+  <!-- SEO:END -->
+        <link rel="preload" as="style"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </noscript>
+
+    <style>
+        :root {
+            --red: #B5122A;
+            --dark-red: #8F0E21;
+            --gold: #C6A56B;
+            --white: #F5F3EF;
+            --black: #151515;
+            --soft-black: #202020;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        /* The navigation, its logo and the "Get a Quote" pill are styled by
+           css/shared.css for every page, so this page adds no nav rules of
+           its own — anything here used to override the shared mobile drawer. */
+
+        /* HERO */
+        .hero {
+            padding: 105px 7% 90px;
+            background: var(--black);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            border: 1px solid rgba(198, 165, 107, 0.25);
+            border-radius: 50%;
+            right: -110px;
+            bottom: -190px;
+            pointer-events: none;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            font-size: clamp(42px, 7vw, 88px);
+            line-height: 0.98;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--red);
+        }
+
+        .hero p {
+            max-width: 560px;
+            color: #c7c7c7;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .hero-line {
+            width: 65px;
+            height: 4px;
+            background: var(--gold);
+            margin-top: 32px;
+        }
+
+        /* PORTFOLIO SECTION */
+        .portfolio {
+            padding: 75px 7% 100px;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            color: #686868;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .category-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        .category-btn {
+            border: 1px solid #d4d0c8;
+            background: transparent;
+            color: var(--black);
+            padding: 13px 18px;
+            border-radius: 3px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--red);
+            border-color: var(--red);
+            color: white;
+        }
+
+        /* IMAGE GALLERY
+           Editorial masonry: every photograph keeps its own proportions
+           instead of being cropped to one tile size, and one full-width
+           statement tile leads the page. */
+        /* A grid, not a column flow: every tile in a row shares the row's
+           height, so the tiles line up on the same level instead of
+           staggering. The lead spans the full width above them. */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            margin: 0;
+            background: white;
+            border: 1px solid #e8e4dc;
+            cursor: pointer;
+            animation: appear 0.35s ease;
+        }
+
+        .project-card[hidden] {
+            display: none;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            background: #dedbd4;
+            transition: transform 0.4s;
+        }
+
+        /* One ratio for every tile is what lets the rows sit level; the
+           photograph is cropped to fit rather than left at its own height. */
+        .image-wrap {
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 4 / 3;
+            background: #dedbd4;
+        }
+
+        .image-wrap::after {
+            content: "VIEW PROJECT +";
+            position: absolute;
+            inset: auto 0 0;
+            padding: 18px;
+            color: white;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .project-card:hover .image-wrap::after {
+            opacity: 1;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.04);
+        }
+
+        /* Takes whatever height the row has left over so the cards in a row
+           finish at exactly the same line. */
+        .project-info {
+            flex: 1 1 auto;
+            padding: 20px;
+        }
+
+        .project-category {
+            color: var(--red);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 9px;
+        }
+
+        .project-info h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .project-info p {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .empty-message {
+            display: none;
+            color: #777;
+            padding: 40px 0;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* REQUEST A QUOTE */
+        .cta {
+            padding: 70px 7%;
+            background: var(--red);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .cta h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            max-width: 580px;
+            color: #f8e9eb;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--black);
+            padding: 16px 24px;
+            border-radius: 3px;
+            font-weight: 800;
+            font-size: 13px;
+            white-space: nowrap;
+            transition: 0.25s;
+        }
+
+        .cta-button:hover {
+            background: var(--gold);
+        }
+
+        /* IMAGE LIGHTBOX */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.93);
+            padding: 25px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox-content {
+            width: min(900px, 100%);
+            max-height: 90vh;
+            text-align: center;
+            position: relative;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 72vh;
+            object-fit: contain;
+        }
+
+        .lightbox h3 {
+            color: white;
+            margin-top: 15px;
+            font-size: 20px;
+        }
+
+        .lightbox p {
+            color: #ccc;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: -35px;
+            right: 0;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+       
+
+        /* TABLET */
+        @media (max-width: 950px) {
+            .hero,
+            .portfolio,
+            .cta {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .section-heading {
+                display: block;
+            }
+
+            .section-heading p {
+                margin-top: 10px;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .hero {
+                padding-top: calc(var(--nav-h, 76px) + 30px);
+                padding-bottom: 65px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .portfolio {
+                padding-top: 55px;
+                padding-bottom: 65px;
+            }
+
+            .category-buttons {
+                gap: 8px;
+            }
+
+            .category-btn {
+                padding: 11px 12px;
+                font-size: 11px;
+            }
+
+            .gallery {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 18px;
+            }
+
+            .cta {
+                align-items: flex-start;
+                flex-direction: column;
+                padding-top: 55px;
+                padding-bottom: 55px;
+            }
+
+           
+        }
+
+        /* Touch screens have no hover, so the "view project" cue stays on. */
+        @media (hover: none) {
+            .image-wrap::after {
+                opacity: 0.75;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/shared.css">
+    
+<style>
+    /* KWETU CREATIONS — OUR WORK THEME */
+
+    body {
+        background: #151515;
+        color: #F5F3EF;
+    }
+
+    .portfolio {
+        background: #151515;
+        color: #F5F3EF;
+    }
+
+    .section-heading h2 {
+        color: #F5F3EF;
+    }
+
+    .section-heading p {
+        color: rgba(245, 243, 239, 0.70);
+    }
+
+    .project-card {
+        background: #202020;
+        border: 1px solid #343434;
+        color: #F5F3EF;
+        transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .project-card:hover {
+        border-color: #C6A56B;
+        transform: translateY(-4px);
+    }
+
+    .project-info h3 {
+        color: #F5F3EF;
+    }
+
+    .project-info p {
+        color: rgba(245, 243, 239, 0.72);
+    }
+
+    .project-category {
+        color: #C6A56B;
+    }
+
+    .category-btn {
+        background: #202020;
+        color: #F5F3EF;
+        border-color: #444444;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+        background: #B5122A;
+        border-color: #B5122A;
+        color: #FFFFFF;
+    }
+
+    .empty-message {
+        color: rgba(245, 243, 239, 0.7);
+    }
+
+    .cta {
+        background: #202020;
+        color: #F5F3EF;
+        border-top: 1px solid #C6A56B;
+        border-bottom: 1px solid #343434;
+    }
+
+    .cta h2 {
+        color: #F5F3EF;
+    }
+
+    .cta p {
+        color: rgba(245, 243, 239, 0.75);
+    }
+
+    .cta-button {
+        background: #B5122A;
+        color: #FFFFFF;
+        border: 1px solid #B5122A;
+        transition: background 0.3s, border-color 0.3s;
+    }
+
+    .cta-button:hover {
+        background: #8F0E21;
+        border-color: #C6A56B;
+        color: #FFFFFF;
+    }
+
+    .image-wrap,
+    .project-image {
+        background: #202020;
+    }
+
+    .hero {
+        border-bottom: 1px solid rgba(198, 165, 107, 0.25);
+    }
+
+    .project-card:focus-visible {
+        outline: 2px solid #C6A56B;
+        outline-offset: 3px;
+    }
+
+    .lightbox-nav {
+        position: absolute;
+        top: 42%;
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(198, 165, 107, 0.55);
+        border-radius: 50%;
+        background: rgba(32, 32, 32, 0.85);
+        color: #F5F3EF;
+        font-size: 26px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .lightbox-nav:hover {
+        background: #B5122A;
+        border-color: #C6A56B;
+    }
+
+    .lightbox-nav:focus-visible {
+        outline: 2px solid #C6A56B;
+        outline-offset: 3px;
+    }
+
+    .lightbox-prev {
+        left: -58px;
+    }
+
+    .lightbox-next {
+        right: -58px;
+    }
+
+    .lightbox-count {
+        color: #C6A56B;
+        font-size: 12px;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+    }
+
+    @media (max-width: 1020px) {
+        .lightbox-prev {
+            left: 4px;
+        }
+
+        .lightbox-next {
+            right: 4px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .project-card:hover {
+            transform: none;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <div id="site-header">
+  <!-- KWETU:CHROME:SITE-HEADER:BEGIN -->
+  <header class="navbar">
+      <a href="./" class="logo">
+          <img class="logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+          <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+          <span class="logo-creations">CREATIONS</span>
+      </a>
+  
+      <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="main-navigation"
+          aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+  
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+          <a href="./" data-page="index3.html">Home</a>
+          <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+          <a href="services.html" data-page="services.html">Services</a>
+          <a href="about.html" data-page="about.html">About Us</a>
+         <a href="contact.html" data-page="contact.html">Contact Us</a>
+          <a href="quote-request.html" class="nav-quote" data-page="quote-request.html">Get a Quote ↗</a>
+          
+      </nav>
+  </header>
+  <!-- KWETU:CHROME:SITE-HEADER:END -->
+</div>
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="eyebrow">Creativity. Precision. Excellence.</div>
+
+        <h1>OUR WORK.<br><span>YOUR VISION.</span></h1>
+
+        <p>
+            Discover our work across branding, laser services, signage,
+            fabrication and interior solutions. Every project begins with
+            an idea and becomes something remarkable.
+        </p>
+
+        <div class="hero-line"></div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <main class="portfolio" id="our-projects">
+
+        <div class="section-heading">
+            <div>
+                <div class="eyebrow">The Portfolio</div>
+                <h2>Explore Our Work</h2>
+                <p>Select a category to explore the projects and services.</p>
+            </div>
+        </div>
+
+        <!-- CATEGORY BUTTONS -->
+        <div class="category-buttons" aria-label="Filter projects">
+            <button class="category-btn active" data-filter="all" aria-pressed="true">
+                All Projects
+            </button>
+
+            <button class="category-btn" data-filter="branding" aria-pressed="false">
+                Branding
+            </button>
+
+            <button class="category-btn" data-filter="laser" aria-pressed="false">
+                Laser Services
+            </button>
+
+            <button class="category-btn" data-filter="signages" aria-pressed="false">
+                Signages
+            </button>
+
+            <button class="category-btn" data-filter="fabrication" aria-pressed="false">
+                Fabrication
+            </button>
+
+            <button class="category-btn" data-filter="interiors" aria-pressed="false">
+                Interior Solutions
+            </button>
+        </div>
+
+        <p class="form-status" id="filter-status" role="status" aria-live="polite" hidden></p>
+
+        <p class="form-status" id="gallery-status" role="alert" aria-live="assertive" hidden></p>
+
+        <!-- IMAGE GALLERY --> 
+        <div class="gallery" id="gallery">
+
+            <article class="project-card" tabindex="0"
+                data-category="signages"
+                data-title="Dange Shoppers Storefront Fascia"
+                data-description="Curved fabricated fascia with dimensional illuminated letters and a cut logo.">
+                <div class="image-wrap">
+                    <img decoding="async" height="960" width="1280" class="project-image"
+                        src="images/webp/sho.webp"
+                        alt="Curved grey and cream fascia carrying dimensional letters spelling DANGE SHOPPERS beside a red and blue shopping-cart logo, mounted on a stone-clad retail front"
+                        loading="eager">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Signages</div>
+                    <h3>Dange Shoppers Storefront Fascia</h3>
+                    <p>Curved fabricated fascia with dimensional illuminated letters and a cut logo.</p>
+                </div>
+            </article>
+
+            <!-- BRANDING --> 
+             
+             <article class="project-card" tabindex="0" data-category="branding"
+                data-title="3D Halo-Lit Exterior Branding"
+                data-description="Halo-lit 3D letters and logo signage on a retail exterior.">
+                <div class="image-wrap">
+                    <img decoding="async" height="1707" width="1280" class="project-image"
+                        src="images/webp/branding/spice.webp"
+                        alt="Backlit 3D logo and letters glowing on a terracotta tiled wall at dusk, beside silver channel letters on a rendered wall"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Branding</div>
+                    <h3>3D Halo-Lit Exterior Branding</h3>
+                    <p>Halo-lit 3D letters and logo signage on a retail exterior.</p>
+                </div>
+            </article>
+            <article class="project-card" tabindex="0" data-category="branding"
+                data-title="Boutique Shopfront Branding"
+                data-description="Fascia signage and lit display shelving for a perfume boutique.">
+                <div class="image-wrap">
+                    <img decoding="async" height="720" width="1280" class="project-image"
+                        src="images/webp/branding/pmmo.webp"
+                        alt="Green and black Perfumes and Mo fascia above a shopfront, with LED-lit display shelves behind the glass"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Branding</div>
+                    <h3>Boutique Shopfront Branding</h3>
+                    <p>Fascia signage and lit display shelving for a perfume boutique.</p>
+                </div>
+            </article>
+
+            <article class="project-card" tabindex="0" data-category="branding"
+                data-title="Forex & Money Transfer Branding"
+                data-description="Printed window graphics for a money-transfer bureau.">
+                <div class="image-wrap">
+                    <img decoding="async" height="1280" width="720" class="project-image"
+                        src="images/webp/branding/nio.webp"
+                        alt="Bureau windows covered with Western Union, Transfast and MoneyGram vinyl decals, service lists and contact numbers"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Branding</div>
+                    <h3>Forex & Money Transfer Branding</h3>
+                    <p>Printed window graphics for a money-transfer bureau.</p>
+                </div>
+            </article>
+
+            <!-- LASER SERVICES -->
+            <article class="project-card" tabindex="0" data-category="laser"
+                data-title="Laser Cutting"
+                data-description="Precision cutting for custom projects.">
+                <div class="image-wrap">
+                    <img decoding="async" height="701" width="720" class="project-image"
+                        src="images/webp/eng.webp"
+                        alt="Laser-cut black metal address plaque reading 12 Riddell Close with a cut-out leaf motif, mounted on white timber"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Laser Services</div>
+                    <h3>Laser Cutting</h3>
+                    <p>Accurate cutting for customized designs.</p>
+                </div>
+            </article>
+
+            <article class="project-card" tabindex="0" data-category="laser"
+                data-title="Laser Engraving"
+                data-description="Detailed engraving on suitable materials.">
+                <div class="image-wrap">
+                    <img decoding="async" height="752" width="564" class="project-image"
+                        src="images/webp/bar.webp"
+                        alt="Round black laser-cut Coffee Bar plaque with a cut-out cup, saucer and beans, held against a lawn"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Laser Services</div>
+                    <h3>Laser Engraving</h3>
+                    <p>Detailed, customized engraving and finishes.</p>
+                </div>
+            </article>
+
+            <!-- SIGNAGES -->
+             <article class="project-card" tabindex="0" data-category="signages"
+                data-title="Custom Totem Pylon Signage"
+                data-description="Outdoor totem pylon sign for a lounge.">
+                <div class="image-wrap">
+                    <img decoding="async" height="1024" width="768" class="project-image"
+                        src="images/webp/signages/vibe.webp"
+                        alt="Red roadside totem pylon sign reading Notos Lounge with 3D lettering, a phone number and a directional arrow"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Signages</div>
+                    <h3>Custom Totem Pylon Signage</h3>
+                    <p>Outdoor totem pylon sign for a lounge.</p>
+                </div>
+            </article>
+            <article class="project-card" tabindex="0" data-category="signages"
+                data-title="3D Signage"
+                data-description="Three-dimensional business signage.">
+                <div class="image-wrap">
+                    <img decoding="async" height="765" width="1020" class="project-image"
+                        src="images/webp/signages/signage-1.webp"
+                        alt="Red-fronted illuminated 3D channel letters spelling Isuzu resting on a workshop floor before installation"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Signages</div>
+                    <h3>3D Signage</h3>
+                    <p>Make your business stand out with dimensional signs.</p>
+                </div>
+            </article>
+
+            <article class="project-card" tabindex="0" data-category="signages"
+                data-title="Reception Signage"
+                data-description="Signage for professional reception spaces.">
+                <div class="image-wrap">
+                    <img decoding="async" height="853" width="1280" class="project-image"
+                        src="images/webp/signages/signage-2.webp"
+                        alt="Dark 3D RECEPTION letters fixed to a textured wall and thrown into relief by warm uplighting"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Signages</div>
+                    <h3>Reception Signage</h3>
+                    <p>Professional signs for offices and commercial spaces.</p>
+                </div> 
+            </article>
+
+            <article class="project-card" tabindex="0" data-category="signages"
+                data-title=" Family Hospital Kitende"
+                data-description="Fascia band with dimensional lettering and an institutional emblem.">
+                <div class="image-wrap">
+                    <img decoding="async" height="720" width="1280" class="project-image"
+                        src="images/webp/adt.webp"
+                        alt="White fascia band carrying blue dimensional letters reading ADULT AND CHILDREN'S WING beside a circular hospital emblem, fixed along the top of a grey building against a clear sky"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Signages</div>
+                    <h3>Family Hospital Kitende</h3>
+                    <p>Fascia band with dimensional lettering and an institutional emblem.</p>
+                </div>
+            </article>
+
+            <article class="project-card" tabindex="0" data-category="signages"
+                data-title="Shemsande Hall Facade Lettering"
+                data-description="Oversized dimensional letters fixed to a rendered facade from a boom lift.">
+                <div class="image-wrap">
+                    <img decoding="async" height="720" width="1280" class="project-image"
+                        src="images/webp/hall.webp"
+                        alt="White dimensional capital letters reading SHEMSANDE HALL mounted on a terracotta rendered facade above arched openings, with a technician in an articulated boom lift working beside the sign"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Signages</div>
+                    <h3>Shemsande Hall Facade Lettering</h3>
+                    <p>Oversized dimensional letters fixed to a rendered facade from a boom lift.</p>
+                </div>
+            </article>
+
+            <article class="project-card" tabindex="0" data-category="signages"
+                data-title="Tehillah Lux Living Facade Sign"
+                data-description="Dimensional letters on a dark fascia board, above laser-cut metal cladding to the building's corners.">
+                <div class="image-wrap">
+                    <img decoding="async" height="606" width="1280" class="project-image"
+                        src="images/webp/teha.webp"
+                        alt="Dark fascia sign carrying white dimensional letters reading TEHILLAH with Lux Living in orange script below it, fixed high on a cream rendered apartment block whose corners are clad in laser-cut decorative metal panels"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Signages</div>
+                    <h3>Tehillah Lux Living Facade Sign</h3>
+                    <p>Dimensional letters on a dark fascia board, above laser-cut metal cladding to the building's corners.</p>
+                </div>
+            </article>
+
+            <article class="project-card" tabindex="0" data-category="signages"
+                data-title="Mountain Inn Hotel Illuminated Tower Sign"
+                data-description="Green LED lettering and logo on a reflective glass tower, shown lit after dark.">
+                <div class="image-wrap">
+                    <img decoding="async" height="606" width="1280" class="project-image"
+                        src="images/webp/mout.webp"
+                        alt="Green illuminated sign reading Mountain Inn Hotel beneath a mountain and rising sun logo, mounted on a reflective glass tower at night with lit balconies on either side"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Signages</div>
+                    <h3>Mountain Inn Hotel Illuminated Tower Sign</h3>
+                    <p>Green LED lettering and logo on a reflective glass tower, shown lit after dark.</p>
+                </div>
+            </article>
+
+            <!-- FABRICATION -->
+             <article class="project-card" tabindex="0" data-category="fabrication"
+                data-title="Illuminated Hotel Pylon Signage"
+                data-description="Illuminated hotel roadside tower signage.">
+                <div class="image-wrap">
+                    <img decoding="async" height="1008" width="756" class="project-image" 
+                        src="images/webp/fabrication/mer.webp"
+                        alt="Illuminated roadside pylon sign at night for Hotel Toronto Ug, listing accommodation, restaurant, gardens, sauna and conferences"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Fabrication</div>
+                    <h3>Illuminated Hotel Pylon Signage</h3>
+                    <p>Illuminated hotel roadside tower signage.</p>
+                </div>
+            </article>
+             <article class="project-card" tabindex="0" data-category="fabrication"
+                data-title="Contemporary Stainless Steel Letters"
+                data-description="Custom 3D metal studio signage.">
+                <div class="image-wrap">
+                    <img decoding="async" height="1737" width="1280" class="project-image" 
+                        src="images/webp/fabrication/studio.webp"
+                        alt="Brushed silver 3D STUDIO letters mounted on horizontal timber slats"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Fabrication</div>
+                    <h3>Contemporary Stainless Steel Letters</h3>
+                    <p>Custom 3D metal studio signage.</p>
+                </div>
+            </article>
+            <article class="project-card" tabindex="0" data-category="fabrication"
+                data-title="Custom Illuminated Acrylic Letters"
+                data-description="Custom 3D illuminated storefront signage.">
+                <div class="image-wrap">
+                    <img decoding="async" height="853" width="1280" class="project-image"
+                        src="images/webp/fabrication/coff.webp"
+                        alt="Close-up of white illuminated 3D letters fixed to a dark timber-clad wall"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Fabrication</div>
+                    <h3>Custom Illuminated Acrylic Letters</h3>
+                    <p>Custom 3D illuminated storefront signage.</p>
+                </div>
+            </article>
+
+            <article class="project-card" tabindex="0" data-category="fabrication"
+                data-title="Display Structures"
+                data-description="Custom structures for displays and exhibitions.">
+                <div class="image-wrap">
+                    <img decoding="async" height="720" width="1280" class="project-image"
+                        src="images/webp/melt.webp"
+                        alt="Grey 3D Exquisite Solution letters mounted between the fins of a white boundary fence in front of an office block"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Fabrication</div>
+                    <h3>Display Structures</h3>
+                    <p>Purpose-built displays for products and spaces.</p>
+                </div>
+            </article>
+
+            <!-- INTERIOR SOLUTIONS -->
+             <article class="project-card" tabindex="0" data-category="interiors"
+                data-title="Contemporary Executive Office Joinery"
+                data-description="Bespoke executive office wall unit.">  
+                <div class="image-wrap">
+                    <img decoding="async" height="873" width="1280" class="project-image"
+                        src="images/webp/interiors/interior4.webp"
+                        alt="Timber office wall unit with open shelving, glass display cabinets and integrated lighting above a round table"
+                        loading="lazy">
+                </div>
+                <div class="project-info"> 
+                    <div class="project-category">Interior Solutions</div>
+                    <h3>Contemporary Executive Office Joinery</h3>
+                    <p>Bespoke executive office wall unit.</p>
+                </div>
+            </article>
+             <article class="project-card" tabindex="0" data-category="interiors"
+                data-title="Good Vibes Only Accent Wall"
+                data-description="Backlit lettering mounted on a foliage feature wall.">  
+                <div class="image-wrap">
+                    <img decoding="async" height="1920" width="1280" class="project-image"
+                        src="images/webp/interiors/good.webp"
+                        alt="Backlit acrylic panel reading Good Vibes Only mounted on a preserved-foliage green wall"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Interior Solutions</div>
+                    <h3>Good Vibes Only Accent Wall</h3>
+                    <p>Backlit lettering mounted on a foliage feature wall.</p>
+                </div>
+            </article>
+
+            <article class="project-card" tabindex="0" data-category="interiors"
+                data-title="Feature Wall Fit-Out"
+                data-description="Curved feature wall with lit display niches and a wall-mounted screen.">
+                <div class="image-wrap">
+                    <img decoding="async" height="888" width="1080" class="project-image"
+                        src="images/webp/tv.webp"
+                        alt="Curved white feature wall with illuminated display niches and a wall-mounted flat-screen television"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Interior Solutions</div>
+                    <h3>Feature Wall Fit-Out</h3>
+                    <p>Curved feature wall with lit display niches and a wall-mounted screen.</p>
+                </div>
+            </article>
+
+                <article class="project-card" tabindex="0" data-category="interiors"
+                data-title="Contemporary Interior Design"
+                data-description="Backlit geometric shelf highlighting footwear as art.">
+                <div class="image-wrap">
+                    <img decoding="async" height="854" width="1280" class="project-image"
+                        src="images/webp/interiors/shoe.webp"
+                        alt="Pair of beige high-heel shoes displayed on a black wall shelf outlined with warm LED strip lighting"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Interior Solutions</div>
+                    <h3>Contemporary Interior Design</h3>
+                    <p>Backlit geometric shelf highlighting footwear as art.</p>
+                </div>
+            </article>
+
+            <article class="project-card" tabindex="0" data-category="interiors"
+                data-title="Custom Wardrobe Interior Design"
+                data-description="Fitted wardrobe joinery with shelving, hanging rails and drawer units."> 
+                <div class="image-wrap">
+                    <img decoding="async" height="854" width="1280" class="project-image"
+                        src="images/webp/interiors/interior-2.webp"
+                        alt="Fitted walk-in wardrobe with white shelving on both walls, a hanging rail and a central drawer unit"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Interior Solutions</div>
+                    <h3>Custom Wardrobe Interior Design</h3>
+                    <p>Fitted wardrobe joinery with shelving, hanging rails and drawer units.</p>
+                </div>
+            </article>
+
+            <article class="project-card" tabindex="0" data-category="interiors"
+                data-title="Bespoke Office Workstation Joinery"
+                data-description="Wood-panelled workstation pods with overhead cabinets and lit display niches.">
+                <div class="image-wrap">
+                    <img decoding="async" height="853" width="1280" class="project-image"
+                        src="images/webp/interiors/interior-1.webp"
+                        alt="Open-plan office fitted with wood-panelled workstation pods and white desk tops, beneath cream overhead cabinets and display niches lit with warm strip lighting"
+                        loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Interior Solutions</div>
+                    <h3>Bespoke Office Workstation Joinery</h3>
+                    <p>Wood-panelled workstation pods with overhead cabinets and lit display niches.</p>
+                </div>
+            </article>
+
+        </div>
+
+        <p class="empty-message" id="empty-message">
+            No projects are available in this category yet.
+        </p>
+    </main>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+        <div>
+            <h2>Have a Project in Mind?</h2>
+            <p>
+                Tell us what you need. Our team can discuss your idea
+                and help you take the next step.
+            </p>
+
+        <p class="related-links">
+            <span>Want the detail?</span>
+            <a href="services.html">How each service is delivered</a>
+            <a href="about.html">About the Kwetu Creations studio</a>
+        </p>
+        </div>
+
+        <a href="quote-request.html" class="cta-button">
+            REQUEST A QUOTE &rarr;
+        </a>
+    </section>
+
+    <!-- IMAGE ENLARGEMENT POPUP -->
+    <div class="lightbox" id="lightbox" role="dialog"
+        aria-modal="true" aria-label="Project image preview">
+
+        <div class="lightbox-content">
+            <button class="close-lightbox" id="close-lightbox"
+                aria-label="Close image preview">&times;</button>
+
+            <button class="lightbox-nav lightbox-prev" id="lightbox-prev"
+                aria-label="Show the previous project">&#8249;</button>
+
+            <img id="lightbox-image" alt="">
+
+            <button class="lightbox-nav lightbox-next" id="lightbox-next"
+                aria-label="Show the next project">&#8250;</button>
+
+            <h3 id="lightbox-title"></h3>
+            <p id="lightbox-description"></p>
+            <p class="lightbox-count" id="lightbox-count"></p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    
+
+    <script>
+        const categoryButtons = document.querySelectorAll(".category-btn");
+        const projectCards = document.querySelectorAll(".project-card");
+        const emptyMessage = document.getElementById("empty-message");
+        const filterStatus = document.getElementById("filter-status");
+        const galleryStatus = document.getElementById("gallery-status");
+
+        let shown = Array.from(projectCards);
+
+        function announce(element, message) {
+            element.hidden = false;
+            element.textContent = message;
+        }
+
+        // CATEGORY FILTER
+        categoryButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const selected = button.dataset.filter;
+
+                categoryButtons.forEach(item => {
+                    const isActive = item === button;
+                    item.classList.toggle("active", isActive);
+                    item.setAttribute("aria-pressed", String(isActive));
+                });
+
+                shown = Array.from(projectCards).filter(card =>
+                    selected === "all" || card.dataset.category === selected);
+
+                projectCards.forEach(card => {
+                    card.hidden = shown.indexOf(card) === -1;
+                });
+
+                emptyMessage.style.display = shown.length ? "none" : "block";
+
+                const label = button.textContent.trim();
+
+                announce(filterStatus, shown.length
+                    ? (selected === "all"
+                        ? `Showing all ${shown.length} projects.`
+                        : `Showing ${shown.length} of ${projectCards.length} projects in ${label}.`)
+                    : `No projects are listed under ${label} yet.`);
+            });
+        });
+
+        // IMAGE PREVIEW
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightbox-image");
+        const lightboxTitle = document.getElementById("lightbox-title");
+        const lightboxDescription = document.getElementById("lightbox-description");
+        const lightboxCount = document.getElementById("lightbox-count");
+        const closeLightbox = document.getElementById("close-lightbox");
+        const previousButton = document.getElementById("lightbox-prev");
+        const nextButton = document.getElementById("lightbox-next");
+
+        let previousFocus = null;
+        let position = -1;
+
+        function display(index) {
+            const card = shown[index];
+            const image = card.querySelector(".project-image");
+
+            // The preview loads its own copy: a card below the fold is still
+            // lazy, and that must never stop the gallery from opening.
+            lightboxImage.alt = image.alt;
+            lightboxTitle.textContent = card.dataset.title;
+            lightboxDescription.textContent = card.dataset.description;
+            lightboxCount.textContent = (index + 1) + " of " + shown.length;
+            lightboxImage.src = image.src;
+            position = index;
+        }
+
+        lightboxImage.addEventListener("load", () => {
+            galleryStatus.hidden = true;
+        });
+
+        lightboxImage.addEventListener("error", () => {
+            // No source means the closed gallery, not a failed photograph.
+            if (!lightboxImage.getAttribute("src")) return;
+
+            announce(galleryStatus,
+                "This project image could not be loaded. The other projects are still available.");
+        });
+
+        function open(index) {
+            display(index);
+
+            previousFocus = document.activeElement;
+            lightbox.classList.add("open");
+            document.body.style.overflow = "hidden";
+            closeLightbox.focus();
+        }
+
+        function close() {
+            lightbox.classList.remove("open");
+            lightboxImage.removeAttribute("src");
+            document.body.style.overflow = "";
+
+            if (previousFocus) previousFocus.focus();
+        }
+
+        projectCards.forEach(card => {
+            const activate = () => {
+                const index = shown.indexOf(card);
+                if (index !== -1) open(index);
+            };
+
+            card.addEventListener("click", activate);
+
+            card.addEventListener("keydown", event => {
+                if (event.key !== "Enter" && event.key !== " ") return;
+                event.preventDefault();
+                activate();
+            });
+        });
+
+        previousButton.addEventListener("click", () => {
+            if (!shown.length) return;
+            display((position - 1 + shown.length) % shown.length);
+        });
+
+        nextButton.addEventListener("click", () => {
+            if (!shown.length) return;
+            display((position + 1) % shown.length);
+        });
+
+        closeLightbox.addEventListener("click", close);
+
+        lightbox.addEventListener("click", event => {
+            if (event.target === lightbox) close();
+        });
+
+        document.addEventListener("keydown", event => {
+            if (!lightbox.classList.contains("open")) return;
+
+            if (event.key === "Escape") {
+                close();
+                return;
+            }
+
+            if (event.key === "ArrowRight") {
+                nextButton.click();
+                return;
+            }
+
+            if (event.key === "ArrowLeft") {
+                previousButton.click();
+                return;
+            }
+
+            // Keep keyboard focus inside the dialog while it is open.
+            if (event.key !== "Tab") return;
+
+            const focusable = [closeLightbox, previousButton, nextButton];
+
+            event.preventDefault();
+            const step = event.shiftKey ? -1 : 1;
+            const at = focusable.indexOf(document.activeElement);
+            focusable[(at + step + focusable.length) % focusable.length].focus();
+        });
+</script>
+    <div id="site-footer">
+  <!-- KWETU:CHROME:SITE-FOOTER:BEGIN -->
+  <footer class="site-footer">
+  
+      <div class="footer-top">
+          <div class="footer-brand">
+              <a href="./" class="footer-logo">
+                  <img class="footer-logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+                  <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+                  <span class="logo-creations">CREATIONS</span>
+              </a>
+  
+              <p class="footer-tagline">
+                  Creative design. Precision production. Exceptional results.
+              </p>
+          </div>
+  
+          <div class="footer-explore">
+              <h3>EXPLORE</h3>
+              <a href="./" data-page="index3.html">Home</a>
+              <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+              <a href="services.html" data-page="services.html">Services</a>
+              <a href="about.html" data-page="about.html">About Us</a>
+              <a href="testimonials.html" data-page="testimonials.html">Client Reviews</a>
+              <a href="contact.html" data-page="contact.html">Contact Us</a>
+              <a href="quote-request.html" data-page="quote-request.html">Get a Quote</a>
+          </div>
+          <div class="footer-services">
+                  <h3>OUR SERVICES</h3>
+                  <a href="services.html#signage">Signage</a>
+                  <a href="services.html#branding">Branding &amp; Graphic Design</a>
+                  <a href="services.html#interiors">Interior Solutions</a>
+                  <a href="services.html#illuminated-signage">Illuminated Signage</a>
+                  <a href="services.html#fabrication">Fabrication</a>
+                  <a href="services.html#laser-cutting">Laser Cutting</a>
+                  <a href="services.html#large-format-printing">Large-Format Printing</a>
+                  <a href="services.html#web-design">Website Design &amp; Development</a>
+              </div>
+  
+              <div class="footer-contact">
+                  <h3>CONTACT US</h3>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <address>
+                      Freedom House, Level 6, Suite R-724<br>
+                      Nkurumah Road, Kampala, Uganda
+                     
+                  </address>
+              </div>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  <a href="tel:+256787738999">+256 787 738 999</a>
+              </div>
+              
+              <div class="footer-contact-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <a href="mailto:info@kwetucreations.com">
+                      info@kwetucreations.com
+                  </a>
+              </div>
+  
+          </div>
+  
+          <div class="footer-social">
+              <h3>CONNECT WITH US</h3>
+  
+              <div class="social-icons-container">
+                  <a class="icon-link whatsapp"
+                     href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener"
+                     aria-label="Message the studio on WhatsApp"
+                     title="Message the studio on WhatsApp">
+                      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                  </a>
+                  <span class="icon-link instagram" role="img"
+                        aria-label="Instagram" title="Instagram">
+                      <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link tiktok" role="img"
+                        aria-label="TikTok" title="TikTok">
+                      <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link linkedin" role="img"
+                        aria-label="LinkedIn" title="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link facebook" role="img"
+                        aria-label="Facebook" title="Facebook">
+                      <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                  </span>
+              </div>
+  
+              <p class="footer-social-note">
+                  Speak to the studio directly —
+                  <a href="mailto:info@kwetucreations.com">info@kwetucreations.com</a>,
+                  <a href="tel:+256787738999">+256 787 738 999</a>,
+                  or
+                  <a href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener">message us on WhatsApp</a>.
+                  All three reach the team, and a reply from us comes from a
+                  person, not a queue.
+              </p>
+  
+          </div>
+          
+      </div>
+  
+      <div class="footer-bottom">
+          <div class="footer-legal-links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <span>|</span>
+              <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+              <span>|</span>
+              <a href="cookie-policy.html">Cookie Policy</a>
+              <span>|</span>
+              <button type="button" data-cookie-settings
+                      aria-haspopup="dialog">Cookie Settings</button>
+          </div>
+  
+          <p class="footer-copyright">
+              &copy; <span id="year"></span>
+              <span class="footer-kwetu">Kwetu</span>
+              <span class="footer-creations">Creations</span>.
+              All rights reserved.
+          </p>
+  
+          <div class="footer-designer">
+              <span>Website designed by</span>
+              <strong>BYUMA DANIEL</strong>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mpozzadaniel@gmail.com"
+                 target="_blank" rel="noopener noreferrer">
+                  mpozzadaniel@gmail.com
+              </a>
+          </div>
+      </div>
+  
+  </footer>
+  <!-- KWETU:CHROME:SITE-FOOTER:END -->
+</div>
+    <script src="script.js"></script>
+    <script src="cookie-consent.js"></script>
+</body>
+</html>

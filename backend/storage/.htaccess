@@ -1,0 +1,13 @@
+# Uploaded design files live here, and nothing in here is ever a URL.
+#
+# backend/.htaccess already refuses the whole folder, and this file repeats
+# that refusal so the storage directory stays shut even if the parent rules
+# are edited, replaced or simply not read by a different web server.
+#
+# The only way an attachment should ever reach a browser is through
+# admin/attachment.php, which checks the signed-in session first and then
+# sends the file as a download.
+
+Require all denied
+
+Options -Indexes

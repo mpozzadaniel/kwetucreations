@@ -1,0 +1,1611 @@
+/* =========================================
+   KWETU CREATIONS — SHARED STYLES
+========================================= */
+
+/* Poppins is loaded with preconnect + <link> tags in every page head, so the
+   font request is not queued behind this file. */
+
+:root {
+    --brand-red: #B5122A;
+    --brand-red-dark: #8F0E21;
+    --brand-gold: #C6A56B;
+    --brand-white: #F5F3EF;
+    --brand-black: #151515;
+}
+
+/* SHARED HEADER */
+
+/* The browser's default 8px body margin used to leave an empty band down
+   both edges of the pages that only paint their background on <main>. */
+body {
+    margin: 0;
+}
+
+/* Anchored sections must not land underneath the fixed navigation bar. */
+html {
+    scroll-padding-top: calc(var(--nav-h, 76px) + 14px);
+}
+
+#site-header {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+}
+
+#site-header .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    min-height: 76px;
+    padding: 14px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: #151515;
+    color: #F5F3EF;
+    border-bottom: 1px solid rgba(198, 165, 107, .3);
+    box-sizing: border-box;
+}
+
+#site-header .logo {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    color: #F5F3EF;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+#site-header .logo span {
+    color: var(--brand-red);
+}
+
+/* The white ground is keyed out of images/logo/mark.webp by
+   tools/make-logo-assets.php, so the mark sits directly on the bar. */
+#site-header .logo-mark {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+#site-header .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(14px, 2.3vw, 32px);
+}
+
+#site-header .nav-links a {
+    color: #F5F3EF;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .7px;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color .25s ease;
+}
+
+#site-header .nav-links a:hover,
+#site-header .nav-links a[aria-current="page"] {
+    color: var(--brand-gold);
+}
+
+#site-header .nav-links .nav-quote {
+    padding: 13px 18px;
+    background: var(--brand-red);
+    border: 1px solid var(--brand-red);
+    border-radius: 3px;
+    color: #fff;
+}
+
+#site-header .nav-links .nav-quote:hover {
+    background: var(--brand-red-dark);
+    border-color: var(--brand-gold);
+    color: #fff;
+}
+
+/* MOBILE MENU BUTTON */
+
+#site-header .menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    padding: 8px;
+    border: 1px solid rgba(245, 243, 239, .35);
+    border-radius: 4px;
+    background: #202020;
+    color: #fff;
+    cursor: pointer;
+}
+
+#site-header .menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+#site-header .menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(7px) rotate(45deg);
+}
+
+#site-header .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+#site-header .menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 760px) {
+    #site-header .navbar {
+        min-height: 72px;
+        padding: 12px 5%;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    #site-header .logo {
+        font-size: 17px;
+    }
+
+    #site-header .menu-toggle {
+        display: inline-flex;
+        margin-left: auto;
+    }
+
+    #site-header .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+        padding: 8px 5% 14px;
+        background: #151515;
+        border-bottom: 1px solid rgba(198, 165, 107, .3);
+        box-sizing: border-box;
+    }
+
+    #site-header .nav-links.is-open {
+        display: flex;
+    }
+
+    #site-header .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 15px 12px;
+        box-sizing: border-box;
+        font-size: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    #site-header .nav-links .nav-quote {
+        margin-top: 8px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 380px) {
+    #site-header .navbar {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    #site-header .logo {
+        font-size: 15px;
+        letter-spacing: .5px;
+    }
+}
+
+
+/* =====================================
+   KWETU CREATIONS PREMIUM FOOTER
+===================================== */
+
+.site-footer {
+    display: block;
+    padding: 42px 6% 22px;
+    background: #101010;
+    color: var(--brand-gold);
+    border-top: 1px solid var(--brand-gold);
+    box-sizing: border-box;
+    font-size: 13px;
+}
+
+/* PREMIUM FOOTER LAYOUT */
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 1fr 1fr 1.2fr;
+    gap: 28px;
+    align-items: start;
+    padding-bottom: 32px;
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Same treatment as the header badge, so the footer brand reads as one lockup
+   rather than a picture next to a separate word. */
+.footer-logo-mark {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.footer-logo .logo-kwetu {
+    color: #F5F3EF;
+}
+
+.footer-logo .logo-dot,
+.footer-logo .logo-creations {
+    color: var(--brand-red);
+}
+
+.footer-tagline {
+    max-width: 280px;
+    margin: 12px 0 0;
+    color: rgba(245, 243, 239, .75);
+    line-height: 1.8;
+}
+
+.footer-explore,
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+}
+
+.footer-explore h3,
+.footer-social h3,
+.footer-services h3,
+.footer-contact h3 {
+    margin: 0 0 5px;
+    color: var(--brand-gold);
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+.footer-explore a,
+.footer-legal-links a {
+    color: rgba(245, 243, 239, .85);
+    text-decoration: none;
+    transition: color .25s ease;
+}
+
+.footer-explore a:hover,
+.footer-legal-links a:hover {
+    color: var(--brand-gold);
+}
+
+
+
+
+   
+
+
+
+
+.social-icons-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+/* Kwetu Creations — Social Media Brand Colours */
+
+/* WhatsApp green */
+.icon-link.whatsapp {
+    color: #25D366;
+}
+
+/* Instagram gradient */
+.icon-link.instagram {
+    background: linear-gradient(
+        45deg,
+        #FEDA75,
+        #FA7E1E,
+        #D62976,
+        #962FBF,
+        #4F5BD5
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* TikTok black with cyan/red accents are not easy to reproduce
+   with a single Font Awesome icon, so use its recognizable white mark
+   on your dark footer. */
+.icon-link.tiktok {
+    color: #FFFFFF;
+}
+
+/* LinkedIn blue */
+.icon-link.linkedin {
+    color: #0A66C2;
+}
+
+/* Facebook blue */
+.icon-link.facebook {
+    color: #1877F2;
+}
+
+/* Keep the original brand colour when hovering */
+.icon-link.whatsapp:hover {
+    color: #25D366;
+}
+
+.icon-link.linkedin:hover {
+    color: #0A66C2;
+}
+
+.icon-link.facebook:hover {
+    color: #1877F2;
+}
+
+.icon-link.tiktok:hover {
+    color: #69C9D0;
+}
+
+
+.icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    font-size: 30px;
+    text-decoration: none;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.icon-link:hover {
+    transform: translateY(-4px) scale(1.12);
+}
+
+/* Applies as soon as an icon is given a real href in includes/footer.html. */
+.icon-link:focus-visible {
+    outline: 2px solid var(--brand-gold);
+    outline-offset: 4px;
+    border-radius: 6px;
+}
+
+
+
+
+.footer-social-note {
+    margin: 3px 0 0;
+    color: rgba(245, 243, 239, .65);
+    line-height: 1.7;
+}
+
+/* The only footer links that had no rule of their own, so each page fell back
+   to its own reset: portfolio.html and quote-request.html declare
+   `a { color: inherit }` and showed these addresses in the dim sentence
+   colour, while the other eleven showed the browser default blue and
+   underline. Class + element beats both, so all thirteen pages match. */
+.footer-social-note a {
+    color: var(--brand-gold);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color .25s ease;
+}
+
+.footer-social-note a:hover,
+.footer-social-note a:focus-visible {
+    color: var(--brand-white);
+    outline: none;
+}
+/* FOOTER SERVICES */
+.footer-services {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+    min-width: 0;
+}
+
+.footer-services h3 {
+    margin-bottom: 5px;
+}
+
+.footer-services a {
+    color: rgba(245, 243, 239, 0.85);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.footer-services a:hover {
+    color: var(--brand-gold);
+}
+
+/* FOOTER CONTACT */
+.footer-contact {
+    min-width: 0;
+}
+
+.footer-contact h3 {
+    margin-bottom: 16px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.footer-contact-item i {
+    flex-shrink: 0;
+    margin-top: 4px;
+    color: var(--brand-gold);
+}
+
+/* Each channel mark in the colour people already read it as: pin red, call
+   green, mail blue. Two classes beat the gold rule just above (one class and
+   a bare element), so the text beside each mark keeps its colour and only the
+   glyph changes. They live here because the footer is injected into all
+   thirteen pages. */
+.footer-contact-item .fa-location-dot {
+    color: #EA4335;
+}
+
+.footer-contact-item .fa-phone {
+    color: #34A853;
+}
+
+.footer-contact-item .fa-envelope {
+    color: #1A73E8;
+}
+
+.footer-contact-item address {
+    color: rgba(245, 243, 239, 0.85);
+    font-size: 13px;
+    font-style: normal;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.footer-contact-item a {
+    color: rgba(245, 243, 239, 0.85);
+    font-size: 13px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.25s ease;
+}
+
+.footer-contact-item a:hover {
+    color: var(--brand-gold);
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    padding-top: 20px;
+    border-top: 1px solid #393027;
+}
+
+.footer-legal-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-legal-links span {
+    color: var(--brand-gold);
+}
+
+.footer-copyright {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: var(--brand-gold);
+    line-height: 1.7;
+    text-align: center;
+}
+
+.footer-copyright .footer-kwetu {
+    color: #F5F3EF;
+}
+
+.footer-copyright .footer-creations {
+    color: var(--brand-red);
+}
+
+.footer-designer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 0;
+    font-size: 12px;
+}
+
+.footer-designer span {
+    color: rgba(245, 243, 239, .72);
+}
+
+.footer-designer strong {
+    color: #F5F3EF;
+}
+
+.footer-designer a {
+    color: var(--brand-gold);
+    text-decoration: none;
+}
+
+.footer-designer a:hover {
+    color: var(--brand-red);
+}
+
+/* TABLETS */
+@media (max-width: 1000px) {
+    .footer-top {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px 24px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* MOBILE PHONES */
+@media (max-width: 600px) {
+    .site-footer {
+        padding: 32px 5% 22px;
+    }
+
+    .footer-top {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 20px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-social {
+        min-width: 0;
+    }
+
+    .social-icons-container {
+        gap: 14px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-legal-links,
+    .footer-designer {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* VERY SMALL PHONES */
+@media (max-width: 380px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+}
+
+
+
+
+
+/* Kwetu Creations logo colours — navigation and footer */
+.logo-kwetu {
+    color: #F5F3EF !important;
+}
+
+.logo-dot {
+    color: #C6A56B !important;
+}
+
+.logo-creations {
+    color: #B5122A !important;
+}
+/* Highlight the current page in the navigation */
+.navbar a.active,
+.nav-links a.active {
+    color: #C6A56B !important;
+    position: relative;
+}
+
+/* Gold underline for the current page */
+.navbar a.active::after,
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 100%;
+    height: 2px;
+    background: #C6A56B;
+    border-radius: 2px;
+}
+
+/* Keep the active link clear on hover */
+.navbar a.active:hover,
+.nav-links a.active:hover {
+    color: #C6A56B !important;
+}
+/* Highlight the current page in both navigation and footer */
+.navbar a.active,
+.nav-links a.active,
+.footer-links a.active {
+    color: #C6A56B !important;
+}
+
+/* Gold underline for the active navigation link */
+.navbar a.active::after,
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 100%;
+    height: 2px;
+    background: #C6A56B;
+    border-radius: 2px;
+}
+
+/* Make the active footer link stand out */
+.footer-links a.active {
+    font-weight: 700;
+}
+
+/* =====================================
+   KWETU CREATIONS — HOMEPAGE INTRO
+===================================== */
+
+.home-intro {
+    position: relative;
+    width: 100%;
+    padding: 100px 8%;
+    background: #151515;
+    color: #F5F3EF;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.home-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: #B5122A;
+}
+
+.home-intro-content {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.home-intro-label {
+    display: inline-block;
+    margin-bottom: 22px;
+    color: #C6A56B;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.8;
+}
+
+.home-intro h2 {
+    max-width: 850px;
+    margin: 0;
+    color: #F5F3EF;
+    font-size: clamp(34px, 5vw, 62px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+.home-intro h2 span {
+    display: block;
+    color: #B5122A;
+}
+
+.home-intro-line {
+    width: 65px;
+    height: 3px;
+    margin: 28px 0;
+    background: #C6A56B;
+}
+
+.home-intro-lead {
+    max-width: 760px;
+    margin: 0 0 18px;
+    color: #F5F3EF;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+.home-intro-description {
+    max-width: 780px;
+    margin: 0 0 16px;
+    color: rgba(245, 243, 239, 0.76);
+    font-size: 15px;
+    line-height: 1.95;
+}
+
+.home-intro-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 32px;
+}
+
+.intro-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 48px;
+    padding: 13px 21px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.intro-btn-primary {
+    background: #B5122A;
+    border: 1px solid #B5122A;
+    color: #F5F3EF;
+}
+
+.intro-btn-primary:hover {
+    background: #8F0E21;
+    border-color: #C6A56B;
+}
+
+.intro-btn-outline {
+    background: transparent;
+    border: 1px solid #C6A56B;
+    color: #C6A56B;
+}
+
+.intro-btn-outline:hover {
+    background: #C6A56B;
+    color: #151515;
+}
+
+.intro-btn span {
+    font-size: 17px;
+}
+
+@media (max-width: 600px) {
+    .home-intro {
+        padding: 70px 7%;
+    }
+
+    .home-intro-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .home-intro h2 {
+        font-size: clamp(32px, 9vw, 44px);
+        letter-spacing: -0.7px;
+    }
+
+    .home-intro-lead {
+        font-size: 17px;
+    }
+
+    .home-intro-description {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .home-intro-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .intro-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Welcome label brand colours */
+.home-intro-label .intro-kwetu {
+    color: #F5F3EF;
+}
+
+.home-intro-label .intro-creations {
+    color: #B5122A;
+}
+
+.footer-kwetu {
+    color: #F5F3EF;
+    font-weight: 700;
+}
+
+.footer-creations {
+    color: #B5122A;
+    font-weight: 700;
+}
+.company-address {
+    font-style: normal;
+    line-height: 1.8;
+    color: #F5F3EF;
+}
+
+.company-address strong {
+    color: #C6A56B;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+/* =================================
+   KWETU CREATIONS — GLOBAL TYPOGRAPHY
+   ================================= */
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, a, label, li {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =========================================
+   ENQUIRY FORM FEEDBACK
+   Written by form-guard.js; the paragraph is
+   always in the DOM and only shows when it has
+   something to say, so fields never shift.
+========================================= */
+
+.field-message {
+    display: none;
+
+    margin: 7px 0 0;
+    color: var(--brand-gold);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+}
+
+.field-message.is-visible {
+    display: block;
+}
+
+[aria-invalid="true"] {
+    border-color: var(--brand-red) !important;
+    outline-color: var(--brand-red);
+}
+
+.form-status {
+    margin: 18px 0 0;
+    padding: 14px 16px;
+    border: 1px solid rgba(198, 165, 107, 0.4);
+    border-radius: 6px;
+    background: rgba(32, 32, 32, 0.65);
+    color: var(--brand-white);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+.form-status:focus {
+    outline: 2px solid var(--brand-gold);
+    outline-offset: 3px;
+}
+
+.form-status strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--brand-gold);
+    font-weight: 600;
+}
+
+/* The endpoint's second line, shown under the gold headline of a saved reply.
+   Its own class, so the older unclassed note in the same box is unaffected. */
+.form-status .form-status-detail {
+    display: block;
+    color: rgba(245, 243, 239, 0.86);
+}
+
+/* The standing line under a form's button: what actually happens to what you
+   typed. Quieter than .form-status, which is for live replies. */
+.form-note {
+    margin: 16px 0 0;
+    color: rgba(245, 243, 239, 0.62);
+    font-size: 0.82rem;
+    line-height: 1.7;
+}
+
+/* The reply from a connected endpoint: red edge for "not saved", gold for
+   "saved". The text itself is the message; the edge is only reinforcement, so
+   nothing here relies on colour being distinguishable. */
+.form-status.is-error {
+    border-left: 3px solid var(--brand-red);
+}
+
+.form-status.is-saved {
+    border-left: 3px solid var(--brand-gold);
+}
+
+/* Bot trap: in the page for a script to find, outside the viewport for a
+   person never to see. Never display:none — some browsers refuse to autofill
+   and some bots skip hidden fields. */
+.guard-trap {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.form-action {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 1px solid var(--brand-gold);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--brand-gold);
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.form-action:hover {
+    background: var(--brand-gold);
+    color: var(--brand-black);
+}
+
+/* =========================================
+   CONTEXTUAL LINKS — one row of in-content links at the end of a page,
+   so a visitor who finishes reading always has somewhere to go next.
+   Gold on the dark brand background, matching the footer link styling.
+========================================= */
+
+.related-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 22px;
+    margin: 28px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(198, 165, 107, 0.35);
+    font-size: 0.86rem;
+    line-height: 1.6;
+}
+
+.related-links span {
+    color: inherit;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    opacity: 0.75;
+}
+
+.related-links a {
+    color: var(--brand-gold);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(198, 165, 107, 0.45);
+    padding-bottom: 2px;
+}
+
+.related-links a:hover,
+.related-links a:focus-visible {
+    color: #ffffff;
+    border-bottom-color: var(--brand-red);
+    background: var(--brand-red);
+    outline: none;
+}
+
+.related-links--center {
+    justify-content: center;
+}
+
+.related-links--stacked {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* =========================================
+   COOKIE CONSENT — the bar and the preferences sheet built by
+   cookie-consent.js. Dark card, gold hairlines and the red primary
+   action so the choices read as part of the Kwetu identity instead of
+   a plugin dropped on top of the page.
+   Layered above the fixed navbar, which sits at z-index 1000.
+========================================= */
+
+/* The site has no global reset, so the consent UI declares its own box model:
+   without border-box the sheet's padding was added on top of its max-height
+   and the dialog spilled past the bottom of the viewport. */
+.kw-cookie,
+.kw-cookie *,
+.kw-cookie *::before,
+.kw-cookie *::after {
+    box-sizing: border-box;
+}
+
+.kw-cookie__bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    visibility: hidden;
+    transform: translateY(110%);
+    transition: transform .32s ease, visibility .32s ease;
+    background: #191919;
+    border-top: 1px solid rgba(198, 165, 107, 0.45);
+    box-shadow: 0 -22px 48px rgba(0, 0, 0, 0.55);
+}
+
+.kw-cookie__bar.is-up {
+    visibility: visible;
+    transform: none;
+}
+
+.kw-cookie__bar[hidden] {
+    display: none;
+}
+
+/* The gallery viewer on Our Work puts its caption at the foot of the screen,
+   so the bar steps aside while that viewer is open rather than covering the
+   project title. Browsers without :has() simply keep the bar in place. */
+body:has(.lightbox.open) .kw-cookie__bar.is-up {
+    visibility: hidden;
+}
+
+.kw-cookie__inner {
+    display: grid;
+    grid-template-columns: 14px minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 18px 22px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 26px 6% 28px;
+}
+
+/* Brand mark: a gold diamond with the Kwetu red core. */
+.kw-cookie__mark {
+    position: relative;
+    display: block;
+    width: 11px;
+    height: 11px;
+    margin-top: 7px;
+    background: var(--brand-gold);
+    transform: rotate(45deg);
+}
+
+.kw-cookie__mark::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 5px;
+    height: 5px;
+    background: var(--brand-red);
+}
+
+.kw-cookie__eyebrow {
+    margin: 0 0 7px;
+    color: var(--brand-gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+}
+
+.kw-cookie__title {
+    margin: 0;
+    color: var(--brand-white);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    line-height: 1.35;
+}
+
+.kw-cookie__text {
+    margin: 9px 0 0;
+    max-width: 660px;
+    color: rgba(245, 243, 239, 0.72);
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.kw-cookie__text a {
+    color: var(--brand-gold);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(198, 165, 107, 0.45);
+}
+
+.kw-cookie__text a:hover,
+.kw-cookie__text a:focus-visible {
+    color: #fff;
+    border-bottom-color: var(--brand-red);
+    outline: none;
+}
+
+.kw-cookie__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+/* BUTTONS */
+
+.kw-btn {
+    padding: 12px 18px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font: inherit;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background .22s ease, border-color .22s ease, color .22s ease;
+}
+
+.kw-btn:focus-visible {
+    outline: 2px solid var(--brand-gold);
+    outline-offset: 3px;
+}
+
+.kw-btn--primary {
+    background: var(--brand-red);
+    border-color: var(--brand-red);
+    color: #fff;
+}
+
+.kw-btn--primary:hover {
+    background: var(--brand-red-dark);
+    border-color: var(--brand-gold);
+}
+
+.kw-btn--gold {
+    background: var(--brand-gold);
+    border-color: var(--brand-gold);
+    color: #151515;
+}
+
+.kw-btn--gold:hover {
+    background: #d8bb84;
+    border-color: #d8bb84;
+}
+
+.kw-btn--ghost {
+    background: transparent;
+    border-color: rgba(198, 165, 107, 0.55);
+    color: var(--brand-white);
+}
+
+.kw-btn--ghost:hover {
+    background: var(--brand-gold);
+    border-color: var(--brand-gold);
+    color: #151515;
+}
+
+.kw-btn--plain {
+    background: transparent;
+    border-color: transparent;
+    color: var(--brand-gold);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.kw-btn--plain:hover {
+    color: #fff;
+}
+
+/* PREFERENCES SHEET */
+
+.kw-cs {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: grid;
+    place-items: center;
+    padding: 22px 18px;
+}
+
+.kw-cs[hidden] {
+    display: none;
+}
+
+html.kw-cs-open {
+    overflow: hidden;
+}
+
+.kw-cs__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 8, 8, 0.82);
+}
+
+.kw-cs__dialog {
+    position: relative;
+    width: min(660px, 100%);
+    /* A grid item keeps its content height unless the automatic minimum is
+       released, which would push the sheet past the viewport. */
+    min-height: 0;
+    max-height: calc(100vh - 44px);
+    overflow-y: auto;
+    padding: 26px 26px 22px;
+    background: #1B1B1B;
+    border: 1px solid rgba(198, 165, 107, 0.4);
+    border-radius: 5px;
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.6);
+    color: var(--brand-white);
+}
+
+.kw-cs__dialog:focus {
+    outline: none;
+}
+
+.kw-cs__title {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+}
+
+.kw-cs__lede {
+    margin: 12px 0 0;
+    color: rgba(245, 243, 239, 0.7);
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.kw-cs__rows {
+    margin: 22px 0 0;
+    border-top: 1px solid #332c22;
+}
+
+.kw-cs-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 18px;
+    padding: 17px 0;
+    border-bottom: 1px solid #332c22;
+}
+
+.kw-cs-row__name {
+    margin: 0;
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--brand-white);
+}
+
+.kw-cs-row__status {
+    margin-left: 8px;
+    padding: 3px 8px;
+    border: 1px solid rgba(198, 165, 107, 0.4);
+    border-radius: 999px;
+    color: var(--brand-gold);
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+}
+
+.kw-cs-row__text {
+    margin: 7px 0 0;
+    max-width: 430px;
+    color: rgba(245, 243, 239, 0.66);
+    font-size: 12.5px;
+    line-height: 1.7;
+}
+
+/* SWITCH */
+
+.kw-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.kw-switch__input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 46px;
+    height: 24px;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.kw-switch__input[disabled] {
+    cursor: not-allowed;
+}
+
+.kw-switch__track {
+    position: relative;
+    display: block;
+    width: 46px;
+    height: 24px;
+    flex: 0 0 46px;
+    border: 1px solid rgba(245, 243, 239, 0.28);
+    border-radius: 999px;
+    background: #2B2B2B;
+    transition: background .2s ease, border-color .2s ease;
+}
+
+.kw-switch__track::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(245, 243, 239, 0.75);
+    transition: transform .2s ease, background .2s ease;
+}
+
+.kw-switch__input:checked ~ .kw-switch__track {
+    border-color: var(--brand-gold);
+    background: var(--brand-red);
+}
+
+.kw-switch__input:checked ~ .kw-switch__track::after {
+    transform: translateX(22px);
+    background: #fff;
+}
+
+.kw-switch__input:focus-visible ~ .kw-switch__track {
+    outline: 2px solid var(--brand-gold);
+    outline-offset: 3px;
+}
+
+.kw-switch__input:disabled ~ .kw-switch__track {
+    border-color: rgba(198, 165, 107, 0.5);
+    background: rgba(198, 165, 107, 0.22);
+}
+
+.kw-switch__input:disabled ~ .kw-switch__track::after {
+    transform: translateX(22px);
+    background: var(--brand-gold);
+}
+
+.kw-switch__hint {
+    color: var(--brand-gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.kw-cs__saved {
+    margin: 16px 0 0;
+    padding: 11px 14px;
+    border: 1px solid rgba(198, 165, 107, 0.5);
+    border-radius: 4px;
+    background: rgba(181, 18, 42, 0.12);
+    color: var(--brand-gold);
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.kw-cs__saved[hidden] {
+    display: none;
+}
+
+.kw-cs__foot {
+    margin-top: 20px;
+}
+
+.kw-cs__foot-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+.kw-cs__foot-links a {
+    color: var(--brand-gold);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(198, 165, 107, 0.45);
+    padding-bottom: 2px;
+}
+
+.kw-cs__foot-links a:hover,
+.kw-cs__foot-links a:focus-visible {
+    color: #fff;
+    border-bottom-color: var(--brand-red);
+    outline: none;
+}
+
+/* FOOTER TRIGGER — a button has to match the links beside it. */
+.footer-legal-links button[data-cookie-settings] {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: rgba(245, 243, 239, 0.85);
+    font: inherit;
+    cursor: pointer;
+    transition: color .25s ease;
+}
+
+.footer-legal-links button[data-cookie-settings]:hover {
+    color: var(--brand-gold);
+}
+
+.footer-legal-links button[data-cookie-settings]:focus-visible {
+    outline: 2px solid var(--brand-gold);
+    outline-offset: 3px;
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+    .kw-cookie__inner {
+        grid-template-columns: 14px minmax(0, 1fr);
+        padding: 22px 6% 24px;
+    }
+
+    .kw-cookie__actions {
+        grid-column: 2;
+    }
+}
+
+/* PHONES — the sheet becomes a bottom tray so the top of the dialog is
+   never hidden behind the browser chrome, and the buttons stretch. */
+
+@media (max-width: 600px) {
+    .kw-cookie__inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        padding: 20px 5% calc(20px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .kw-cookie__mark {
+        display: none;
+    }
+
+    .kw-cookie__actions {
+        grid-column: 1;
+    }
+
+    .kw-cookie__title {
+        font-size: 17px;
+    }
+
+    .kw-cookie__text {
+        font-size: 12.5px;
+    }
+
+    .kw-btn {
+        flex: 1 1 auto;
+        padding: 13px 14px;
+        text-align: center;
+    }
+
+    .kw-cs {
+        align-items: end;
+        padding: 0;
+    }
+
+    .kw-cs__dialog {
+        width: 100%;
+        max-height: 88vh;
+        margin: 0;
+        padding: 22px 5% calc(20px + env(safe-area-inset-bottom, 0px));
+        border: 0;
+        border-top: 1px solid rgba(198, 165, 107, 0.45);
+        border-radius: 0;
+    }
+
+    .kw-cs-row {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .kw-cs-row__text {
+        max-width: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .kw-cookie__bar,
+    .kw-btn,
+    .kw-switch__track,
+    .kw-switch__track::after {
+        transition: none;
+    }
+
+    .kw-cookie__bar {
+        transform: none;
+    }
+}

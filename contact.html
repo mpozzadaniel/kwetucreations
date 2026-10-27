@@ -1,0 +1,973 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Kwetu Creations, Kampala</title>  <!-- SEO:BEGIN -->
+  <meta name="description" content="Talk to Kwetu Creations about signage, branding, illuminated displays or interior work. Reach us on Nkurumah Road, Kampala, or call +256 787 738 999.">
+  <!-- SEO:DOMAIN: tools/set-domain.php inserts the canonical link, og:url and og:image here -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kwetu Creations">
+  <meta property="og:locale" content="en_UG">
+  <meta property="og:title" content="Contact Us | Kwetu Creations, Kampala">
+  <meta property="og:description" content="Talk to Kwetu Creations about signage, branding, illuminated displays or interior work. Reach us on Nkurumah Road, Kampala, or call +256 787 738 999.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact Us | Kwetu Creations, Kampala">
+  <meta name="twitter:description" content="Talk to Kwetu Creations about signage, branding, illuminated displays or interior work. Reach us on Nkurumah Road, Kampala, or call +256 787 738 999.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo/favicon-32.png?v=4">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png?v=3">
+  <!-- SEO:END -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/shared.css">
+
+    <!-- Font Awesome icons -->
+        <link rel="preload" as="style"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </noscript>
+
+    <style>
+        /* =================================
+           KWETU CREATIONS CONTACT PAGE
+           ================================= */
+
+        .contact-page {
+            background: #151515;
+            color: #F5F3EF;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .contact-page * {
+            box-sizing: border-box;
+        }
+
+        .contact-hero {
+            position: relative;
+            padding: calc(var(--nav-h, 76px) + 24px) 7% 75px;
+            text-align: center;
+            background:
+                radial-gradient(
+                    ellipse at 50% 0%,
+                    rgba(181, 18, 42, 0.20),
+                    transparent 65%
+                ),
+                #151515;
+            border-bottom: 1px solid rgba(198, 165, 107, 0.22);
+        }
+
+        .contact-eyebrow {
+            color: #C6A56B;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(36px, 5vw, 64px);
+            line-height: 1.12;
+            margin: 0 0 22px;
+            color: #F5F3EF;
+            font-weight: 800;
+        }
+
+        .contact-hero h1 span {
+            color: #B5122A;
+        }
+
+        .contact-hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            color: rgba(245, 243, 239, 0.76);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .contact-container {
+            width: min(1160px, 88%);
+            margin: 0 auto;
+            padding: 75px 0 90px;
+        }
+
+        .contact-intro {
+            margin-bottom: 38px;
+        }
+
+        .contact-intro h2 {
+            font-size: clamp(25px, 3vw, 36px);
+            margin: 0 0 12px;
+            color: #F5F3EF;
+        }
+
+        .contact-intro h2 span {
+            color: #C6A56B;
+        }
+
+        .contact-intro p {
+            color: rgba(245, 243, 239, 0.70);
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 0.85fr 1.35fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .contact-info,
+        .contact-form-card {
+            border: 1px solid rgba(198, 165, 107, 0.22);
+            border-radius: 14px;
+            padding: 35px;
+        }
+
+        .contact-info {
+            background: #202020;
+        }
+
+        .contact-form-card {
+            background: #1B1B1B;
+        }
+
+        .contact-info h3,
+        .contact-form-card h3 {
+            color: #F5F3EF;
+            font-size: 23px;
+            margin: 0 0 12px;
+        }
+
+        .contact-info > p,
+        .contact-form-card > p {
+            color: rgba(245, 243, 239, 0.68);
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .contact-detail {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 19px 0;
+            border-bottom: 1px solid rgba(245, 243, 239, 0.09);
+        }
+
+        .contact-detail:last-of-type {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            color: #C6A56B;
+            background: rgba(198, 165, 107, 0.10);
+            border: 1px solid rgba(198, 165, 107, 0.22);
+            border-radius: 10px;
+        }
+
+        /* Each glyph in the colour people already read it as — mail blue, call
+           green, WhatsApp's own green, pin red. The tile behind each stays gold,
+           so the box keeps the site palette while the marks become recognisable.
+           Two classes beat the gold on .contact-icon above, which is inherited. */
+        .contact-icon .fa-envelope {
+            color: #1A73E8;
+        }
+
+        .contact-icon .fa-phone {
+            color: #34A853;
+        }
+
+        .contact-icon .fa-whatsapp {
+            color: #25D366;
+        }
+
+        .contact-icon .fa-location-dot {
+            color: #EA4335;
+        }
+
+        .contact-detail h4 {
+            font-size: 14px;
+            margin: 2px 0 7px;
+            color: #F5F3EF;
+        }
+
+        .contact-detail p,
+        .contact-detail a {
+            color: rgba(245, 243, 239, 0.72);
+            font-size: 13px;
+            line-height: 1.8;
+            margin: 0;
+            overflow-wrap: anywhere;
+            text-decoration: none;
+        }
+
+        .contact-detail a:hover {
+            color: #C6A56B;
+        }
+
+        .contact-note {
+            margin-top: 28px;
+            padding: 17px;
+            border-left: 3px solid #B5122A;
+            background: rgba(181, 18, 42, 0.08);
+            color: rgba(245, 243, 239, 0.72);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 19px;
+        }
+
+        .contact-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 17px;
+        }
+
+        .contact-form label {
+            display: block;
+            color: #F5F3EF;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 9px;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 15px;
+            background: #151515;
+            color: #F5F3EF;
+            border: 1px solid rgba(245, 243, 239, 0.17);
+            border-radius: 7px;
+            outline: none;
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.25s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            border-color: #C6A56B;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(245, 243, 239, 0.38);
+        }
+
+        .contact-form textarea {
+            min-height: 145px;
+            resize: vertical;
+        }
+
+        .contact-form select {
+            cursor: pointer;
+        }
+
+        .contact-submit {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 11px;
+            padding: 16px 24px;
+            background: #B5122A;
+            border: 1px solid #B5122A;
+            border-radius: 7px;
+            color: #FFFFFF;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.25s ease,
+                        border-color 0.25s ease;
+        }
+
+        .contact-submit:hover {
+            background: #8F0E21;
+            border-color: #C6A56B;
+        }
+
+        .contact-form small {
+            color: rgba(245, 243, 239, 0.50);
+            line-height: 1.7;
+        }
+
+        .contact-bottom {
+            margin-top: 55px;
+            padding: 36px;
+            text-align: center;
+            border: 1px solid rgba(198, 165, 107, 0.25);
+            border-radius: 12px;
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(181, 18, 42, 0.10),
+                    rgba(198, 165, 107, 0.04)
+                );
+        }
+
+        .contact-bottom h3 {
+            font-size: 24px;
+            margin: 0 0 12px;
+        }
+
+        .contact-bottom p {
+            color: rgba(245, 243, 239, 0.72);
+            line-height: 1.8;
+            margin: 0 auto 22px;
+            max-width: 650px;
+        }
+
+        .contact-bottom a {
+            display: inline-block;
+            padding: 13px 23px;
+            background: #C6A56B;
+            color: #151515;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .contact-bottom a:hover {
+            background: #F5F3EF;
+        }
+
+        @media (max-width: 850px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-hero {
+                padding: calc(var(--nav-h, 76px) + 26px) 6%;
+            }
+
+            .contact-container {
+                width: 90%;
+                padding: 55px 0 65px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .contact-info,
+            .contact-form-card {
+                padding: 23px 19px;
+            }
+
+            .contact-form .form-row {
+                grid-template-columns: 1fr;
+                gap: 19px;
+            }
+
+            .contact-bottom {
+                padding: 27px 20px;
+            }
+
+            .contact-eyebrow {
+                letter-spacing: 2px;
+                font-size: 10px;
+            }
+        }
+        
+        /* CONTACT PAGE SCROLL FIX */
+        html {
+            height: auto;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        body.contact-page {
+            height: auto;
+            min-height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        #site-header,
+        #site-footer {
+            flex-shrink: 0;
+        }
+
+    </style>
+  <!-- SEO:JSON-LD:BEGIN -->
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "#kwetu-creations",
+      "name": "Kwetu Creations",
+      "description": "Kampala creative studio delivering signage solutions, branding and graphic design, interior solutions, illuminated signage, laser cutting, custom fabrication, large-format printing and website design.",
+      "email": "info@kwetucreations.com",
+      "telephone": "+256787738999",
+      "foundingDate": "2014",
+      "founder": {
+          "@type": "Person",
+          "name": "Stephen Were Mbatya",
+          "jobTitle": "Marketing Director"
+      },
+      "employee": [
+          {
+              "@type": "Person",
+              "name": "Stephen Were Mbatya",
+              "jobTitle": "Marketing Director"
+          },
+          {
+              "@type": "Person",
+              "name": "Byuma Daniel",
+              "jobTitle": "Creative Graphics Designer"
+          }
+      ],
+      "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Freedom House, Level 6, Suite R-724, Nkurumah Road",
+          "addressLocality": "Kampala",
+          "addressCountry": "UG"
+      },
+      "knowsAbout": [
+          "Signage solutions",
+          "Illuminated signage",
+          "Branding and graphic design",
+          "Large-format printing",
+          "Laser cutting",
+          "Custom fabrication",
+          "Interior solutions",
+          "Website design and development"
+      ],
+      "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Studio services",
+          "itemListElement": [
+              {
+                  "@type": "Offer",
+                  "url": "services.html#signage",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Signage Solutions"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#branding",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Branding & Graphic Design"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#interiors",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Interior Solutions"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#illuminated-signage",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Illuminated Signage"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#fabrication",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Custom Fabrication"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#laser-cutting",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Laser Cutting"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#large-format-printing",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Large-Format Printing"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "url": "services.html#web-design",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": "Website Design & Development"
+                  }
+              }
+          ]
+      }
+  }
+  </script>
+  <!-- SEO:JSON-LD:END -->
+</head>
+
+<body class="contact-page">
+
+    <!-- Shared navigation -->
+    <div id="site-header">
+  <!-- KWETU:CHROME:SITE-HEADER:BEGIN -->
+  <header class="navbar">
+      <a href="./" class="logo">
+          <img class="logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+          <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+          <span class="logo-creations">CREATIONS</span>
+      </a>
+  
+      <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="main-navigation"
+          aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+  
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+          <a href="./" data-page="index3.html">Home</a>
+          <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+          <a href="services.html" data-page="services.html">Services</a>
+          <a href="about.html" data-page="about.html">About Us</a>
+         <a href="contact.html" data-page="contact.html">Contact Us</a>
+          <a href="quote-request.html" class="nav-quote" data-page="quote-request.html">Get a Quote ↗</a>
+          
+      </nav>
+  </header>
+  <!-- KWETU:CHROME:SITE-HEADER:END -->
+</div>
+
+    <main>
+        <!-- Page introduction -->
+        <section class="contact-hero">
+            <div class="contact-eyebrow">
+                Let's Create Something Exceptional
+            </div>
+
+            <h1>
+                Get In <span>Touch.</span>
+            </h1>
+
+            <p>
+                Have a project in mind? We would love to hear from you.
+                Contact Kwetu Creations to discuss your ideas and discover
+                how we can bring your vision to life.
+            </p>
+        </section>
+
+        <section class="contact-container">
+
+            <div class="contact-intro">
+                <h2>Let's Start a <span>Conversation</span></h2>
+
+                <p>
+                    Whether you need professional branding, signage,
+                    laser services, fabrication, interior solutions or
+                    a website for your business, our team is ready to
+                    discuss your project and help you take the next step.
+                </p>
+            </div>
+
+            <div class="contact-layout">
+
+                <!-- Contact information -->
+                <aside class="contact-info">
+                    <h3>Contact Information</h3>
+
+                    <p>
+                        Reach out to us using the contact details below.
+                        We look forward to hearing from you.
+                    </p>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+
+                        <div>
+                            <h4>Email Address</h4>
+                            <a href="mailto:info@kwetucreations.com">
+                                info@kwetucreations.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+
+                        <div>
+                            <h4>Phone Number</h4>
+                            <a href="tel:+256787738999">
+                                +256 787 738 999
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Above "Our Location" on purpose: .contact-detail:last-of-type
+                         removes the divider line, and the address should keep it. -->
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        </div>
+
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                               target="_blank" rel="noopener">
+                                +256 787 738 999
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>
+                            
+                    Freedom House, Level 6, Suite R-724<br>
+                    Nkurumah Road,  Kampala, Uganda<br>
+                    
+                
+                            </p>
+                        </div>
+                    </div>
+
+                   
+                </aside>
+
+                <!-- Contact form -->
+                <div class="contact-form-card">
+                    <h3>Send Us a Message</h3>
+
+                    <p>
+                        Tell us a little about yourself and how we can
+                        help with your project.
+                    </p>
+
+                    <form class="contact-form"
+                          id="contactForm"
+                          action="#"
+                          method="post"
+                          data-form-guard
+                          data-endpoint="backend/submit-enquiry.php"
+                          data-csrf-endpoint="backend/csrf-token.php"
+                          data-recipient="info@kwetucreations.com"
+                          data-subject="Website enquiry - Kwetu Creations">
+
+                        <input type="hidden" name="kind" value="contact">
+
+                        <!-- Bot trap. A person never sees or fills this. -->
+                        <div class="guard-trap" aria-hidden="true">
+                            <label for="contact-website">Company website</label>
+                            <input type="text" id="contact-website"
+                                   name="company_website"
+                                   tabindex="-1"
+                                   autocomplete="off">
+                        </div>
+
+                        <div class="form-row">
+                            <div>
+                                <label for="fullName">Full Name *</label>
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    placeholder="Your full name"
+                                    autocomplete="name"
+                                    required>
+                            </div>
+
+                            <div>
+                                <label for="company">Company Name</label>
+                                <input
+                                    type="text"
+                                    id="company"
+                                    name="company"
+                                    placeholder="Your company (optional)"
+                                    autocomplete="organization">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div>
+                                <label for="email">Email Address *</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required>
+                            </div>
+
+                            <div>
+                                <label for="phone">Phone Number</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="+256 ..."
+                                    autocomplete="tel">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject">What Is Your Enquiry About? *</label>
+
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a service</option>
+                                <option value="Branding">Branding</option>
+                                <option value="Laser Services">Laser Services</option>
+                                <option value="Signage">Signage</option>
+                                <option value="Fabrication">Fabrication</option>
+                                <option value="Interior Solutions">Interior Solutions</option>
+                                <option value="Website design">Website Design &amp; Development</option>
+                                <option value="General Enquiry">General Enquiry</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message">Your Message *</label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Tell us about your enquiry or project..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="contact-submit">
+                            Send Message
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+
+                        <p class="form-note">
+                            What you send is stored on our own server for the
+                            team to read, and it stays private — this page
+                            never publishes your message and never replies on
+                            our behalf. If the form cannot reach the server it
+                            says so and hands you the text to send yourself.
+                        </p>
+
+                       
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Quote call to action -->
+            <div class="contact-bottom">
+                <h3>Ready to Start Your Project?</h3>
+
+                <p>
+                    If you already have a project in mind, submit a
+                    quotation request with your requirements and relevant
+                    design files.
+                </p>
+
+                <a href="quote-request.html">
+                    REQUEST A QUOTE
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+        <p class="related-links">
+            <span>While you are here:</span>
+            <a href="portfolio.html">See our recent work</a>
+            <a href="services.html">What Kwetu Creations produces</a>
+        </p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Shared footer -->
+    <div id="site-footer">
+  <!-- KWETU:CHROME:SITE-FOOTER:BEGIN -->
+  <footer class="site-footer">
+  
+      <div class="footer-top">
+          <div class="footer-brand">
+              <a href="./" class="footer-logo">
+                  <img class="footer-logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+                  <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+                  <span class="logo-creations">CREATIONS</span>
+              </a>
+  
+              <p class="footer-tagline">
+                  Creative design. Precision production. Exceptional results.
+              </p>
+          </div>
+  
+          <div class="footer-explore">
+              <h3>EXPLORE</h3>
+              <a href="./" data-page="index3.html">Home</a>
+              <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+              <a href="services.html" data-page="services.html">Services</a>
+              <a href="about.html" data-page="about.html">About Us</a>
+              <a href="testimonials.html" data-page="testimonials.html">Client Reviews</a>
+              <a href="contact.html" data-page="contact.html">Contact Us</a>
+              <a href="quote-request.html" data-page="quote-request.html">Get a Quote</a>
+          </div>
+          <div class="footer-services">
+                  <h3>OUR SERVICES</h3>
+                  <a href="services.html#signage">Signage</a>
+                  <a href="services.html#branding">Branding &amp; Graphic Design</a>
+                  <a href="services.html#interiors">Interior Solutions</a>
+                  <a href="services.html#illuminated-signage">Illuminated Signage</a>
+                  <a href="services.html#fabrication">Fabrication</a>
+                  <a href="services.html#laser-cutting">Laser Cutting</a>
+                  <a href="services.html#large-format-printing">Large-Format Printing</a>
+                  <a href="services.html#web-design">Website Design &amp; Development</a>
+              </div>
+  
+              <div class="footer-contact">
+                  <h3>CONTACT US</h3>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <address>
+                      Freedom House, Level 6, Suite R-724<br>
+                      Nkurumah Road, Kampala, Uganda
+                     
+                  </address>
+              </div>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  <a href="tel:+256787738999">+256 787 738 999</a>
+              </div>
+              
+              <div class="footer-contact-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <a href="mailto:info@kwetucreations.com">
+                      info@kwetucreations.com
+                  </a>
+              </div>
+  
+          </div>
+  
+          <div class="footer-social">
+              <h3>CONNECT WITH US</h3>
+  
+              <div class="social-icons-container">
+                  <a class="icon-link whatsapp"
+                     href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener"
+                     aria-label="Message the studio on WhatsApp"
+                     title="Message the studio on WhatsApp">
+                      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                  </a>
+                  <span class="icon-link instagram" role="img"
+                        aria-label="Instagram" title="Instagram">
+                      <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link tiktok" role="img"
+                        aria-label="TikTok" title="TikTok">
+                      <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link linkedin" role="img"
+                        aria-label="LinkedIn" title="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link facebook" role="img"
+                        aria-label="Facebook" title="Facebook">
+                      <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                  </span>
+              </div>
+  
+              <p class="footer-social-note">
+                  Speak to the studio directly —
+                  <a href="mailto:info@kwetucreations.com">info@kwetucreations.com</a>,
+                  <a href="tel:+256787738999">+256 787 738 999</a>,
+                  or
+                  <a href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener">message us on WhatsApp</a>.
+                  All three reach the team, and a reply from us comes from a
+                  person, not a queue.
+              </p>
+  
+          </div>
+          
+      </div>
+  
+      <div class="footer-bottom">
+          <div class="footer-legal-links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <span>|</span>
+              <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+              <span>|</span>
+              <a href="cookie-policy.html">Cookie Policy</a>
+              <span>|</span>
+              <button type="button" data-cookie-settings
+                      aria-haspopup="dialog">Cookie Settings</button>
+          </div>
+  
+          <p class="footer-copyright">
+              &copy; <span id="year"></span>
+              <span class="footer-kwetu">Kwetu</span>
+              <span class="footer-creations">Creations</span>.
+              All rights reserved.
+          </p>
+  
+          <div class="footer-designer">
+              <span>Website designed by</span>
+              <strong>BYUMA DANIEL</strong>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mpozzadaniel@gmail.com"
+                 target="_blank" rel="noopener noreferrer">
+                  mpozzadaniel@gmail.com
+              </a>
+          </div>
+      </div>
+  
+  </footer>
+  <!-- KWETU:CHROME:SITE-FOOTER:END -->
+</div>
+
+    <script src="script.js"></script>
+    <script src="cookie-consent.js"></script>
+
+    <!-- Field validation and an honest note about what has not been sent -->
+    <script src="form-guard.js"></script>
+
+</body>
+</html>

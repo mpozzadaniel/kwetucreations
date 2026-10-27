@@ -1,0 +1,1255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cookie Policy | Kwetu Creations</title>  <!-- SEO:BEGIN -->
+  <meta name="description" content="Which cookies and browser storage this Kwetu Creations website uses, what your consent controls and what is not installed.">
+  <!-- SEO:DOMAIN: tools/set-domain.php inserts the canonical link, og:url and og:image here -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kwetu Creations">
+  <meta property="og:locale" content="en_UG">
+  <meta property="og:title" content="Cookie Policy | Kwetu Creations">
+  <meta property="og:description" content="Which cookies and browser storage this Kwetu Creations website uses, what your consent controls and what is not installed.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cookie Policy | Kwetu Creations">
+  <meta name="twitter:description" content="Which cookies and browser storage this Kwetu Creations website uses, what your consent controls and what is not installed.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo/favicon-32.png?v=4">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png?v=3">
+  <!-- SEO:END -->
+
+    <meta name="theme-color" content="#151515">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/shared.css">
+
+        <link rel="preload" as="style"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </noscript>
+
+    <style>
+        /* =========================================
+           KWETU CREATIONS — COOKIE POLICY
+           Premium black, red, white and gold
+        ========================================= */
+
+        :root {
+            --cookie-red: #B5122A;
+            --cookie-red-dark: #8F0E21;
+            --cookie-gold: #C6A56B;
+            --cookie-gold-dark: #A7864D;
+            --cookie-white: #F5F3EF;
+            --cookie-black: #151515;
+            --cookie-black-soft: #202020;
+            --cookie-muted: #B8B5B0;
+            --cookie-border: rgba(198, 165, 107, 0.22);
+        }
+
+        /* The dark canvas belongs to the document, not only to <main>, so no
+           leftover page margin can expose a white band down the sides. */
+        body {
+            background: var(--cookie-black);
+        }
+
+        .cookie-page {
+            background: var(--cookie-black);
+            color: var(--cookie-white);
+            min-height: 100vh;
+        }
+
+        .cookie-page * {
+            box-sizing: border-box;
+        }
+
+        .cookie-hero {
+            position: relative;
+            overflow: hidden;
+            padding: calc(var(--nav-h, 76px) + 26px) 7% 80px;
+            background:
+                radial-gradient(
+                    ellipse at 85% 20%,
+                    rgba(181, 18, 42, 0.20),
+                    transparent 42%
+                ),
+                linear-gradient(
+                    135deg,
+                    #151515 0%,
+                    #202020 100%
+                );
+            border-bottom: 1px solid var(--cookie-border);
+        }
+
+        .cookie-hero::after {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 4px;
+            background: var(--cookie-gold);
+            right: -50px;
+            bottom: 55px;
+            transform: rotate(-35deg);
+            opacity: 0.55;
+        }
+
+        .cookie-hero-inner {
+            max-width: 1150px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cookie-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--cookie-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .cookie-eyebrow::before {
+            content: "";
+            width: 35px;
+            height: 2px;
+            background: var(--cookie-red);
+        }
+
+        .cookie-hero h1 {
+            max-width: 850px;
+            margin: 0 0 22px;
+            font-size: clamp(42px, 7vw, 82px);
+            line-height: 1.04;
+            letter-spacing: -2px;
+            font-weight: 800;
+        }
+
+        .cookie-hero h1 span {
+            color: var(--cookie-gold);
+        }
+
+        .cookie-hero-description {
+            max-width: 680px;
+            color: var(--cookie-muted);
+            font-size: 17px;
+            line-height: 1.9;
+            margin: 0;
+        }
+
+        .cookie-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 14px 20px;
+            margin-top: 30px;
+        }
+
+        .cookie-actions button {
+            padding: 14px 22px;
+            border: 1px solid var(--cookie-gold);
+            border-radius: 3px;
+            background: transparent;
+            color: var(--cookie-white);
+            font: inherit;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background .25s ease, color .25s ease;
+        }
+
+        .cookie-actions button:hover {
+            background: var(--cookie-gold);
+            color: var(--cookie-black);
+        }
+
+        .cookie-actions button:focus-visible {
+            outline: 2px solid var(--cookie-gold);
+            outline-offset: 3px;
+        }
+
+        .cookie-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 30px;
+            color: var(--cookie-muted);
+            font-size: 13px;
+        }
+
+        .cookie-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cookie-meta span::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--cookie-gold);
+        }
+
+        .cookie-layout {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 65px 6% 100px;
+            display: grid;
+            grid-template-columns: 270px minmax(0, 1fr);
+            gap: 65px;
+            align-items: start;
+        }
+
+        /* Contents navigation */
+
+        .cookie-toc {
+            position: sticky;
+            top: calc(var(--nav-h, 76px) + 24px);
+            background: var(--cookie-black-soft);
+            border: 1px solid var(--cookie-border);
+            padding: 28px 23px;
+        }
+
+        .cookie-toc h2 {
+            margin: 0 0 20px;
+            font-size: 15px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .cookie-toc h2 span {
+            color: var(--cookie-gold);
+        }
+
+        .cookie-toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 4px;
+        }
+
+        .cookie-toc a {
+            display: block;
+            color: var(--cookie-muted);
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 1.6;
+            padding: 10px 12px;
+            border-left: 2px solid transparent;
+            transition: 0.25s ease;
+        }
+
+        .cookie-toc a:hover,
+        .cookie-toc a:focus-visible {
+            color: var(--cookie-white);
+            background: rgba(181, 18, 42, 0.13);
+            border-left-color: var(--cookie-gold);
+        }
+
+        /* Inventory table */
+
+        .cookie-table {
+            width: 100%;
+            margin: 18px 0 6px;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .cookie-table caption {
+            margin-bottom: 12px;
+            color: var(--cookie-gold);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            text-align: left;
+        }
+
+        .cookie-table th,
+        .cookie-table td {
+            padding: 13px 12px;
+            border: 1px solid rgba(198, 165, 107, 0.22);
+            color: var(--cookie-muted);
+            line-height: 1.8;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .cookie-table th {
+            background: rgba(198, 165, 107, 0.09);
+            color: var(--cookie-white);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .cookie-table code {
+            color: var(--cookie-gold);
+            font-size: 12.5px;
+            overflow-wrap: anywhere;
+        }
+
+        .cookie-table .is-off {
+            color: var(--cookie-white);
+            font-weight: 600;
+        }
+
+        /* Policy content */
+
+        .cookie-content {
+            min-width: 0;
+        }
+
+        .cookie-intro {
+            background: linear-gradient(
+                135deg,
+                rgba(181, 18, 42, 0.12),
+                rgba(198, 165, 107, 0.05)
+            );
+            border: 1px solid var(--cookie-border);
+            border-left: 4px solid var(--cookie-red);
+            padding: 25px 28px;
+            margin-bottom: 48px;
+        }
+
+        .cookie-intro h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .cookie-intro p {
+            margin: 0;
+            color: var(--cookie-muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .cookie-section {
+            padding: 0 0 37px;
+            margin-bottom: 37px;
+            border-bottom: 1px solid rgba(245, 243, 239, 0.10);
+            scroll-margin-top: calc(var(--nav-h, 76px) + 24px);
+        }
+
+        .cookie-section:last-of-type {
+            border-bottom: 0;
+        }
+
+        .cookie-section h2 {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            font-size: clamp(21px, 2.6vw, 27px);
+            line-height: 1.4;
+            margin: 0 0 18px;
+            font-weight: 750;
+        }
+
+        .cookie-section h2 span {
+            color: var(--cookie-gold);
+            font-size: 13px;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+
+        .cookie-section h3 {
+            font-size: 16px;
+            color: var(--cookie-white);
+            margin: 24px 0 9px;
+        }
+
+        .cookie-section p,
+        .cookie-section li {
+            color: var(--cookie-muted);
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .cookie-section p {
+            margin: 0 0 15px;
+        }
+
+        .cookie-section ul {
+            padding-left: 22px;
+            margin: 12px 0 18px;
+        }
+
+        .cookie-section li {
+            padding-left: 5px;
+            margin-bottom: 7px;
+        }
+
+        .cookie-section li::marker {
+            color: var(--cookie-gold);
+        }
+
+        .cookie-section strong {
+            color: var(--cookie-white);
+            font-weight: 650;
+        }
+
+        .cookie-section code {
+            color: var(--cookie-gold);
+            font-size: 13px;
+            overflow-wrap: anywhere;
+        }
+
+        .cookie-section a {
+            color: var(--cookie-gold);
+        }
+
+        .cookie-note {
+            margin-top: 20px;
+            padding: 18px 20px;
+            background: rgba(198, 165, 107, 0.07);
+            border: 1px solid var(--cookie-border);
+            color: var(--cookie-muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .cookie-note strong {
+            color: var(--cookie-gold);
+        }
+
+        .legal-links-box {
+            margin-top: 24px;
+            padding: 20px;
+            background: #202020;
+            border: 1px solid rgba(198, 165, 107, 0.35);
+        }
+
+        .legal-links-box h3 {
+            margin: 0 0 14px;
+            color: #C6A56B;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .legal-links-box a {
+            display: block;
+            padding: 10px 0;
+            color: #F5F3EF;
+            font-size: 13px;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(245, 243, 239, 0.10);
+        }
+
+        .legal-links-box a:last-child {
+            border-bottom: none;
+        }
+
+        .legal-links-box a:hover {
+            color: #C6A56B;
+        }
+
+        .cookie-final {
+            background: var(--cookie-black-soft);
+            border: 1px solid var(--cookie-border);
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .cookie-final h2 {
+            margin: 0 0 12px;
+            font-size: 23px;
+        }
+
+        .cookie-final h2 span {
+            color: var(--cookie-gold);
+        }
+
+        .cookie-final p {
+            color: var(--cookie-muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .cookie-final a {
+            color: var(--cookie-gold);
+            overflow-wrap: anywhere;
+        }
+
+        .cookie-back-top {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--cookie-white);
+            font-size: 13px;
+            text-decoration: none;
+            border-bottom: 1px solid var(--cookie-gold);
+            padding-bottom: 5px;
+        }
+
+        .cookie-back-top:hover {
+            color: var(--cookie-gold);
+        }
+
+        /* Tablet and mobile */
+
+        @media (max-width: 900px) {
+            .cookie-layout {
+                grid-template-columns: 1fr;
+                gap: 38px;
+                padding-top: 45px;
+            }
+
+            .cookie-toc {
+                position: static;
+            }
+
+            .cookie-toc ol {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 4px 12px;
+            }
+        }
+
+        @media (max-width: 620px) {
+            /* The inventory is read one row at a time on a phone instead of
+               squeezing four columns into a narrow screen. */
+            .cookie-table,
+            .cookie-table tbody,
+            .cookie-table tr,
+            .cookie-table td,
+            .cookie-table th {
+                display: block;
+                width: 100%;
+            }
+
+            .cookie-table thead {
+                display: none;
+            }
+
+            .cookie-table tr {
+                margin-bottom: 14px;
+                border: 1px solid rgba(198, 165, 107, 0.22);
+            }
+
+            .cookie-table td {
+                border: 0;
+                border-bottom: 1px solid rgba(198, 165, 107, 0.16);
+            }
+
+            .cookie-table td:last-child {
+                border-bottom: 0;
+            }
+
+            .cookie-table td::before {
+                content: attr(data-label);
+                display: block;
+                margin-bottom: 4px;
+                color: var(--cookie-gold);
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 1.2px;
+                text-transform: uppercase;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .cookie-hero {
+                padding: calc(var(--nav-h, 76px) + 22px) 6% 50px;
+            }
+
+            .cookie-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .cookie-hero-description {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+
+            .cookie-meta {
+                gap: 12px;
+            }
+
+            .cookie-layout {
+                padding: 35px 5% 65px;
+            }
+
+            .cookie-toc {
+                padding: 22px 17px;
+            }
+
+            .cookie-toc ol {
+                grid-template-columns: 1fr;
+            }
+
+            .cookie-intro {
+                padding: 20px;
+            }
+
+            .cookie-section h2 {
+                gap: 10px;
+            }
+
+            .cookie-section p,
+            .cookie-section li {
+                font-size: 13px;
+            }
+
+            .cookie-actions button {
+                flex: 1 1 100%;
+            }
+
+            .cookie-final {
+                padding: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cookie-page *,
+            .cookie-page *::before,
+            .cookie-page *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Shared navigation -->
+    <div id="site-header">
+  <!-- KWETU:CHROME:SITE-HEADER:BEGIN -->
+  <header class="navbar">
+      <a href="./" class="logo">
+          <img class="logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+          <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+          <span class="logo-creations">CREATIONS</span>
+      </a>
+  
+      <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="main-navigation"
+          aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+  
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+          <a href="./" data-page="index3.html">Home</a>
+          <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+          <a href="services.html" data-page="services.html">Services</a>
+          <a href="about.html" data-page="about.html">About Us</a>
+         <a href="contact.html" data-page="contact.html">Contact Us</a>
+          <a href="quote-request.html" class="nav-quote" data-page="quote-request.html">Get a Quote ↗</a>
+          
+      </nav>
+  </header>
+  <!-- KWETU:CHROME:SITE-HEADER:END -->
+</div>
+
+    <main class="cookie-page" id="top">
+
+        <!-- Hero -->
+        <section class="cookie-hero">
+            <div class="cookie-hero-inner">
+
+                <div class="cookie-eyebrow">
+                    Cookies and your consent
+                </div>
+
+                <h1>
+                    Cookie <span>Policy.</span>
+                </h1>
+
+                <p class="cookie-hero-description">
+                    This page lists every cookie and piece of browser storage
+                    the Kwetu Creations website uses today, explains what your
+                    consent choice controls, and names the services that are
+                    deliberately not installed.
+                </p>
+
+                <div class="cookie-actions">
+                    <button type="button" data-cookie-settings
+                            aria-haspopup="dialog">
+                        Open Cookie Settings
+                    </button>
+                </div>
+
+                <div class="cookie-meta">
+                    <span>Kwetu Creations</span>
+                    <span>Website Cookies</span>
+                    <span>Uganda</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Main layout -->
+        <div class="cookie-layout">
+
+            <aside class="cookie-toc">
+                <h2>On this <span>page</span></h2>
+
+                <ol>
+                    <li><a href="#summary">01. Plain Answer</a></li>
+                    <li><a href="#inventory">02. Storage We Use</a></li>
+                    <li><a href="#categories">03. The Three Choices</a></li>
+                    <li><a href="#consent-bar">04. How Consent Works</a></li>
+                    <li><a href="#not-used">05. What Is Not Used</a></li>
+                    <li><a href="#third-party">06. Third-Party Requests</a></li>
+                    <li><a href="#analytics">07. Analytics and Advertising</a></li>
+                    <li><a href="#managing">08. Changing Your Choice</a></li>
+                    <li><a href="#browser">09. Browser Controls</a></li>
+                    <li><a href="#changes">10. Policy Updates</a></li>
+                    <li><a href="#contact">11. Contact Us</a></li>
+                </ol>
+
+                <div class="legal-links-box">
+                    <h3>Legal &amp; Information</h3>
+
+                    <a href="privacy-policy.html">Privacy Policy ↗</a>
+                    <a href="terms-and-conditions.html">Terms &amp; Conditions ↗</a>
+                    <a href="cookie-policy.html">Cookie Policy ↗</a>
+                </div>
+            </aside>
+
+            <article class="cookie-content">
+
+                <div class="cookie-intro">
+                    <h2>The short version</h2>
+                    <p>
+                        This website does not plant advertising or tracking
+                        cookies on you. The storage it writes itself is two
+                        items: the small record of the choice you make in
+                        the consent bar, so that the bar does not follow you
+                        from page to page, and — only if you press submit on
+                        one of the forms — one technical cookie that lets the
+                        server recognise that submission. Neither is used for
+                        advertising, and neither is read back as a history of
+                        what you have looked at.
+                    </p>
+                </div>
+
+                <section class="cookie-section" id="summary">
+                    <h2><span>01</span> The Plain Answer</h2>
+
+                    <p>
+                        Cookies are small text files a website asks your
+                        browser to keep. Modern sites also use
+                        <strong>localStorage</strong>, which does the same job
+                        from inside the browser without being sent to the
+                        server on every request. Under cookie and
+                        e-privacy rules, both are treated the same way, so
+                        this page covers both.
+                    </p>
+
+                    <p>
+                        Kwetu Creations writes <strong>two</strong> items of
+                        storage, both listed in full in the table below. Your
+                        consent record lives on your device and is never sent
+                        to us. The form cookie is issued by our own server,
+                        cannot be read by other scripts on the page, and is
+                        gone when you close the browser.
+                    </p>
+                </section>
+
+                <section class="cookie-section" id="inventory">
+                    <h2><span>02</span> Storage This Website Writes</h2>
+
+                    <table class="cookie-table">
+                        <caption>Complete inventory at the time of writing</caption>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Purpose</th>
+                                <th scope="col">Category</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td data-label="Name"><code>kwetu-consent-v1</code></td>
+                                <td data-label="Type">localStorage on your device</td>
+                                <td data-label="Purpose">
+                                    Remembers which categories you accepted,
+                                    the policy version you answered and the
+                                    date of your choice, so the consent bar
+                                    stays out of your way on the next visit.
+                                </td>
+                                <td data-label="Category">Strictly necessary</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Name"><code>kwetu_intake</code></td>
+                                <td data-label="Type">
+                                    Cookie, written by our server, expires
+                                    when the browser closes
+                                </td>
+                                <td data-label="Purpose">
+                                    Appears only after you press submit on
+                                    the contact, quote request or testimonial
+                                    form. It holds one random number, which
+                                    lets the server confirm that the enquiry
+                                    it just received really started on this
+                                    website rather than from a script. It
+                                    carries no name, no email address and
+                                    nothing you typed, and the server keeps
+                                    no browsing history against it.
+                                </td>
+                                <td data-label="Category">Strictly necessary</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Name">Analytics cookies</td>
+                                <td data-label="Type">None</td>
+                                <td data-label="Purpose">
+                                    This website runs no analytics service, so
+                                    no analytics cookie is set.
+                                </td>
+                                <td data-label="Category" class="is-off">
+                                    Not installed
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="Name">Advertising and social cookies</td>
+                                <td data-label="Type">None</td>
+                                <td data-label="Purpose">
+                                    No marketing tag, pixel or social-platform
+                                    tracker is loaded by this website.
+                                </td>
+                                <td data-label="Category" class="is-off">
+                                    Not installed
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="cookie-note">
+                        <strong>Nothing is stored when you only read.</strong>
+                        Browsing a page does not write any of the entries
+                        above. The consent record appears the moment you
+                        press Accept All, Reject Non-Essential or Save
+                        Preferences, and the form cookie appears only if you
+                        go on to submit one of the three forms.
+                    </p>
+                </section>
+
+                <section class="cookie-section" id="categories">
+                    <h2><span>03</span> The Three Choices You Are Offered</h2>
+
+                    <h3>Strictly necessary — always on</h3>
+                    <p>
+                        Your consent decision itself has to be remembered,
+                        otherwise the banner would reopen on every page you
+                        visit. A submitted form has to be recognised by the
+                        server, otherwise anyone's script could post enquiries
+                        through it. This is the only category that works
+                        without a choice from you, and it carries no personal
+                        profile: the consent record stores three yes or no
+                        values and a date, and the form cookie stores one
+                        random number.
+                    </p>
+
+                    <h3>Analytics — optional</h3>
+                    <p>
+                        Analytics would tell the studio which pages people
+                        read and which projects attract interest. This
+                        website runs none. The switch is here so that your
+                        decision is recorded first and asked for second:
+                        no measurement service can load for you unless you
+                        have said yes.
+                    </p>
+
+                    <h3>Marketing — optional</h3>
+                    <p>
+                        Marketing covers advertising cookies and social-media
+                        pixels used to follow visitors between websites or show
+                        them ads. This website uses neither, and the same rule
+                        applies: nothing in this category loads unless you have
+                        accepted it.
+                    </p>
+                </section>
+
+                <section class="cookie-section" id="consent-bar">
+                    <h2><span>04</span> How The Consent Bar Works</h2>
+
+                    <ul>
+                        <li>It appears at the bottom of the first page you open.</li>
+                        <li><strong>Accept All</strong> records analytics and marketing as accepted.</li>
+                        <li><strong>Reject Non-Essential</strong> records both as refused and keeps only the necessary choice.</li>
+                        <li><strong>Cookie Settings</strong> opens the panel so you can decide category by category, then Save Preferences.</li>
+                        <li>Whichever button you press, the bar closes and does not return until you reopen Cookie Settings.</li>
+                    </ul>
+
+                    <p>
+                        No tracking script is loaded before you answer. This
+                        website carries no analytics or advertising code at
+                        all, so nothing in those categories can load after you
+                        answer either. Your recorded choice is what any future
+                        service would have to respect first, which is a safer
+                        arrangement than asking permission afterwards.
+                    </p>
+                </section>
+
+                <section class="cookie-section" id="not-used">
+                    <h2><span>05</span> What This Website Does Not Do</h2>
+
+                    <ul>
+                        <li>No advertising networks, remarketing lists or social-media pixels.</li>
+                        <li>No cross-website profiles and no sale of browsing behaviour.</li>
+                        <li>No hidden tracking triggered by scrolling, clicking or hovering.</li>
+                        <li>No analytics or advertising cookie attached to the enquiry and quote forms — only the one technical cookie listed in the inventory.</li>
+                        <li>No analytics or advertising script of any kind, whether a category was accepted or refused.</li>
+                    </ul>
+
+                    <p>
+                        The contact, quote request and testimonial forms now
+                        send their answers to this website's own intake system,
+                        which is described in the
+                        <a href="privacy-policy.html">Privacy Policy</a>. The
+                        request carries the cookie above so the server can tell
+                        it started on this site. That is the whole extent of
+                        what the forms do; nothing about you is watched before,
+                        during or after the submission, and no advertiser is
+                        told that you filled anything in.
+                    </p>
+                </section>
+
+                <section class="cookie-section" id="third-party">
+                    <h2><span>06</span> Third-Party Requests That Are Not Cookies</h2>
+
+                    <p>
+                        Honest disclosure needs the whole picture, so these
+                        requests are named. They are not tracking cookies and
+                        they are not used to build a profile of you, but they
+                        do mean your browser contacts another company:
+                    </p>
+
+                    <ul>
+                        <li><strong>Google Fonts</strong> (<code>fonts.googleapis.com</code> and <code>fonts.gstatic.com</code>) supplies the Poppins typeface used on every page.</li>
+                        <li><strong>cdnjs</strong> (<code>cdnjs.cloudflare.com</code>) supplies the Font Awesome icon stylesheet.</li>
+                        <li><strong>Your email application</strong> opens when you use a <code>mailto:</code> link, and the footer designer credit can open a Gmail compose window if you click it.</li>
+                    </ul>
+
+                    <p>
+                        Each of those requests carries your IP address to the
+                        provider, as any web request does, and each provider
+                        handles that request under its own privacy policy.
+                        They load because the design and the icons depend on
+                        them, not because of advertising.
+                    </p>
+
+                    <p class="cookie-note">
+                        <strong>Nothing is set by them for advertising.</strong>
+                        A font file and an icon sheet are static assets: the
+                        providers named above do not place a cookie on your
+                        device to follow you between websites.
+                    </p>
+                </section>
+
+                <section class="cookie-section" id="analytics">
+                    <h2><span>07</span> Analytics and Advertising</h2>
+
+                    <p>
+                        This website runs no analytics service and no
+                        advertising or social-platform tracker. No page on it
+                        reports your visit to Google, Meta or any other
+                        measurement provider, and the only third-party
+                        requests an ordinary page view makes are the font and
+                        icon files listed above.
+                    </p>
+
+                    <p>
+                        The consent panel still asks about Analytics and
+                        Marketing, and the answer you give is stored on your
+                        own device. Choosing first and being asked later is the
+                        safer arrangement: nothing in either category can load
+                        for you unless your record says yes, and a visitor who
+                        rejected it is never re-asked by a silent update.
+                    </p>
+                </section>
+
+                <section class="cookie-section" id="managing">
+                    <h2><span>08</span> Changing Your Choice</h2>
+
+                    <p>
+                        Your decision is never final. <strong>Cookie
+                        Settings</strong> sits in the footer of every page and
+                        reopens the panel, so you can turn analytics or
+                        marketing on or off, or withdraw it entirely, as often
+                        as you like. Saving replaces the previous record on
+                        your device immediately.
+                    </p>
+
+                    <p>
+                        Clearing the site's stored data in your browser removes
+                        the record and brings the consent bar back on your next
+                        visit. That is a quick way to withdraw consent if you
+                        share a device.
+                    </p>
+
+                    <div class="cookie-actions">
+                        <button type="button" data-cookie-settings
+                                aria-haspopup="dialog">
+                            Review My Cookie Settings
+                        </button>
+                    </div>
+                </section>
+
+                <section class="cookie-section" id="browser">
+                    <h2><span>09</span> Your Browser Controls</h2>
+
+                    <p>
+                        Every browser can block or delete cookies and site
+                        data, usually under a privacy or security menu.
+                        Blocking all storage is allowed and respected here: the
+                        website stays readable, and the consent bar may return
+                        on each visit because the browser refuses to remember
+                        the answer.
+                    </p>
+
+                    <p>
+                        Browser extensions that block trackers also work
+                        against this site, because there is nothing of theirs
+                        to find.
+                    </p>
+                </section>
+
+                <section class="cookie-section" id="changes">
+                    <h2><span>10</span> Changes To This Cookie Policy</h2>
+
+                    <p>
+                        This page is written against the code that is actually
+                        in the website folder. If a tracker, a service or a
+                        storage item is added, the inventory in section 02 is
+                        updated first, the consent categories are reviewed, and
+                        the version inside the consent record is increased so
+                        that returning visitors are asked again.
+                    </p>
+
+                    <p>
+                        Review this page when you next visit; it carries no
+                        promise of advance notice.
+                    </p>
+                </section>
+
+                <section class="cookie-section" id="contact">
+                    <h2><span>11</span> Contact Kwetu Creations</h2>
+
+                    <p>
+                        Questions about cookies, consent or how this website
+                        handles your information can go to the studio using the
+                        published contact details.
+                    </p>
+
+                    <p>
+                        <strong>Business:</strong> Kwetu Creations
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        <a href="mailto:info@kwetucreations.com">
+                            info@kwetucreations.com
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Telephone:</strong>
+                        <a href="tel:+256787738999">+256 787 738 999</a>
+                    </p>
+
+                    <p>
+                        <strong>Business address:</strong>
+                        Freedom House, Level 6, Suite R-724, Nkurumah Road, Kampala, Uganda
+                    </p>
+
+                    <p class="related-links">
+                        <span>Related pages:</span>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+                        <a href="contact.html">Contact Kwetu Creations</a>
+                        <a href="quote-request.html">Request a quote</a>
+                    </p>
+                </section>
+
+                <div class="cookie-final">
+                    <h2>Nothing hidden, <span>nothing extra.</span></h2>
+
+                    <p>
+                        If a cookie is not listed on this page, this website is
+                        not setting it. Tell us at
+                        <a href="mailto:info@kwetucreations.com">
+                            info@kwetucreations.com
+                        </a>
+                        and we will investigate and correct this policy.
+                    </p>
+
+                    <a class="cookie-back-top" href="#top">
+                        Back to top ↑
+                    </a>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <!-- Shared footer -->
+    <div id="site-footer">
+  <!-- KWETU:CHROME:SITE-FOOTER:BEGIN -->
+  <footer class="site-footer">
+  
+      <div class="footer-top">
+          <div class="footer-brand">
+              <a href="./" class="footer-logo">
+                  <img class="footer-logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+                  <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+                  <span class="logo-creations">CREATIONS</span>
+              </a>
+  
+              <p class="footer-tagline">
+                  Creative design. Precision production. Exceptional results.
+              </p>
+          </div>
+  
+          <div class="footer-explore">
+              <h3>EXPLORE</h3>
+              <a href="./" data-page="index3.html">Home</a>
+              <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+              <a href="services.html" data-page="services.html">Services</a>
+              <a href="about.html" data-page="about.html">About Us</a>
+              <a href="testimonials.html" data-page="testimonials.html">Client Reviews</a>
+              <a href="contact.html" data-page="contact.html">Contact Us</a>
+              <a href="quote-request.html" data-page="quote-request.html">Get a Quote</a>
+          </div>
+          <div class="footer-services">
+                  <h3>OUR SERVICES</h3>
+                  <a href="services.html#signage">Signage</a>
+                  <a href="services.html#branding">Branding &amp; Graphic Design</a>
+                  <a href="services.html#interiors">Interior Solutions</a>
+                  <a href="services.html#illuminated-signage">Illuminated Signage</a>
+                  <a href="services.html#fabrication">Fabrication</a>
+                  <a href="services.html#laser-cutting">Laser Cutting</a>
+                  <a href="services.html#large-format-printing">Large-Format Printing</a>
+                  <a href="services.html#web-design">Website Design &amp; Development</a>
+              </div>
+  
+              <div class="footer-contact">
+                  <h3>CONTACT US</h3>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <address>
+                      Freedom House, Level 6, Suite R-724<br>
+                      Nkurumah Road, Kampala, Uganda
+                     
+                  </address>
+              </div>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  <a href="tel:+256787738999">+256 787 738 999</a>
+              </div>
+              
+              <div class="footer-contact-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <a href="mailto:info@kwetucreations.com">
+                      info@kwetucreations.com
+                  </a>
+              </div>
+  
+          </div>
+  
+          <div class="footer-social">
+              <h3>CONNECT WITH US</h3>
+  
+              <div class="social-icons-container">
+                  <a class="icon-link whatsapp"
+                     href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener"
+                     aria-label="Message the studio on WhatsApp"
+                     title="Message the studio on WhatsApp">
+                      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                  </a>
+                  <span class="icon-link instagram" role="img"
+                        aria-label="Instagram" title="Instagram">
+                      <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link tiktok" role="img"
+                        aria-label="TikTok" title="TikTok">
+                      <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link linkedin" role="img"
+                        aria-label="LinkedIn" title="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link facebook" role="img"
+                        aria-label="Facebook" title="Facebook">
+                      <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                  </span>
+              </div>
+  
+              <p class="footer-social-note">
+                  Speak to the studio directly —
+                  <a href="mailto:info@kwetucreations.com">info@kwetucreations.com</a>,
+                  <a href="tel:+256787738999">+256 787 738 999</a>,
+                  or
+                  <a href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener">message us on WhatsApp</a>.
+                  All three reach the team, and a reply from us comes from a
+                  person, not a queue.
+              </p>
+  
+          </div>
+          
+      </div>
+  
+      <div class="footer-bottom">
+          <div class="footer-legal-links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <span>|</span>
+              <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+              <span>|</span>
+              <a href="cookie-policy.html">Cookie Policy</a>
+              <span>|</span>
+              <button type="button" data-cookie-settings
+                      aria-haspopup="dialog">Cookie Settings</button>
+          </div>
+  
+          <p class="footer-copyright">
+              &copy; <span id="year"></span>
+              <span class="footer-kwetu">Kwetu</span>
+              <span class="footer-creations">Creations</span>.
+              All rights reserved.
+          </p>
+  
+          <div class="footer-designer">
+              <span>Website designed by</span>
+              <strong>BYUMA DANIEL</strong>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mpozzadaniel@gmail.com"
+                 target="_blank" rel="noopener noreferrer">
+                  mpozzadaniel@gmail.com
+              </a>
+          </div>
+      </div>
+  
+  </footer>
+  <!-- KWETU:CHROME:SITE-FOOTER:END -->
+</div>
+
+    <script src="script.js"></script>
+    <script src="cookie-consent.js"></script>
+</body>
+</html>

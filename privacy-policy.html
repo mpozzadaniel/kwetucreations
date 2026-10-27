@@ -1,0 +1,1352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Privacy Policy | Kwetu Creations</title>  <!-- SEO:BEGIN -->
+  <meta name="description" content="How Kwetu Creations handles personal information, quote requests, project briefs and uploaded design files.">
+  <!-- SEO:DOMAIN: tools/set-domain.php inserts the canonical link, og:url and og:image here -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kwetu Creations">
+  <meta property="og:locale" content="en_UG">
+  <meta property="og:title" content="Privacy Policy | Kwetu Creations">
+  <meta property="og:description" content="How Kwetu Creations handles personal information, quote requests, project briefs and uploaded design files.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Privacy Policy | Kwetu Creations">
+  <meta name="twitter:description" content="How Kwetu Creations handles personal information, quote requests, project briefs and uploaded design files.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo/favicon-32.png?v=4">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png?v=3">
+  <!-- SEO:END -->
+
+    <meta name="theme-color" content="#151515">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/shared.css">
+
+        <link rel="preload" as="style"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </noscript>
+
+    <style>
+        /* =========================================
+           KWETU CREATIONS — PRIVACY POLICY
+           Premium black, red, white and gold   
+        ========================================= */
+
+        :root {
+            --privacy-red: #B5122A;
+            --privacy-red-dark: #8F0E21;
+            --privacy-gold: #C6A56B;
+            --privacy-gold-dark: #A7864D;
+            --privacy-white: #F5F3EF;
+            --privacy-black: #151515;
+            --privacy-black-soft: #202020;
+            --privacy-muted: #B8B5B0;
+            --privacy-border: rgba(198, 165, 107, 0.22);
+        }
+
+        /* The dark canvas belongs to the document, not only to <main>, so no
+           leftover page margin or overscroll can expose a white band down the
+           sides of the page. */
+        body {
+            background: var(--privacy-black);
+        }
+
+        .privacy-page {
+            background: var(--privacy-black);
+            color: var(--privacy-white);
+            min-height: 100vh;
+            font-family: inherit;
+        }
+
+        .privacy-page * {
+            box-sizing: border-box;
+        }
+
+        .privacy-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 7% 80px;
+            background:
+                radial-gradient(
+                    ellipse at 85% 20%,
+                    rgba(181, 18, 42, 0.20),
+                    transparent 42%
+                ),
+                linear-gradient(
+                    135deg,
+                    #151515 0%,
+                    #202020 100%
+                );
+            border-bottom: 1px solid var(--privacy-border);
+        }
+
+        .privacy-hero::after {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 4px;
+            background: var(--privacy-gold);
+            right: -50px;
+            bottom: 55px;
+            transform: rotate(-35deg);
+            opacity: 0.55;
+        }
+
+        .privacy-hero-inner {
+            max-width: 1150px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .privacy-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--privacy-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .privacy-eyebrow::before {
+            content: "";
+            width: 35px;
+            height: 2px;
+            background: var(--privacy-red);
+        }
+
+        .privacy-hero h1 {
+            max-width: 850px;
+            margin: 0 0 22px;
+            font-size: clamp(42px, 7vw, 82px);
+            line-height: 1.04;
+            letter-spacing: -2px;
+            font-weight: 800;
+        }
+
+        .privacy-hero h1 span {
+            color: var(--privacy-gold);
+        }
+
+        .privacy-hero-description {
+            max-width: 680px;
+            color: var(--privacy-muted);
+            font-size: 17px;
+            line-height: 1.9;
+            margin: 0;
+        }
+
+        .privacy-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 32px;
+            color: var(--privacy-muted);
+            font-size: 13px;
+        }
+
+        .privacy-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .privacy-meta span::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--privacy-gold);
+        }
+
+        .privacy-layout {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 65px 6% 100px;
+            display: grid;
+            grid-template-columns: 270px minmax(0, 1fr);
+            gap: 65px;
+            align-items: start;
+        }
+
+        /* Contents navigation */
+
+        .privacy-toc {
+            position: sticky;
+            top: 100px;
+            background: var(--privacy-black-soft);
+            border: 1px solid var(--privacy-border);
+            padding: 28px 23px;
+        }
+
+        .privacy-toc h2 {
+            margin: 0 0 20px;
+            font-size: 15px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .privacy-toc h2 span {
+            color: var(--privacy-gold);
+        }
+
+        .privacy-toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 4px;
+        }
+
+        .privacy-toc a {
+            display: block;
+            color: var(--privacy-muted);
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 1.6;
+            padding: 10px 12px;
+            border-left: 2px solid transparent;
+            transition: 0.25s ease;
+        }
+
+        .privacy-toc a:hover,
+        .privacy-toc a:focus-visible {
+            color: var(--privacy-white);
+            background: rgba(181, 18, 42, 0.13);
+            border-left-color: var(--privacy-gold);
+        }
+
+        .privacy-toc .toc-contact {
+            margin-top: 22px;
+            padding-top: 20px;
+            border-top: 1px solid var(--privacy-border);
+        }
+
+        .privacy-toc .toc-contact p {
+            color: var(--privacy-muted);
+            font-size: 12px;
+            line-height: 1.8;
+            margin: 0 0 14px;
+        }
+
+        .privacy-contact-link {
+            display: inline-block;
+            color: var(--privacy-gold);
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .privacy-contact-link:hover {
+            color: var(--privacy-white);
+        }
+
+        /* Policy content */
+
+        .privacy-content {
+            min-width: 0;
+        }
+
+        .privacy-intro {
+            background: linear-gradient(
+                135deg,
+                rgba(181, 18, 42, 0.12),
+                rgba(198, 165, 107, 0.05)
+            );
+            border: 1px solid var(--privacy-border);
+            border-left: 4px solid var(--privacy-red);
+            padding: 25px 28px;
+            margin-bottom: 48px;
+        }
+
+        .privacy-intro h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .privacy-intro p {
+            margin: 0;
+            color: var(--privacy-muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .privacy-section {
+            padding: 0 0 37px;
+            margin-bottom: 37px;
+            border-bottom: 1px solid rgba(245, 243, 239, 0.10);
+            scroll-margin-top: 100px;
+        }
+
+        .privacy-section:last-of-type {
+            border-bottom: 0;
+        }
+
+        .privacy-section h2 {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            font-size: clamp(21px, 2.6vw, 27px);
+            line-height: 1.4;
+            margin: 0 0 18px;
+            font-weight: 750;
+        }
+
+        .privacy-section h2 span {
+            color: var(--privacy-gold);
+            font-size: 13px;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+
+        .privacy-section h3 {
+            font-size: 16px;
+            color: var(--privacy-white);
+            margin: 24px 0 9px;
+        }
+
+        .privacy-section p,
+        .privacy-section li {
+            color: var(--privacy-muted);
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .privacy-section p {
+            margin: 0 0 15px;
+        }
+
+        .privacy-section ul {
+            padding-left: 22px;
+            margin: 12px 0 18px;
+        }
+
+        .privacy-section li {
+            padding-left: 5px;
+            margin-bottom: 7px;
+        }
+
+        .privacy-section li::marker {
+            color: var(--privacy-gold);
+        }
+
+        .privacy-section strong {
+            color: var(--privacy-white);
+            font-weight: 650;
+        }
+
+        .privacy-section code {
+            color: var(--privacy-gold);
+            font-size: 13px;
+        }
+
+        .privacy-note {
+            margin-top: 20px;
+            padding: 18px 20px;
+            background: rgba(198, 165, 107, 0.07);
+            border: 1px solid var(--privacy-border);
+            color: var(--privacy-muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .privacy-note strong {
+            color: var(--privacy-gold);
+        }
+
+        .privacy-final {
+            background: var(--privacy-black-soft);
+            border: 1px solid var(--privacy-border);
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .privacy-final h2 {
+            margin: 0 0 12px;
+            font-size: 23px;
+        }
+
+        .privacy-final h2 span {
+            color: var(--privacy-gold);
+        }
+
+        .privacy-final p {
+            color: var(--privacy-muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* Gold for the closing block and for the few links inside the numbered
+           sections, which would otherwise fall back to the browser's blue. */
+        .privacy-final a,
+        .privacy-section .inline-link {
+            color: var(--privacy-gold);
+            overflow-wrap: anywhere;
+        }
+
+        .privacy-back-top {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--privacy-white);
+            font-size: 13px;
+            text-decoration: none;
+            border-bottom: 1px solid var(--privacy-gold);
+            padding-bottom: 5px;
+        }
+
+        .privacy-back-top:hover {
+            color: var(--privacy-gold);
+        }
+
+        /* Tablet and mobile */
+
+        @media (max-width: 900px) {
+            .privacy-hero {
+                padding: calc(var(--nav-h, 76px) + 26px) 6% 65px;
+            }
+
+            .privacy-layout {
+                grid-template-columns: 1fr;
+                gap: 38px;
+                padding-top: 45px;
+            }
+
+            .privacy-toc {
+                position: static;
+            }
+
+            .privacy-toc ol {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 4px 12px;
+            }
+
+            .privacy-toc .toc-contact {
+                margin-top: 18px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .privacy-hero {
+                padding: calc(var(--nav-h, 76px) + 22px) 6% 50px;
+            }
+
+            .privacy-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .privacy-hero-description {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+
+            .privacy-meta {
+                gap: 12px;
+            }
+
+            .privacy-layout {
+                padding: 35px 5% 65px;
+            }
+
+            .privacy-toc {
+                padding: 22px 17px;
+            }
+
+            .privacy-toc ol {
+                grid-template-columns: 1fr;
+            }
+
+            .privacy-intro {
+                padding: 20px;
+            }
+
+            .privacy-section h2 {
+                gap: 10px;
+            }
+
+            .privacy-section p,
+            .privacy-section li {
+                font-size: 13px;
+            }
+
+            .privacy-final {
+                padding: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .privacy-page *,
+            .privacy-page *::before,
+            .privacy-page *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+        
+    /* Legal & Information sidebar box */
+    .legal-links-box {
+        margin-top: 24px;
+        padding: 20px;
+        background: #202020;
+        border: 1px solid rgba(198, 165, 107, 0.35);
+    }
+
+    .legal-links-box h3 {
+        margin: 0 0 14px;
+        color: #C6A56B;
+        font-size: 13px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .legal-links-box a {
+        display: block;
+        padding: 10px 0;
+        color: #F5F3EF;
+        font-size: 13px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(245, 243, 239, 0.10);
+    }
+
+    .legal-links-box a:last-child {
+        border-bottom: none;
+    }
+
+    .legal-links-box a:hover {
+        color: #C6A56B;
+    }
+    
+    </style>
+</head>
+
+<body>
+    <!-- Shared navigation -->
+    <div id="site-header">
+  <!-- KWETU:CHROME:SITE-HEADER:BEGIN -->
+  <header class="navbar">
+      <a href="./" class="logo">
+          <img class="logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+          <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+          <span class="logo-creations">CREATIONS</span>
+      </a>
+  
+      <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="main-navigation"
+          aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+  
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+          <a href="./" data-page="index3.html">Home</a>
+          <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+          <a href="services.html" data-page="services.html">Services</a>
+          <a href="about.html" data-page="about.html">About Us</a>
+         <a href="contact.html" data-page="contact.html">Contact Us</a>
+          <a href="quote-request.html" class="nav-quote" data-page="quote-request.html">Get a Quote ↗</a>
+          
+      </nav>
+  </header>
+  <!-- KWETU:CHROME:SITE-HEADER:END -->
+</div>
+
+    <main class="privacy-page" id="top">
+
+        <!-- Hero -->
+        <section class="privacy-hero">
+            <div class="privacy-hero-inner">
+
+                <div class="privacy-eyebrow">
+                    Your privacy matters
+                </div>
+
+                <h1>
+                    Privacy <span>Policy.</span>
+                </h1>
+
+                <p class="privacy-hero-description">
+                    At Kwetu Creations, we respect your privacy.
+                    This policy explains how we handle
+                    personal information when you visit our website,
+                    contact us, request a quotation or share project files.
+                </p>
+
+                <div class="privacy-meta">
+                    <span>Kwetu Creations</span>
+                    <span>Website Privacy</span>
+                    <span>Uganda</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Main policy layout -->
+        <div class="privacy-layout">
+
+            <!-- Table of contents -->
+            <aside class="privacy-toc">
+                <h2>On this <span>page</span></h2>
+
+                <ol>
+                    <li><a href="#who-we-are">01. Who We Are</a></li>
+                    <li><a href="#information">02. Information We Collect</a></li>
+                    <li><a href="#how-we-use">03. How We Use Information</a></li>
+                    <li><a href="#uploads">04. Design Files</a></li>
+                    <li><a href="#sharing">05. Sharing Information</a></li>
+                    <li><a href="#security">06. Data Security</a></li>
+                    <li><a href="#retention">07. Data Retention</a></li>
+                    <li><a href="#cookies">08. Cookies & Analytics</a></li>
+                    <li><a href="#your-rights">09. Your Privacy Rights</a></li>
+                    <li><a href="#external-links">10. External Links</a></li>
+                    <li><a href="#changes">11. Policy Updates</a></li>
+                    <li><a href="#contact">12. Contact Us</a></li>
+                </ol>
+                
+                <div class="legal-links-box">
+                    <h3>Legal &amp; Information</h3>
+
+                    <a href="privacy-policy.html">Privacy Policy ↗</a>
+                    <a href="terms-and-conditions.html">Terms &amp; Conditions ↗</a>
+                    <a href="cookie-policy.html">Cookie Policy ↗</a>
+                </div>
+
+
+                <div class="toc-contact">
+                    <p>
+                        Have a question about your information?
+                        Contact our team for privacy enquiries.
+                    </p>
+                    <a class="privacy-contact-link"
+                       href="mailto:info@kwetucreations.com">
+                        Contact Kwetu Creations ↗
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Policy content -->
+            <article class="privacy-content">
+
+                <div class="privacy-intro">
+                    <h2>Our commitment to your privacy</h2>
+                    <p>
+                        We collect only information relevant to
+                        our business activities, explain why it is
+                        needed, and handle it responsibly. This page
+                        describes the systems the website uses now:
+                        the three forms on this site, the intake store
+                        behind them, the consent record your own
+                        browser keeps, and the two font and icon files
+                        named in the Cookie Policy. No analytics
+                        service and no advertising tracker run here.
+                    </p>
+                </div>
+
+                <section class="privacy-section" id="who-we-are">
+                    <h2><span>01</span> Who We Are</h2>
+
+                    <p>
+                        Kwetu Creations provides creative services
+                        including signage, branding, interior solutions,
+                        illuminated signage and fabrication.
+                    </p>
+
+                    <p>
+                        For this policy, references to "we", "us" and
+                        "our" mean Kwetu Creations. References to
+                        "you" mean a visitor, prospective client or
+                        client using our website or contacting us.
+                    </p>
+
+                    <p>
+                        Our business contact details should be provided
+                        below before this policy is published.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="information">
+                    <h2><span>02</span> Information We Collect</h2>
+
+                    <p>
+                        Depending on how you interact with our website,
+                        we may collect the following categories of
+                        information when necessary for a specific purpose.
+                    </p>
+
+                    <h3>Contact and business details</h3>
+                    <ul>
+                        <li>Your name and business or organisation name.</li>
+                        <li>Email address and telephone number.</li>
+                        <li>Business address or project location, where relevant.</li>
+                    </ul>
+
+                    <h3>Quotation and project information</h3>
+                    <ul>
+                        <li>The service you are interested in.</li>
+                        <li>Project descriptions, measurements and requirements.</li>
+                        <li>Budgets, preferred timelines and other details you choose to provide.</li>
+                        <li>Artwork, logos, photographs, reference images and other files you upload or send to us.</li>
+                    </ul>
+
+                    <h3>What the forms on this website ask for</h3>
+                    <ul>
+                        <li><strong>Quote request:</strong> full name, business or organisation name, email address, contact number, business address, the service required, a project description, and any files you attach.</li>
+                        <li><strong>Contact form:</strong> full name, company name, email address, phone number, the subject of your enquiry and your message.</li>
+                        <li><strong>Testimonial form:</strong> your name, business name, rating, the testimonial text and the publication permission you tick.</li>
+                    </ul>
+
+                    <p class="privacy-note">
+                        <strong>Where those answers go.</strong> All three
+                        forms send their contents to this website's own intake
+                        system, which stores them in a database on the server
+                        that runs the site. A quote request and its attachments
+                        appear in a private review screen that only someone with
+                        the studio's review password can open; nothing you type
+                        becomes visible to another visitor. A testimonial is
+                        published on the website only after a person reads it and
+                        approves it, and only if you ticked the permission box.
+                        The site does not reply to you automatically — answering
+                        is done by a person, from the studio's own phone or email
+                        address. If you would rather not use the form, the phone
+                        number and email address on the contact page work
+                        directly.
+                    </p>
+
+                    <h3>What these forms do not ask for</h3>
+                    <p>
+                        None of the forms asks for a password, payment card,
+                        national ID, date of birth or any other sensitive
+                        identifier, and you should not volunteer those in a
+                        message or a file.
+                    </p>
+
+                    <h3>Basic technical information</h3>
+                    <p>
+                        Our hosting provider or website systems may
+                        record technical information such as browser
+                        type, device information, access times and
+                        server logs.
+                    </p>
+
+                    <p>
+                        The intake system itself keeps one technical value
+                        alongside each submission: a one-way fingerprint of the
+                        IP address your device submitted from, used only to cap
+                        how many enquiries arrive from the same address in a day.
+                        The address itself is not stored, and the fingerprint is
+                        salted, so it is not turned back into an address or
+                        matched against other websites. The form also notes how
+                        long the page was open before you pressed submit, which
+                        exists to make automated submissions harder, not to
+                        watch you.
+                    </p>
+
+                    <p>
+                        Please do not submit sensitive personal
+                        information through our general enquiry or
+                        quotation forms unless it is genuinely necessary
+                        and we have explained how it will be handled.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="how-we-use">
+                    <h2><span>03</span> How We Use Information</h2>
+
+                    <p>
+                        We use personal information only
+                        for legitimate, relevant business purposes,
+                        which are:
+                    </p>
+
+                    <ul>
+                        <li>Responding to enquiries and quotation requests.</li>
+                        <li>Understanding your project requirements.</li>
+                        <li>Preparing estimates, designs and proposals.</li>
+                        <li>Communicating about project progress, approvals and delivery.</li>
+                        <li>Maintaining appropriate business and transaction records.</li>
+                        <li>Reading a testimonial and deciding whether to publish it.</li>
+                        <li>Protecting our website and preventing misuse.</li>
+                        <li>Meeting applicable legal obligations.</li>
+                    </ul>
+
+                    <p>
+                        One mechanical use is worth naming: when an enquiry or a
+                        testimonial is stored, the intake system can send a plain
+                        text copy of what you typed to the studio's own mailboxes,
+                        so that somebody notices it without having to log in and
+                        look. That step is switched off until a real mail account
+                        is configured, and it is described again under
+                        <strong>Sharing Information</strong> below.
+                    </p>
+
+                    <p>
+                        We will not treat a quotation enquiry as
+                        permission to send unrelated promotional
+                        messages. If we introduce marketing
+                        communications, we will provide an appropriate
+                        way to manage your preferences.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="uploads">
+                    <h2><span>04</span> Uploaded Design Files</h2>
+
+                    <p>
+                        Clients may be asked to provide logos, artwork,
+                        reference photographs, technical drawings or
+                        other files to help us understand and complete
+                        a project.
+                    </p>
+
+                    <p>We use those files to:</p>
+
+                    <ul>
+                        <li>Review your project requirements.</li>
+                        <li>Prepare quotations and design proposals.</li>
+                        <li>Complete agreed design, production or installation work.</li>
+                        <li>Resolve project-related questions where necessary.</li>
+                    </ul>
+
+                    <p>
+                        Please upload only files you are authorised
+                        to share. Do not upload confidential material
+                        that is unrelated to your project.
+                    </p>
+
+                    <p>
+                        Attachments on the quote request form are limited to four
+                        files of up to 8 MB each, in the image, document, archive
+                        and drawing formats the form lists. Each file is checked
+                        against its own contents, not merely its name, and a file
+                        whose contents do not match the format it claims is
+                        refused — in which case the whole request is refused, so
+                        you are never told a drawing arrived when it did not.
+                    </p>
+
+                    <p>
+                        Accepted files are saved on the same server, under a
+                        randomly generated name, in a folder that no web address
+                        can reach. They are opened only by someone signed in to the
+                        private review screen, and the browser is forced to treat
+                        them as a download rather than a page, which is what stops a
+                        crafted file from running anything on your machine or ours.
+                        Your original file name is kept so the studio can recognise
+                        it; the copy on the server carries a different name.
+                    </p>
+
+                    <p>
+                        Delete the request and its files go with it. Until then,
+                        attachments stay on the server for as long as the enquiry
+                        they belong to.
+                    </p>
+
+                    <p>
+                        We will not use a client's confidential artwork
+                        for unrelated purposes. Any use of completed
+                        work in our portfolio or promotional materials
+                        should be handled separately and with the
+                        appropriate permission where required.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="sharing">
+                    <h2><span>05</span> Sharing Information</h2>
+
+                    <p>
+                        We do not sell personal information
+                        to third parties.
+                    </p>
+
+                    <p>
+                        Information may need to be shared in limited
+                        circumstances, such as:
+                    </p>
+
+                    <ul>
+                        <li>With authorised team members working on your project.</li>
+                        <li>With hosting, email, file-storage or other service providers when those services are used to operate the website or fulfil your request.</li>
+                        <li>Where disclosure is required by applicable law or a lawful request.</li>
+                        <li>Where necessary to protect rights, property or security, subject to applicable law.</li>
+                    </ul>
+
+                    <p>
+                        <strong>The one internal route worth spelling out:</strong>
+                        if email notification is switched on, the text of your
+                        enquiry — the same fields listed above — is delivered to
+                        mailboxes the studio controls, through the mail service
+                        the studio has configured, with your email address set as
+                        the reply address so a reply goes back to you. Attached
+                        files are not emailed; they stay on the server and are read
+                        there. If a mail send fails, the failure is a line in our
+                        server log and nothing further leaves our system.
+                    </p>
+
+                    <p>
+                        Those providers are used only to operate this
+                        website and to answer the request you make
+                        through it. If the arrangements for sharing
+                        information change, this page is updated and the
+                        published version is the one that applies.
+                    </p>
+
+                    <p>
+                        Some providers may process information outside
+                        Uganda. Any such arrangement must be assessed
+                        against the applicable data-protection
+                        requirements.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="security">
+                    <h2><span>06</span> Data Security</h2>
+
+                    <p>
+                        We use reasonable technical and
+                        organisational measures to protect personal
+                        information against unauthorised access,
+                        disclosure, loss, alteration or misuse.
+                    </p>
+
+                    <p>On the intake system specifically, those measures are:</p>
+
+                    <ul>
+                        <li>The review screens sit behind a password stored only as a one-way hash, and repeat failures to guess it are counted and locked out.</li>
+                        <li>Submitted text reaches the database through prepared statements, so what you type is treated as data and never as instructions.</li>
+                        <li>Every submission is checked for a token issued to your own browser session, for the page it came from, for a hidden field a person never fills in, and for how long the form was open before submit.</li>
+                        <li>Uploads are verified against their own contents, renamed by the server, and stored in a folder no web address can reach; the review screen hands them back only as forced downloads.</li>
+                        <li>The configuration file that holds database and mail credentials is not readable through the website.</li>
+                    </ul>
+
+                    <p>
+                        No website or electronic storage system can
+                        guarantee absolute security. Two limitations are
+                        stated plainly rather than hidden: before this site is
+                        served over HTTPS, anything sent to it — including a
+                        review password — travels in the open, which is why the
+                        review screens must not be used from a shared network
+                        until encryption is in place; and a submission is stored
+                        on one server, so a compromise of that server is a
+                        compromise of what it holds. Backups, once they exist,
+                        will be covered by the same access rules.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="retention">
+                    <h2><span>07</span> How Long We Keep Information</h2>
+
+                    <p>
+                        We retain personal information only
+                        for as long as it is reasonably necessary for
+                        the purpose for which it was collected, or
+                        for any longer period required or permitted
+                        by applicable law.
+                    </p>
+
+                    <p>
+                        Retention periods may differ for unsuccessful
+                        enquiries, completed projects, financial records
+                        and legal records.
+                    </p>
+
+                    <p>
+                        What runs today, stated as it is: a stored enquiry stays
+                        in the database until a person with the review password
+                        marks it handled, archives it, or deletes it. Archiving
+                        hides it from the default view but does not erase it.
+                        Deleting removes the record and its attached files at the
+                        same moment, and there is no undo. An approved testimonial
+                        stays on the public website until someone removes it.
+                    </p>
+
+                    <p>
+                        Nothing is deleted automatically: no expiry job runs, so
+                        an old enquiry is not cleared just because it is old.
+                        Send us a request from the contact details below and a
+                        person will delete your submission and its attached
+                        files.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="cookies">
+                    <h2><span>08</span> Cookies, Storage and Analytics</h2>
+
+                    <p>
+                        Cookies are small files that a website may store on
+                        your device. Websites also use browser storage such as
+                        <strong>localStorage</strong>, which is treated the
+                        same way under cookie rules, and some sites use
+                        analytics tools to understand how visitors interact
+                        with their pages.
+                    </p>
+
+                    <p>
+                        <strong>What this website stores itself:</strong> one
+                        entry in localStorage that records the choice you make
+                        in the consent bar — which categories you accepted, the
+                        version of the policy you answered and the date. It
+                        stays on your device, is never uploaded by this website,
+                        and exists only so the banner does not reopen on every
+                        page you visit. In addition, pressing submit on one of
+                        the three forms makes our server set a single cookie
+                        (<code>kwetu_intake</code>) that identifies your own
+                        submission to the server so it can confirm the request
+                        started here. It holds a random number, not anything you
+                        typed, and it expires when you close the browser. If you
+                        only read pages, neither of these is written.
+                    </p>
+
+                    <p>
+                        <strong>No analytics and no advertising run here.</strong>
+                        This website uses no measurement service, no advertising
+                        cookie and no social-platform tracker, and it does not
+                        report your visit to any of them. A consent bar appears
+                        on your first visit with three options: Accept All,
+                        Reject Non-Essential and Cookie Settings, which
+                        separates Necessary, Analytics and Marketing. Your
+                        answer for the last two is stored on your device and
+                        honoured: neither of them loads anything, because this
+                        website has nothing in those categories to load. The
+                        Cookie Policy lists what is set, and what is not.
+                    </p>
+
+                    <p>
+                        <strong>Requests that are not cookies:</strong> every
+                        page asks Google Fonts for the Poppins typeface and the
+                        cdnjs content delivery network for the icon stylesheet,
+                        and a <code>mailto:</code> link opens your own email
+                        application. Those requests carry your IP address to
+                        the provider, which handles them under its own privacy
+                        policy. They are not used for advertising or profiling,
+                        and the Cookie Policy lists them in full.
+                    </p>
+
+                    <p>
+                        Before any analytics service is connected, its purpose,
+                        the information it collects and the controls required by
+                        applicable law will be reviewed, and this policy, the
+                        Cookie Policy and the consent wording will be updated on
+                        the same day the service goes live.
+                    </p>
+
+                    <p>
+                        Your consent choice can be reopened at any time from
+                        <strong>Cookie Settings</strong> in the footer of every
+                        page. Your browser can also block or delete cookies and
+                        site data, although blocking everything means the
+                        consent bar may reappear on each visit because the
+                        answer cannot be remembered.
+                    </p>
+
+                    <p>
+                        Full details, including the storage inventory, are in
+                        the
+                        <a class="inline-link" href="cookie-policy.html">Cookie Policy</a>.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="your-rights">
+                    <h2><span>09</span> Your Privacy Rights</h2>
+
+                    <p>
+                        Subject to applicable law and any relevant
+                        conditions or exceptions, you may have rights
+                        concerning your personal information, including
+                        the right to:
+                    </p>
+
+                    <ul>
+                        <li>Ask whether we hold personal information about you.</li>
+                        <li>Request access to your information.</li>
+                        <li>Request correction of inaccurate or incomplete information.</li>
+                        <li>Request deletion where applicable and legally permitted.</li>
+                        <li>Object to certain processing or request that it stop where the law provides that right.</li>
+                        <li>Raise a concern about how your information has been handled.</li>
+                    </ul>
+
+                    <p>
+                        To make a request, contact Kwetu Creations
+                        using the details in the Contact Us section.
+                        We may need to verify your identity before
+                        acting on a request.
+                    </p>
+
+                    <p>
+                        If you sent us something through a form and want it gone,
+                        say which submission — the name you used and roughly when
+                        you sent it is enough to find it. The review screen can
+                        delete an enquiry and its attachments outright, and a
+                        testimonial can be taken down from the website, in both
+                        cases by whoever moderates it. Deletion is carried out by
+                        a person rather than by a button on the page, so that
+                        the record being erased is confirmed first.
+                    </p>
+
+                    <p>
+                        We will consider and respond to requests in
+                        accordance with applicable law. Some records
+                        may need to be retained where a legal
+                        obligation or another lawful basis applies.
+                    </p>
+
+                   
+                </section>
+
+                <section class="privacy-section" id="external-links">
+                    <h2><span>10</span> External Links</h2>
+
+                    <p>
+                        Our website may link to third-party websites
+                        or platforms. Those websites have their own
+                        privacy practices, which we do not control.
+                    </p>
+
+                    <p>
+                        We encourage visitors to review the privacy
+                        notices of external services before sharing
+                        personal information with them.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="changes">
+                    <h2><span>11</span> Changes to This Policy</h2>
+
+                    <p>
+                        We may update this Privacy Policy when our
+                        website, services, technology or legal
+                        obligations change.
+                    </p>
+
+                    <p>
+                        The revised version will be published on this
+                        page with an updated effective date. If a
+                        change requires additional notice or consent,
+                        we will take the steps required by applicable law.
+                    </p>
+
+                    <p>
+                        Please review this page periodically to stay
+                        informed about our privacy practices.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="contact">
+                    <h2><span>12</span> Contact Kwetu Creations</h2>
+
+                    <p>
+                        If you have questions, requests or concerns
+                        about this Privacy Policy or your personal
+                        information, please contact us using our
+                        verified business contact details.
+                    </p>
+
+                    <p>
+                        <strong>Business:</strong> Kwetu Creations
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        <a class="inline-link" href="mailto:info@kwetucreations.com">
+                            info@kwetucreations.com
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Telephone:</strong>
+                        <a class="inline-link" href="tel:+256787738999">+256 787 738 999</a>
+                    </p>
+
+                    <p>
+                        <strong>Business address:</strong>
+                        Freedom House, Level 6, Suite R-724, Nkurumah Road, Kampala, Uganda
+                    </p>
+
+        <p class="related-links">
+            <span>Related pages:</span>
+            <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+            <a href="contact.html">Contact Kwetu Creations</a>
+            <a href="quote-request.html">Request a quote</a>
+        </p>
+                </section>
+
+                <div class="privacy-final">
+                    <h2>Thank you for trusting <span>Kwetu Creations.</span></h2>
+
+                    <p>
+                        We aim to handle the information you share
+                        with care and to explain our practices clearly.
+                        Our published policy will be reviewed as our
+                        website and business systems develop.
+                    </p>
+
+                    <a class="privacy-back-top" href="#top">
+                        Back to top ↑
+                    </a>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <!-- Shared footer -->
+    <div id="site-footer">
+  <!-- KWETU:CHROME:SITE-FOOTER:BEGIN -->
+  <footer class="site-footer">
+  
+      <div class="footer-top">
+          <div class="footer-brand">
+              <a href="./" class="footer-logo">
+                  <img class="footer-logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+                  <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+                  <span class="logo-creations">CREATIONS</span>
+              </a>
+  
+              <p class="footer-tagline">
+                  Creative design. Precision production. Exceptional results.
+              </p>
+          </div>
+  
+          <div class="footer-explore">
+              <h3>EXPLORE</h3>
+              <a href="./" data-page="index3.html">Home</a>
+              <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+              <a href="services.html" data-page="services.html">Services</a>
+              <a href="about.html" data-page="about.html">About Us</a>
+              <a href="testimonials.html" data-page="testimonials.html">Client Reviews</a>
+              <a href="contact.html" data-page="contact.html">Contact Us</a>
+              <a href="quote-request.html" data-page="quote-request.html">Get a Quote</a>
+          </div>
+          <div class="footer-services">
+                  <h3>OUR SERVICES</h3>
+                  <a href="services.html#signage">Signage</a>
+                  <a href="services.html#branding">Branding &amp; Graphic Design</a>
+                  <a href="services.html#interiors">Interior Solutions</a>
+                  <a href="services.html#illuminated-signage">Illuminated Signage</a>
+                  <a href="services.html#fabrication">Fabrication</a>
+                  <a href="services.html#laser-cutting">Laser Cutting</a>
+                  <a href="services.html#large-format-printing">Large-Format Printing</a>
+                  <a href="services.html#web-design">Website Design &amp; Development</a>
+              </div>
+  
+              <div class="footer-contact">
+                  <h3>CONTACT US</h3>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <address>
+                      Freedom House, Level 6, Suite R-724<br>
+                      Nkurumah Road, Kampala, Uganda
+                     
+                  </address>
+              </div>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  <a href="tel:+256787738999">+256 787 738 999</a>
+              </div>
+              
+              <div class="footer-contact-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <a href="mailto:info@kwetucreations.com">
+                      info@kwetucreations.com
+                  </a>
+              </div>
+  
+          </div>
+  
+          <div class="footer-social">
+              <h3>CONNECT WITH US</h3>
+  
+              <div class="social-icons-container">
+                  <a class="icon-link whatsapp"
+                     href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener"
+                     aria-label="Message the studio on WhatsApp"
+                     title="Message the studio on WhatsApp">
+                      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                  </a>
+                  <span class="icon-link instagram" role="img"
+                        aria-label="Instagram" title="Instagram">
+                      <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link tiktok" role="img"
+                        aria-label="TikTok" title="TikTok">
+                      <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link linkedin" role="img"
+                        aria-label="LinkedIn" title="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link facebook" role="img"
+                        aria-label="Facebook" title="Facebook">
+                      <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                  </span>
+              </div>
+  
+              <p class="footer-social-note">
+                  Speak to the studio directly —
+                  <a href="mailto:info@kwetucreations.com">info@kwetucreations.com</a>,
+                  <a href="tel:+256787738999">+256 787 738 999</a>,
+                  or
+                  <a href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener">message us on WhatsApp</a>.
+                  All three reach the team, and a reply from us comes from a
+                  person, not a queue.
+              </p>
+  
+          </div>
+          
+      </div>
+  
+      <div class="footer-bottom">
+          <div class="footer-legal-links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <span>|</span>
+              <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+              <span>|</span>
+              <a href="cookie-policy.html">Cookie Policy</a>
+              <span>|</span>
+              <button type="button" data-cookie-settings
+                      aria-haspopup="dialog">Cookie Settings</button>
+          </div>
+  
+          <p class="footer-copyright">
+              &copy; <span id="year"></span>
+              <span class="footer-kwetu">Kwetu</span>
+              <span class="footer-creations">Creations</span>.
+              All rights reserved.
+          </p>
+  
+          <div class="footer-designer">
+              <span>Website designed by</span>
+              <strong>BYUMA DANIEL</strong>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mpozzadaniel@gmail.com"
+                 target="_blank" rel="noopener noreferrer">
+                  mpozzadaniel@gmail.com
+              </a>
+          </div>
+      </div>
+  
+  </footer>
+  <!-- KWETU:CHROME:SITE-FOOTER:END -->
+</div>
+
+    <script src="script.js"></script>
+    <script src="cookie-consent.js"></script>
+</body>
+</html>

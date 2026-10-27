@@ -1,0 +1,35 @@
+# kwetucreations review screens
+#
+# Deliberately reachable from more than this computer: the person approving
+# testimonials works from their own laptop and phone, so "Require local" had to
+# go. What stands between a stranger and those screens now is:
+#
+#   1. the bcrypt password set by php admin/set-password.php;
+#   2. the failed-sign-in lockout counted against the address fingerprint in
+#      admin_login_attempts, which survives someone clearing cookies;
+#   3. the optional admin_allow_from list in backend/local-config.php, which
+#      restricts by source address inside PHP so it works on any web server.
+#      Set it as soon as the team's addresses are fixed — it is the strongest
+#      of the three and it costs nothing.
+#
+# THE CATCH: a password sent over plain http is readable by anyone on the same
+# network. These screens are only safe the moment the site is served over
+# https. Until then, treat any Wi-Fi that is not your own as hostile and do not
+# sign in from it.
+#
+# On nginx this file is ignored. The equivalent there is to keep the same three
+# controls — the password and the address list are in PHP, so they still apply.
+
+Require all granted
+
+# Command-line only, and it prints nothing useful to a browser anyway.
+<FilesMatch "^set-password\.php$">
+    Require all denied
+</FilesMatch>
+
+Options -Indexes
+
+# The site-wide DirectoryIndex asks for index3.html and index.html, neither of
+# which exists in here, so a bare /admin/ used to answer 403 instead of showing
+# the sign-in screen. This names the file that does redirect.
+DirectoryIndex index.php

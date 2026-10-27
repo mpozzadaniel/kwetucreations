@@ -1,0 +1,825 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Client Testimonials | Kwetu Creations</title>  <!-- SEO:BEGIN -->
+  <meta name="description" content="Read what clients say about working with Kwetu Creations on signage, branding, fabrication and interior projects, or share your own experience.">
+  <!-- SEO:DOMAIN: tools/set-domain.php inserts the canonical link, og:url and og:image here -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kwetu Creations">
+  <meta property="og:locale" content="en_UG">
+  <meta property="og:title" content="Client Testimonials | Kwetu Creations">
+  <meta property="og:description" content="Read what clients say about working with Kwetu Creations on signage, branding, fabrication and interior projects, or share your own experience.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Client Testimonials | Kwetu Creations">
+  <meta name="twitter:description" content="Read what clients say about working with Kwetu Creations on signage, branding, fabrication and interior projects, or share your own experience.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo/favicon-32.png?v=4">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png?v=3">
+  <!-- SEO:END -->
+
+        <link rel="preload" as="style"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </noscript>
+
+    <!-- Shared website stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/shared.css">
+    <!-- Testimonials page styling -->
+    <style>
+        /* TESTIMONIALS PAGE */
+        .testimonials-page {
+            background: #151515;
+            color: #F5F3EF;
+            min-height: 100vh;
+        }
+
+        .testimonials-hero {
+            padding: 90px 6% 65px;
+            text-align: center;
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(181, 18, 42, 0.18),
+                    transparent 60%
+                ),
+                #151515;
+        }
+
+        .testimonials-hero .eyebrow {
+            color: #B5122A;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+        }
+
+        .testimonials-hero h1 {
+            font-size: clamp(36px, 6vw, 68px);
+            line-height: 1.1;
+            margin: 0 auto 22px;
+            max-width: 850px;
+            font-weight: 800;
+        }
+
+        .testimonials-hero h1 span {
+            color: #B5122A;
+        }
+
+        .testimonials-hero > p:last-child {
+            color: #bdbdbd;
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        
+.testimonials-content {
+    position: relative;
+    isolation: isolate;
+    padding: 55px 6% 90px;
+    max-width: 1350px;
+    margin: 0 auto;
+    background:
+        linear-gradient(
+            rgba(21, 21, 21, 0.90),
+            rgba(21, 21, 21, 0.94)
+        ),
+        url("images/webp/allumin.webp") center / cover no-repeat;
+}
+
+
+        .testimonials-section-heading {
+            margin-bottom: 30px;
+        }
+
+        .testimonials-section-heading h2 {
+            font-size: clamp(25px, 3vw, 36px);
+            margin: 0 0 12px;
+        }
+
+        .testimonials-section-heading p {
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        /* TESTIMONIAL CARDS */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+                background: #202020;
+        border: 1px solid #414141;
+        border-top: 3px solid #B5122A;
+        border-radius: 0;
+        padding: 30px;
+        transition: transform 0.3s ease,
+                    border-color 0.3s ease,
+                    border-top-color 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+                    transform: translateY(-5px);
+            border-color: #414141;
+            border-top-color: #C6A56B;
+        }
+
+        .testimonial-quote {
+            color: #B5122A;
+            font-size: 44px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-stars {
+                    color: #C6A56B;
+            letter-spacing: 3px;
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+        .testimonial-card blockquote {
+            color: #F5F3EF;
+            font-size: 15px;
+            line-height: 1.9;
+            margin: 0 0 28px;
+        }
+
+        .testimonial-client {
+            border-top: 1px solid #414141;
+            padding-top: 20px;
+        }
+
+        .testimonial-client strong {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .testimonial-client span {
+                    color: #C6A56B;
+            font-size: 13px;
+        }
+
+        .testimonial-card .card-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #C6A56B;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .testimonial-card .card-link:hover,
+        .testimonial-card .card-link:focus-visible {
+            color: #B5122A;
+            text-decoration: underline;
+        }
+
+        /* CLIENT SUBMISSION FORM */
+        .testimonial-form-section {
+            margin-top: 85px;
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .testimonial-form-intro {
+            padding-top: 10px;
+        }
+
+        .testimonial-form-intro .eyebrow {
+            color: #B5122A;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-form-intro h2 {
+            font-size: clamp(30px, 4vw, 46px);
+            line-height: 1.2;
+            margin: 0 0 20px;
+        }
+
+        .testimonial-form-intro p {
+            color: #aaa;
+            line-height: 1.9;
+            font-size: 15px;
+        }
+
+        .testimonial-form {
+            background: #202020;
+            border: 1px solid #414141;
+            border-radius: 12px;
+            padding: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #F5F3EF;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            background: #151515;
+            color: #F5F3EF;
+            border: 1px solid #414141;
+            border-radius: 6px;
+            padding: 14px 15px;
+            font: inherit;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #B5122A;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+            line-height: 1.7;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #777;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .consent-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .consent-group input {
+            margin-top: 4px;
+            accent-color: #B5122A;
+            flex-shrink: 0;
+        }
+
+        .consent-group label {
+            color: #aaa;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .testimonial-submit {
+            width: 100%;
+            border: none;
+            border-radius: 6px;
+            padding: 16px 20px;
+            background: #B5122A;
+            color: #F5F3EF;
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .testimonial-submit:hover {
+            background: #8F0E21;
+        }
+
+        .form-note {
+            color: #888;
+            font-size: 12px;
+            line-height: 1.7;
+            margin-top: 16px;
+        }
+
+        /* One step quieter than .form-note, and still legible: the card behind
+           it is #202020, so anything under about #878787 drops below 4.5:1 and
+           stops being readable at this size. Subtlety comes from the size, not
+           from fading the text out. */
+        .form-note-quiet {
+            color: #8a8a8a;
+            font-size: 11px;
+            line-height: 1.6;
+            margin: 6px 0 0;
+        }
+
+        /* TABLET */
+        @media (max-width: 950px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .testimonial-form-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .testimonials-hero {
+                padding: calc(var(--nav-h, 76px) + 26px) 5% 45px;
+            }
+
+            .testimonials-content {
+                padding: 25px 5% 60px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-card {
+                padding: 25px;
+            }
+
+            .testimonial-form-section {
+                margin-top: 60px;
+            }
+
+            .testimonial-form {
+                padding: 22px;
+            }
+        }
+            
+            /* TESTIMONIALS PAGE — NAVIGATION WIDTH FIX */
+            html,
+            body {
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                overflow-x: clip;
+                box-sizing: border-box;
+            }
+
+            #site-header,
+            #site-footer {
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            #site-header .navbar {
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- SHARED NAVIGATION -->
+    <div id="site-header">
+  <!-- KWETU:CHROME:SITE-HEADER:BEGIN -->
+  <header class="navbar">
+      <a href="./" class="logo">
+          <img class="logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+          <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+          <span class="logo-creations">CREATIONS</span>
+      </a>
+  
+      <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="main-navigation"
+          aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+  
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+          <a href="./" data-page="index3.html">Home</a>
+          <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+          <a href="services.html" data-page="services.html">Services</a>
+          <a href="about.html" data-page="about.html">About Us</a>
+         <a href="contact.html" data-page="contact.html">Contact Us</a>
+          <a href="quote-request.html" class="nav-quote" data-page="quote-request.html">Get a Quote ↗</a>
+          
+      </nav>
+  </header>
+  <!-- KWETU:CHROME:SITE-HEADER:END -->
+</div>
+
+    <main class="testimonials-page">
+
+        <!-- PAGE INTRODUCTION -->
+        <section class="testimonials-hero">
+            <p class="eyebrow">THE KWETU EXPERIENCE</p>
+
+            <h1>
+                Your Vision.<br>
+                <span>Our Creativity.</span>
+            </h1>
+
+            <p>
+                Every project tells a story. Discover the experiences
+                of our clients and share your own experience with
+                Kwetu Creations.
+            </p>
+        </section>
+
+        <div class="testimonials-content">
+
+            <!-- CLIENT TESTIMONIALS -->
+            <section aria-labelledby="client-stories-title">
+                <div class="testimonials-section-heading">
+                    <h2 id="client-stories-title">Client Experiences</h2>
+                    <p>Great partnerships begin with understanding
+                       and creativity.</p>
+                </div>
+
+                <div class="testimonials-grid">
+
+                    <article class="testimonial-card">
+                        <div class="testimonial-quote"
+                             aria-hidden="true">“</div>
+
+                        <blockquote>
+                            Feedback from the businesses we have worked
+                            with is published here, and only with their
+                            approval. We would rather show you a short
+                            list than a borrowed compliment.
+                        </blockquote>
+
+                        <div class="testimonial-client">
+                            <strong>Kwetu Creations</strong>
+                            <span>Design and production studio, Kampala</span>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <div class="testimonial-quote"
+                             aria-hidden="true">“</div>
+
+                        <blockquote>
+                            Worked on a project with us? Tell us how it
+                            went. Every submission is read by the team,
+                            and nothing is published without the
+                            permission of the person who wrote it.
+                        </blockquote>
+
+                        <div class="testimonial-client">
+                            <strong>Share your experience</strong>
+                            <span>The form is further down this page</span>
+                        </div>
+
+                        <a class="card-link" href="#share-experience">
+                            Write a review &rarr;
+                        </a>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <div class="testimonial-quote"
+                             aria-hidden="true">“</div>
+
+                        <blockquote>
+                            The projects we have delivered — signage,
+                            branding, laser work and interiors — are
+                            photographed in place and gathered in the
+                            portfolio. That is the fastest way to judge us.
+                        </blockquote>
+
+                        <div class="testimonial-client">
+                            <strong>See the work</strong>
+                            <span>Delivered projects, photographed on site</span>
+                        </div>
+
+                        <a class="card-link" href="portfolio.html">
+                            Open the portfolio &rarr;
+                        </a>
+                    </article>
+
+                </div>
+
+        <p class="related-links">
+            <span>See the work behind the words:</span>
+            <a href="portfolio.html">Browse delivered signage and interior projects</a>
+            <a href="quote-request.html">Start a quote for your own project</a>
+        </p>
+            </section>
+
+            <!-- TESTIMONIAL SUBMISSION FORM -->
+            <section class="testimonial-form-section"
+                     id="share-experience">
+
+                <div class="testimonial-form-intro">
+                    <p class="eyebrow">SHARE YOUR EXPERIENCE</p>
+
+                    <h2>Worked with us?<br>
+                        <span style="color: #B5122A">
+                            Tell your story.
+                        </span>
+                    </h2>
+
+                    <p>
+                        Your feedback helps us understand what we're
+                        doing well and where we can improve. Tell us
+                        about your experience working with Kwetu Creations.
+                    </p>
+                </div>
+
+                <form class="testimonial-form"
+                      id="testimonialForm"
+                      action="#"
+                      method="post"
+                      data-form-guard
+                      data-endpoint="backend/submit-testimonial.php"
+                      data-csrf-endpoint="backend/csrf-token.php"
+                      data-recipient="info@kwetucreations.com"
+                      data-subject="Client testimonial - Kwetu Creations">
+
+                    <!-- Bot trap. A human never sees this field, so anything
+                         that fills it is a script reading the markup and the
+                         submission is discarded. -->
+                    <div class="guard-trap" aria-hidden="true">
+                        <label for="company-website">Company website (leave empty)</label>
+                        <input type="text"
+                               id="company-website"
+                               name="company_website"
+                               tabindex="-1"
+                               autocomplete="off"
+                               maxlength="200">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="client-name">Your full name *</label>
+                        <input
+                            type="text"
+                            id="client-name"
+                            name="client_name"
+                            placeholder="Enter your name"
+                            maxlength="100"
+                            autocomplete="name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="business-name">
+                            Business or organisation
+                        </label>
+                        <input
+                            type="text"
+                            id="business-name"
+                            name="business_name"
+                            placeholder="Enter your business name (optional)"
+                            maxlength="150"
+                            autocomplete="organization">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="client-rating">Your rating *</label>
+                        <select id="client-rating"
+                                name="rating"
+                                required>
+                            <option value="">Choose a rating</option>
+                            <option value="5">★★★★★ — Excellent</option>
+                            <option value="4">★★★★☆ — Very good</option>
+                            <option value="3">★★★☆☆ — Good</option>
+                            <option value="2">★★☆☆☆ — Fair</option>
+                            <option value="1">★☆☆☆☆ — Needs improvement</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="client-testimonial">
+                            Tell us about your experience *
+                        </label>
+                        <textarea
+                            id="client-testimonial"
+                            name="testimonial"
+                            placeholder="What did you like about working with us?"
+                            minlength="10"
+                            maxlength="2000"
+                            required></textarea>
+                    </div>
+
+                    <div class="consent-group">
+                        <input
+                            type="checkbox"
+                            id="testimonial-consent"
+                            name="publication_consent"
+                            data-guard-label="Your confirmation"
+                            value="yes"
+                            required>
+
+                        <label for="testimonial-consent">
+                            I confirm this feedback reflects my genuine
+                            experience, and I give Kwetu Creations
+                            permission to publish it with my name and
+                            business name, if provided.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="testimonial-submit">
+                        Submit Testimonial
+                    </button>
+
+                    <p class="form-note">
+                        Your experience matters to us. Share your feedback and
+                        help us continue creating work that stands out.
+                    </p>
+
+                    <p class="form-note-quiet">
+                        Testimonials are reviewed before publication.
+                    </p>
+
+                </form>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- SHARED FOOTER -->
+    <div id="site-footer">
+  <!-- KWETU:CHROME:SITE-FOOTER:BEGIN -->
+  <footer class="site-footer">
+  
+      <div class="footer-top">
+          <div class="footer-brand">
+              <a href="./" class="footer-logo">
+                  <img class="footer-logo-mark" src="images/logo/mark.webp?v=3" alt="" width="120" height="120">
+                  <span class="logo-kwetu">KWETU</span><span class="logo-dot">.</span>
+                  <span class="logo-creations">CREATIONS</span>
+              </a>
+  
+              <p class="footer-tagline">
+                  Creative design. Precision production. Exceptional results.
+              </p>
+          </div>
+  
+          <div class="footer-explore">
+              <h3>EXPLORE</h3>
+              <a href="./" data-page="index3.html">Home</a>
+              <a href="portfolio.html" data-page="portfolio.html">Our Work</a>
+              <a href="services.html" data-page="services.html">Services</a>
+              <a href="about.html" data-page="about.html">About Us</a>
+              <a href="testimonials.html" data-page="testimonials.html">Client Reviews</a>
+              <a href="contact.html" data-page="contact.html">Contact Us</a>
+              <a href="quote-request.html" data-page="quote-request.html">Get a Quote</a>
+          </div>
+          <div class="footer-services">
+                  <h3>OUR SERVICES</h3>
+                  <a href="services.html#signage">Signage</a>
+                  <a href="services.html#branding">Branding &amp; Graphic Design</a>
+                  <a href="services.html#interiors">Interior Solutions</a>
+                  <a href="services.html#illuminated-signage">Illuminated Signage</a>
+                  <a href="services.html#fabrication">Fabrication</a>
+                  <a href="services.html#laser-cutting">Laser Cutting</a>
+                  <a href="services.html#large-format-printing">Large-Format Printing</a>
+                  <a href="services.html#web-design">Website Design &amp; Development</a>
+              </div>
+  
+              <div class="footer-contact">
+                  <h3>CONTACT US</h3>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <address>
+                      Freedom House, Level 6, Suite R-724<br>
+                      Nkurumah Road, Kampala, Uganda
+                     
+                  </address>
+              </div>
+  
+              <div class="footer-contact-item">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  <a href="tel:+256787738999">+256 787 738 999</a>
+              </div>
+              
+              <div class="footer-contact-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <a href="mailto:info@kwetucreations.com">
+                      info@kwetucreations.com
+                  </a>
+              </div>
+  
+          </div>
+  
+          <div class="footer-social">
+              <h3>CONNECT WITH US</h3>
+  
+              <div class="social-icons-container">
+                  <a class="icon-link whatsapp"
+                     href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener"
+                     aria-label="Message the studio on WhatsApp"
+                     title="Message the studio on WhatsApp">
+                      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                  </a>
+                  <span class="icon-link instagram" role="img"
+                        aria-label="Instagram" title="Instagram">
+                      <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link tiktok" role="img"
+                        aria-label="TikTok" title="TikTok">
+                      <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link linkedin" role="img"
+                        aria-label="LinkedIn" title="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                  </span>
+                  <span class="icon-link facebook" role="img"
+                        aria-label="Facebook" title="Facebook">
+                      <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                  </span>
+              </div>
+  
+              <p class="footer-social-note">
+                  Speak to the studio directly —
+                  <a href="mailto:info@kwetucreations.com">info@kwetucreations.com</a>,
+                  <a href="tel:+256787738999">+256 787 738 999</a>,
+                  or
+                  <a href="https://wa.me/256787738999?text=Hello%20Kwetu%20Creations%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+                     target="_blank" rel="noopener">message us on WhatsApp</a>.
+                  All three reach the team, and a reply from us comes from a
+                  person, not a queue.
+              </p>
+  
+          </div>
+          
+      </div>
+  
+      <div class="footer-bottom">
+          <div class="footer-legal-links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <span>|</span>
+              <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+              <span>|</span>
+              <a href="cookie-policy.html">Cookie Policy</a>
+              <span>|</span>
+              <button type="button" data-cookie-settings
+                      aria-haspopup="dialog">Cookie Settings</button>
+          </div>
+  
+          <p class="footer-copyright">
+              &copy; <span id="year"></span>
+              <span class="footer-kwetu">Kwetu</span>
+              <span class="footer-creations">Creations</span>.
+              All rights reserved.
+          </p>
+  
+          <div class="footer-designer">
+              <span>Website designed by</span>
+              <strong>BYUMA DANIEL</strong>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mpozzadaniel@gmail.com"
+                 target="_blank" rel="noopener noreferrer">
+                  mpozzadaniel@gmail.com
+              </a>
+          </div>
+      </div>
+  
+  </footer>
+  <!-- KWETU:CHROME:SITE-FOOTER:END -->
+</div>
+
+    <!-- Shared navigation and footer loader -->
+    <script src="script.js"></script>
+    <script src="cookie-consent.js"></script>
+
+    <!-- Field validation and an honest note about what has not been sent -->
+    <script src="form-guard.js"></script>
+
+    <!-- Approved testimonials, shown only once the review screen has published some -->
+    <script src="testimonials-live.js" data-testimonial-feed="backend/approved-testimonials.php" defer></script>
+
+</body>
+</html>

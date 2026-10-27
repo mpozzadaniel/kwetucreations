@@ -1,0 +1,103 @@
+/* Section Setup */
+.craft-motion-section {
+  padding: 100px 0;
+  background-color: #F9F9F9; /* Clean, premium studio off-white */
+  overflow: hidden;
+}
+
+/* Master Viewport window that enables layering */
+.showcase-viewport {
+  position: relative; /* Crucial: Allows child layers to stack */
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* --- THE LOGO LAYER ENGINE --- */
+.center-logo-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Moves layout directly to the exact geometric center */
+  z-index: 10; /* Keeps the logo floating firmly ON TOP of the moving images */
+  pointer-events: none; /* Allows user to still hover/interact with images beneath the badge area */
+}
+
+/* Premium Geometric Badge Layout */
+.brand-badge {
+  background-color: #1A1A1A; /* Solid dark charcoal core brand background */
+  color: #FFFFFF;
+  padding: 30px 45px;
+  border-radius: 0px; /* Sharp, minimalist editorial rectangular edges */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Soft premium shadow for modern 3D depth */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 4px;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.badge-text {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.badge-divider {
+  width: 40px;
+  height: 1px;
+  background-color: #E5A93C; /* Elegant gold brand line break */
+  margin: 12px 0;
+}
+
+.badge-subtext {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.75rem;
+}
+
+/* --- BACKGROUND MOTION TRACK --- */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 40px;
+  animation: slideMotion 30s linear infinite; /* Gentler speed for premium artistic feel */
+}
+
+/* Slow down slightly on hover for visual elegance */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-image-item {
+  width: 380px;
+  height: 480px;
+  flex-shrink: 0;
+}
+
+.marquee-image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+  /* Premium Studio Effect: Muted tones that color-pop when hovered */
+  filter: contrast(95%) brightness(95%) grayscale(15%); 
+  transition: all 0.5s ease;
+}
+
+.marquee-image-item img:hover {
+  filter: contrast(100%) brightness(100%) grayscale(0%);
+}
+
+/* Standard Engine Slide Loop */
+@keyframes slideMotion {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 20px)); }
+}
